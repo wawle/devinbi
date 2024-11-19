@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Test or Prod
+        env:
+          BRANCH: ${{ github.ref_name }}
+          SERVER: ${{ secrets.SERVER }}
+          USER: ${{ secrets.USER }}
+        run: |
+          if [ "$BRANCH" == "dev" ]; then
+            ssh $USER@$SERVER "cd /var/www/test && docker-compose up -d --build"
+          elif [ "$BRANCH" == "main" ]; then
+            ssh $USER@$SERVER "cd /var/www/prod && docker-compose up -d --build"
+          fi

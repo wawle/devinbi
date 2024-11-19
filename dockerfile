@@ -1,20 +1,23 @@
-# Temel olarak Node.js imajını kullan
+# Base image
 FROM node:23
 
-# Çalışma dizinini belirle
-WORKDIR /src
+# Set working directory
+WORKDIR /src/app
 
-# package.json ve package-lock.json dosyalarını kopyala
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Bağımlılıkları yükle
+# Install dependencies
 RUN npm install
 
-# Uygulama dosyalarını kopyala
+# Copy the rest of the application
 COPY . .
 
-# Uygulama çalıştırma komutu
-CMD ["npm", "run", "dev"]
+# Build the application
+RUN npm run build
 
-# Sunucunun dinleyeceği port
+# Expose the port
 EXPOSE 3000
+
+# Start the application
+CMD ["npm", "run", "start"]
