@@ -31,12 +31,14 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
               git pull origin dev && \
+              docker compose down && \
               docker compose up -d --build
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
               cd /var/www/prod/devinbi && \
               git pull origin main && \
+              docker compose down && \
               docker compose up -d --build
             "
           fi
