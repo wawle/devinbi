@@ -29,13 +29,13 @@ jobs:
         run: |
           if [ "$BRANCH" == "dev" ]; then
             ssh $USER@$SERVER "
-              cd /var/www/test && \
+              cd /var/www/test/devinbi && \
               git pull origin dev && \
               docker compose up -d --build
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
-              cd /var/www/prod && \
+              cd /var/www/prod/devinbi && \
               git pull origin main && \
               docker compose up -d --build
             "
