@@ -31,9 +31,15 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
               git pull origin dev && \
-              # Check if container exists and rename it if needed
-              docker ps -q --filter name=devinbi_test && docker rename devinbi_test devinbi_test_old || echo 'No existing container to rename' && \
-              docker compose up -d --build
+              # Build the Docker image (you can specify the exact tag)
+              docker build -t devinbi_test:latest .
+
+              # Stop and remove the old container
+              docker stop devinbi_test
+              docker rm devinbi_test
+
+              # Run a new container with the latest image
+              docker run -d -p 3001:3000 --name devinbi_test devinbi_test:latest
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
