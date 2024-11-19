@@ -14,11 +14,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up SSH directory
+      - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.HOST_KEY }}" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SERVER }} >> ~/.ssh/known_hosts
 
       - name: Deploy to Test or Prod
         env:
@@ -27,7 +28,7 @@ jobs:
           USER: ${{ secrets.USER }}
         run: |
           if [ "$BRANCH" == "dev" ]; then
-            ssh $USER@$SERVER "cd ~/test && docker-compose up -d --build"
+            ssh $USER@$SERVER "cd /var/www/test && docker-compose up -d --build"
           elif [ "$BRANCH" == "main" ]; then
-            ssh $USER@$SERVER "cd ~/prod && docker-compose up -d --build"
+            ssh $USER@$SERVER "cd /var/www/prod && docker-compose up -d --build"
           fi
