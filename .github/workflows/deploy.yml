@@ -31,6 +31,7 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
               git pull origin dev && \
+
               # Build the Docker image (you can specify the exact tag)
               docker build -t devinbi_test:latest .
 
@@ -45,8 +46,15 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/prod/devinbi && \
               git pull origin main && \
-              # Check if container exists and rename it if needed
-              docker ps -q --filter name=devinbi_test && docker rename devinbi_test devinbi_test_old || echo 'No existing container to rename' && \
-              docker-compose up -d --build
+              
+              # Build the Docker image (you can specify the exact tag)
+              docker build -t devinbi_prod:latest .
+
+              # Stop and remove the old container
+              docker stop devinbi_prod
+              docker rm devinbi_prod
+
+              # Run a new container with the latest image
+              docker run -d -p 3001:3000 --name devinbi_prod devinbi_prod:latest
             "
           fi
