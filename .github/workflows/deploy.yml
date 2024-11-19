@@ -14,8 +14,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Add Known Hosts
-        run: echo "${{ secrets.HOST_KEY }}" >> ~/.ssh/known_hosts
+      - name: Set up SSH directory
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HOST_KEY }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
 
       - name: Deploy to Test or Prod
         env:
@@ -24,7 +27,7 @@ jobs:
           USER: ${{ secrets.USER }}
         run: |
           if [ "$BRANCH" == "dev" ]; then
-            ssh $USER@$SERVER "cd /var/www/test && docker-compose up -d --build"
+            ssh $USER@$SERVER "cd ~/test && docker-compose up -d --build"
           elif [ "$BRANCH" == "main" ]; then
-            ssh $USER@$SERVER "cd /var/www/prod && docker-compose up -d --build"
+            ssh $USER@$SERVER "cd ~/prod && docker-compose up -d --build"
           fi
