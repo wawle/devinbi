@@ -28,7 +28,15 @@ jobs:
           USER: ${{ secrets.USER }}
         run: |
           if [ "$BRANCH" == "dev" ]; then
-            ssh $USER@$SERVER "cd /var/www/test && docker compose up -d --build"
+            ssh $USER@$SERVER "
+              cd /var/www/test && \
+              git pull origin dev && \
+              docker compose up -d --build
+            "
           elif [ "$BRANCH" == "main" ]; then
-            ssh $USER@$SERVER "cd /var/www/prod && docker compose up -d --build"
+            ssh $USER@$SERVER "
+              cd /var/www/prod && \
+              git pull origin main && \
+              docker compose up -d --build
+            "
           fi
