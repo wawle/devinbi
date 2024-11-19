@@ -31,14 +31,16 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
               git pull origin dev && \
-              docker compose down && \
+              # Check if container exists and rename it if needed
+              docker ps -q --filter name=devinbi_test && docker rename devinbi_test devinbi_test_old || echo 'No existing container to rename' && \
               docker compose up -d --build
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
               cd /var/www/prod/devinbi && \
               git pull origin main && \
-              docker compose down && \
-              docker compose up -d --build
+              # Check if container exists and rename it if needed
+              docker ps -q --filter name=devinbi_test && docker rename devinbi_test devinbi_test_old || echo 'No existing container to rename' && \
+              docker-compose up -d --build
             "
           fi
