@@ -32,15 +32,21 @@ jobs:
               cd /var/www/test/devinbi && \
               git pull origin dev && \
 
-              # Build the Docker image (you can specify the exact tag)
-              docker build -t devinbi_test:latest .
+             # Build the Docker image (you can specify the exact tag)
+              docker build -t devinbi_test:latest . && \
 
-              # Stop and remove the old container
-              docker stop devinbi_test
-              docker rm devinbi_test
+              # Run a new container in detached mode with a new name
+              docker run -d -p 3001:3000 --name devinbi_test_new devinbi_test:latest && \
 
-              # Run a new container with the latest image
-              docker run -d -p 3001:3000 --name devinbi_test devinbi_test:latest
+              # Check if the new container is running correctly
+              docker ps -f name=devinbi_test_new --format '{{.Status}}' | grep 'Up' && \
+
+              # Stop and remove the old container after verifying the new one is running
+              docker stop devinbi_test && \
+              docker rm devinbi_test && \
+
+              # Rename the new container to the old container's name (for consistency)
+              docker rename devinbi_test_new devinbi_test
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
@@ -48,13 +54,19 @@ jobs:
               git pull origin main && \
               
               # Build the Docker image (you can specify the exact tag)
-              docker build -t devinbi_prod:latest .
+              docker build -t devinbi_prod:latest . && \
 
-              # Stop and remove the old container
-              docker stop devinbi_prod
-              docker rm devinbi_prod
+              # Run a new container in detached mode with a new name
+              docker run -d -p 3000:3000 --name devinbi_prod_new devinbi_prod:latest && \
 
-              # Run a new container with the latest image
-              docker run -d -p 3000:3000 --name devinbi_prod devinbi_prod:latest
+              # Check if the new container is running correctly
+              docker ps -f name=devinbi_prod_new --format '{{.Status}}' | grep 'Up' && \
+
+              # Stop and remove the old container after verifying the new one is running
+              docker stop devinbi_prod && \
+              docker rm devinbi_prod && \
+
+              # Rename the new container to the old container's name (for consistency)
+              docker rename devinbi_prod_new devinbi_prod
             "
           fi
