@@ -35,25 +35,12 @@ jobs:
               # Build the Docker image (you can specify the exact tag)
               docker build -t devinbi_test:latest .
 
-              # Run the new container with a different name temporarily
-              docker run -d -p 3001:3000 --name devinbi_test_new devinbi_test:latest
-
-              # Wait for a few seconds for the new container to initialize
-              sleep 10
-
-              # Check if the new container is healthy (optional)
-              # You can use `docker ps` to check the status or set up a health check for your container
-              docker ps
-
-              # Once the new container is ready, stop and remove the old container (blue version)
+              # Stop and remove the old container
               docker stop devinbi_test
               docker rm devinbi_test
 
-              # Rename the new container to the original name (to replace the old one)
-              docker rename devinbi_test_new devinbi_test
-
-              # Verify everything is working
-              docker ps
+              # Run a new container with the latest image
+              docker run -d -p 3001:3000 --name devinbi_test devinbi_test:latest
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
@@ -63,24 +50,11 @@ jobs:
               # Build the Docker image (you can specify the exact tag)
               docker build -t devinbi_prod:latest .
 
-              # Run the new container with a different name temporarily
-              docker run -d -p 3000:3000 --name devinbi_prod_new devinbi_prod:latest
-
-              # Wait for a few seconds for the new container to initialize
-              sleep 10
-
-              # Check if the new container is healthy (optional)
-              # You can use `docker ps` to check the status or set up a health check for your container
-              docker ps
-
-              # Once the new container is ready, stop and remove the old container (blue version)
+              # Stop and remove the old container
               docker stop devinbi_prod
               docker rm devinbi_prod
 
-              # Rename the new container to the original name (to replace the old one)
-              docker rename devinbi_prod_new devinbi_prod
-
-              # Verify everything is working
-              docker ps
+              # Run a new container with the latest image
+              docker run -d -p 3000:3000 --name devinbi_prod devinbi_prod:latest
             "
           fi
