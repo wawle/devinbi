@@ -26,11 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+        <GoogleTagManager gtmId='G-B74KGSQKR5' />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <GoogleTagManager gtmId='G-B74KGSQKR5' />
       </body>
     </html>
   );
