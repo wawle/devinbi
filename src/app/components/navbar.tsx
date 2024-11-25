@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <nav
@@ -36,7 +43,7 @@ export default function NavBar() {
         {/* Mobile Nav */}
         <div
           className={cn(
-            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-[#070815] pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
+            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/90 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
             open ? "translate-x-0" : "translate-x-[100%]",
           )}
         >
@@ -50,80 +57,37 @@ export default function NavBar() {
             <span className="sr-only">Close menu</span>
           </button>
 
-          {/* <div className="grid justify-items-end gap-8">
-            {settings.data.navigation.map((item) => {
-              if (item.cta_button) {
-                return (
-                  <ButtonLink
-                    key={item.label}
-                    field={item.link}
-                    onClick={() => setOpen(false)}
-                    aria-current={
-                      pathname.includes(asLink(item.link) as string)
-                        ? "page"
-                        : undefined
-                    }
-                  >
-                    {item.label}
-                  </ButtonLink>
-                );
-              }
-              return (
-                <PrismicNextLink
-                  key={item.label}
-                  className="block px-3 text-3xl first:mt-8"
-                  field={item.link}
-                  onClick={() => setOpen(false)}
-                  aria-current={
-                    pathname.includes(asLink(item.link) as string)
-                      ? "page"
-                      : undefined
-                  }
-                >
-                  {item.label}
-                </PrismicNextLink>
-              );
-            })}
-          </div> */}
+          <div className="mt-12 flex w-full flex-col items-center gap-8 text-2xl font-semibold">
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              Home
+            </Link>
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              About Us
+            </Link>
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              Products
+            </Link>
+          </div>
         </div>
 
         {/* Desktop Nav */}
-        {/* <ul className="hidden gap-6 md:flex">
-          {settings.data.navigation.map((item) => {
-            if (item.cta_button) {
-              return (
-                <li key={item.label}>
-                  <ButtonLink
-                    field={item.link}
-                    aria-current={
-                      pathname.includes(asLink(item.link) as string)
-                        ? "page"
-                        : undefined
-                    }
-                  >
-                    {item.label}
-                  </ButtonLink>
-                </li>
-              );
-            }
-
-            return (
-              <li key={item.label}>
-                <PrismicNextLink
-                  field={item.link}
-                  className="inline-flex min-h-11 items-center"
-                  aria-current={
-                    pathname.includes(asLink(item.link) as string)
-                      ? "page"
-                      : undefined
-                  }
-                >
-                  {item.label}
-                </PrismicNextLink>
-              </li>
-            );
-          })}
-        </ul> */}
+        <ul className="hidden gap-6 font-semibold md:flex">
+          <li>
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/" className="inline-flex min-h-11 items-center">
+              Products
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
