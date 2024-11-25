@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
+import NavBar from "./components/navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,7 +17,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Devinbi",
-  description: "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+  description:
+    "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
 };
 
 export default function RootLayout({
@@ -26,11 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <GoogleTagManager gtmId='G-B74KGSQKR5' />
+      <GoogleTagManager gtmId="G-B74KGSQKR5" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}
       >
-        {children}
+        <NavBar />
+        <div className="bg-black">{children}</div>
       </body>
     </html>
   );
