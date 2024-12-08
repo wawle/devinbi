@@ -3,11 +3,11 @@
 import Bounded from "../bounded";
 import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
 import { useGSAP } from "@gsap/react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import StarGrid from "../star-grid";
 import { useRef } from "react";
 import gsap from "gsap";
+import { Button } from "../ui/button";
 
 const Hero = () => {
   const container = useRef(null);
@@ -66,11 +66,15 @@ const Hero = () => {
     { scope: container },
   );
   return (
-    <Bounded className="py-32 text-center">
+    <Bounded className="text-center">
       <div className="relative w-full space-y-14 text-white" ref={container}>
         <StarGrid />
         <h1 className="hero__heading text-balance text-4xl font-medium opacity-0 md:text-5xl">
-          Yazılımın Geleceğini Şekillendiren Akıllı Çözümler
+          Yazılımın Geleceğini Şekillendiren
+          <br />
+          <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic text-transparent">
+            Akıllı Çözümler
+          </em>
         </h1>
 
         <div className="hero__body clear-start mx-auto max-w-md text-balance opacity-0">
@@ -83,7 +87,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <Button className="hero__button z-10 w-fit rounded-full border px-8 py-6 font-semibold opacity-0 transition-colors duration-500 after:bg-opacity-0 after:blur-md hover:animate-pulse hover:border-emerald-700 hover:text-emerald-700 after:hover:bg-opacity-15">
+          <Button variant="pulseGreen" className="hero__button z-10 px-10 py-6">
             Hemen Keşfedin
           </Button>
         </div>

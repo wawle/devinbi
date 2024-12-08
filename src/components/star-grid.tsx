@@ -71,8 +71,8 @@ export default function StarGrid() {
       // Loop animation
       tl.to(".star-grid-item", {
         delay: 8,
-        repeat: -1,
-        repeatDelay: 8,
+        repeat: 100,
+        repeatDelay: 2,
         keyframes: [
           {
             opacity: 0.4,
