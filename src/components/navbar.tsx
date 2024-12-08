@@ -16,14 +16,11 @@ export default function NavBar() {
   if (!isMounted) return null;
 
   return (
-    <nav
-      className="md-:py-6 bg-background bg-black px-4 py-4 md:px-6"
-      aria-label="Main"
-    >
+    <nav className="md-:py-6 bg-black px-4 py-4 md:px-6" aria-label="Main">
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
         <div className="flex items-center justify-between">
           <Link
-            className="z-50 text-3xl font-bold"
+            className="z-50 text-4xl font-bold"
             href="/"
             onClick={() => setOpen(false)}
           >
@@ -58,33 +55,45 @@ export default function NavBar() {
           </button>
 
           <div className="mt-12 flex w-full flex-col items-center gap-8 text-2xl font-semibold">
-            <Link href="/" className="inline-flex min-h-11 items-center">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              onClick={() => setOpen(false)}
+            >
               Home
             </Link>
-            <Link href="/" className="inline-flex min-h-11 items-center">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              onClick={() => setOpen(false)}
+            >
               About Us
             </Link>
-            <Link href="/" className="inline-flex min-h-11 items-center">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              onClick={() => setOpen(false)}
+            >
               Products
             </Link>
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden gap-6 font-semibold md:flex">
+        <ul className="hidden items-center gap-8 font-semibold md:flex">
           <li>
-            <Link href="/" className="inline-flex min-h-11 items-center">
-              Home
+            <Link href="/" className="nav-hover-btn">
+              Ana Sayfa
             </Link>
           </li>
           <li>
-            <Link href="/" className="inline-flex min-h-11 items-center">
-              About Us
+            <Link href="/" className="nav-hover-btn">
+              Hakkımızda
             </Link>
           </li>
           <li>
-            <Link href="/" className="inline-flex min-h-11 items-center">
-              Products
+            <Link href="/" className="nav-hover-btn">
+              Çözümler
             </Link>
           </li>
         </ul>
