@@ -16,7 +16,10 @@ export default function NavBar() {
   if (!isMounted) return null;
 
   return (
-    <nav className="md-:py-6 bg-black px-4 py-4 md:px-6" aria-label="Main">
+    <nav
+      className="md-:py-6 border-b border-emerald-950/60 bg-black px-4 py-4 md:px-6"
+      aria-label="Main"
+    >
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
         <div className="flex items-center justify-between">
           <Link
@@ -24,7 +27,7 @@ export default function NavBar() {
             href="/"
             onClick={() => setOpen(false)}
           >
-            Devin<span className="text-emerald-600">bi</span>
+            Devin<span className="text-emerald-900">bi</span>
             <span className="sr-only">Devinbi Home Page</span>
           </Link>
           <button
@@ -57,21 +60,21 @@ export default function NavBar() {
           <div className="mt-12 flex w-full flex-col items-center gap-8 text-2xl font-semibold">
             <Link
               href="/"
-              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              className="inline-flex min-h-11 items-center hover:text-emerald-900"
               onClick={() => setOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/"
-              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              className="inline-flex min-h-11 items-center hover:text-emerald-900"
               onClick={() => setOpen(false)}
             >
               About Us
             </Link>
             <Link
               href="/"
-              className="inline-flex min-h-11 items-center hover:text-emerald-600"
+              className="inline-flex min-h-11 items-center hover:text-emerald-900"
               onClick={() => setOpen(false)}
             >
               Products
@@ -94,6 +97,11 @@ export default function NavBar() {
           <li>
             <Link href="/" className="nav-hover-btn">
               Çözümler
+            </Link>
+          </li>
+          <li>
+            <Link href="/" className="nav-hover-btn">
+              İLETİŞİM
             </Link>
           </li>
         </ul>

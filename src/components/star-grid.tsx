@@ -43,7 +43,7 @@ export default function StarGrid() {
           {
             opacity: 0.4,
             rotate: "+=180",
-            color: "#059669",
+            color: "#022c22",
             scale: 3,
             duration: 0.6,
             stagger: {
@@ -77,7 +77,7 @@ export default function StarGrid() {
           {
             opacity: 0.4,
             rotate: "+=180",
-            color: "#059669",
+            color: "#022c22",
             scale: 3,
             duration: 0.6,
             stagger: {

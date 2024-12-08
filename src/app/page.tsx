@@ -1,7 +1,13 @@
-import Hero from "@/components/hero/hero";
+import Bento from "@/components/homepage/bento";
+import Hero from "@/components/homepage/hero";
 
 const Home = () => {
-  return <Hero />;
+  return (
+    <div className="space-y-12">
+      <Hero />
+      <Bento />
+    </div>
+  );
 };
 
 export default Home;
