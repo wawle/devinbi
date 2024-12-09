@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { navbarItems } from "@/lib/constants";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function NavBar() {
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
         <div className="flex items-center justify-between">
           <Link
-            className="z-50 text-4xl font-bold"
+            className="z-50 text-3xl font-bold"
             href="/"
             onClick={() => setOpen(false)}
           >
@@ -58,52 +59,28 @@ export default function NavBar() {
           </button>
 
           <div className="mt-12 flex w-full flex-col items-center gap-8 text-2xl font-semibold">
-            <Link
-              href="/"
-              className="inline-flex min-h-11 items-center"
-              onClick={() => setOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex min-h-11 items-center"
-              onClick={() => setOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex min-h-11 items-center"
-              onClick={() => setOpen(false)}
-            >
-              Products
-            </Link>
+            {navbarItems.map((item, index) => (
+              <Link
+                key={index.toString()}
+                href={item.href}
+                className="inline-flex min-h-11 items-center"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* Desktop Nav */}
         <ul className="hidden items-center gap-8 font-semibold md:flex">
-          <li>
-            <Link href="/" className="nav-hover-btn">
-              Ana Sayfa
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="nav-hover-btn">
-              Hakkımızda
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="nav-hover-btn">
-              Çözümler
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="nav-hover-btn">
-              İLETİŞİM
-            </Link>
-          </li>
+          {navbarItems.map((item, index) => (
+            <li key={index.toString()}>
+              <Link href={item.href} className="nav-hover-btn">
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

@@ -4,7 +4,6 @@ import clsx from "clsx";
 import Bounded from "../bounded";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
-import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -13,40 +12,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Bento = () => {
   const container = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
   gsap.registerPlugin(useGSAP);
 
   useGSAP(
     () => {
-      if (prefersReducedMotion) {
-        gsap.set(".bento_heading, .bento_body, .bento-card", { opacity: 1 });
-        return;
-      }
-
-      const tl = gsap.timeline({ defaults: { ease: "power1.inOut" } });
-
-      // Heading animasyonu
-      tl.fromTo(
-        ".bento_heading",
-        { scale: 0.5 },
-        { scale: 1, opacity: 1, duration: 1.4 },
-      );
-
-      // Body animasyonu
-      tl.fromTo(
-        ".bento_body",
-        { y: 20 },
-        { y: 0, opacity: 1, duration: 1.2 },
-        "-=0.6",
-      );
-
-      // Card animasyonu
-      tl.fromTo(
-        ".bento_card",
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.3 },
-        "-=0.8",
-      );
+      const cards = gsap.utils.toArray<HTMLElement>(".bento_card");
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { x: "-60%" },
+          {
+            x: "0%",
+            scrollTrigger: {
+              once: true,
+              trigger: card,
+              start: "bottom bottom",
+              end: "top center",
+              scrub: 3,
+            },
+          },
+        );
+      });
     },
     { scope: container },
   );

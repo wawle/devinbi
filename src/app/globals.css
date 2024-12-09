@@ -36,7 +36,7 @@ body {
 
 @layer utilities {
   .nav-hover-btn {
-    @apply relative cursor-pointer uppercase after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-emerald-600 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
+    @apply relative cursor-pointer text-sm uppercase after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-emerald-600 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
   }
 }
 

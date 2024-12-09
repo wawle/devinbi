@@ -30,41 +30,34 @@ const Hero = () => {
       tl.fromTo(
         ".hero__heading",
         { scale: 0.5 },
-        { scale: 1, opacity: 1, duration: 1.4 },
+        { scale: 1, opacity: 1, duration: 1.2 },
       );
 
       // Body animasyonu
-      tl.fromTo(
-        ".hero__body",
-        { y: 20 },
-        { y: 0, opacity: 1, duration: 1.2 },
-        "-=0.6",
-      );
+      tl.fromTo(".hero__body", { y: 20 }, { y: 0, opacity: 1, duration: 1.2 });
 
       // Button animasyonu
       tl.fromTo(
         ".hero__button",
         { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.3 },
-        "-=0.8",
+        { scale: 1, opacity: 1, duration: 1.2 },
       );
 
       // Image ve Glow animasyonları aynı anda başlar
       tl.fromTo(
         ".hero__image",
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.3 },
-        "+=0.3",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2 },
       );
       tl.fromTo(
         ".hero__glow",
         { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.8 },
-        "<",
+        { scale: 1, opacity: 1, duration: 1.2 },
       );
     },
     { scope: container },
   );
+
   return (
     <Bounded className="text-center">
       <div className="relative w-full space-y-14 text-white" ref={container}>
@@ -86,11 +79,9 @@ const Hero = () => {
           </p>
         </div>
 
-        <div>
-          <Button variant="pulseGreen" className="hero__button z-10 px-10 py-6">
-            Hemen Keşfedin
-          </Button>
-        </div>
+        <Button variant="pulseGreen" className="hero__button z-10 px-10 py-6">
+          Hemen Keşfedin
+        </Button>
 
         <div className="hero__image glass-container mt-10 w-full max-w-6xl opacity-0">
           <div className="hero__glow absolute inset-0 -z-10 opacity-0 blur-2xl filter" />
