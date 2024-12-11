@@ -12,6 +12,7 @@ import { FaAppStoreIos, FaNodeJs, FaReact } from "react-icons/fa6";
 import { SiTypescript } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { DiAndroid } from "react-icons/di";
+import { TbBrandReactNative } from "react-icons/tb";
 
 const Tech = () => {
   const container = useRef(null);
@@ -22,7 +23,7 @@ const Tech = () => {
     appstore: <FaAppStoreIos />,
     android: <DiAndroid />,
     typescript: <SiTypescript />,
-    react: <FaReact />,
+    reactNative: <TbBrandReactNative />,
     next: <RiNextjsFill />,
   };
 
@@ -36,12 +37,12 @@ const Tech = () => {
       name: "Android",
     },
     {
-      icon: "next",
-      name: "Next",
+      icon: "reactNative",
+      name: "React",
     },
     {
-      icon: "react",
-      name: "React",
+      icon: "next",
+      name: "Next",
     },
     {
       icon: "typescript",

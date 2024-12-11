@@ -4,11 +4,7 @@ export const navbarItems = [
     href: "/",
     dictionary: "home",
   },
-  {
-    label: "About Us",
-    href: "/about-us",
-    dictionary: "about-us",
-  },
+
   {
     label: "Products",
     href: "/products",

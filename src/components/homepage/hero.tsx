@@ -5,7 +5,7 @@ import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import StarGrid from "../star-grid";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
 
@@ -29,30 +29,30 @@ const Hero = () => {
       // Heading animasyonu
       tl.fromTo(
         ".hero__heading",
-        { scale: 0.5 },
-        { scale: 1, opacity: 1, duration: 1.2 },
+        { scale: 0.8 },
+        { scale: 1, opacity: 1, duration: 0.8 },
       );
 
       // Body animasyonu
-      tl.fromTo(".hero__body", { y: 20 }, { y: 0, opacity: 1, duration: 1.2 });
+      tl.fromTo(".hero__body", { y: 20 }, { y: 0, opacity: 1, duration: 0.8 });
 
       // Button animasyonu
       tl.fromTo(
         ".hero__button",
         { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.2 },
+        { scale: 1, opacity: 1, duration: 0.8 },
       );
 
       // Image ve Glow animasyonları aynı anda başlar
       tl.fromTo(
         ".hero__image",
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2 },
+        { y: 0, opacity: 1, duration: 0.8 },
       );
       tl.fromTo(
         ".hero__glow",
         { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.2 },
+        { scale: 1, opacity: 1, duration: 0.8 },
       );
     },
     { scope: container },

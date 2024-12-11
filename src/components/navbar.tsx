@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { navbarItems } from "@/lib/constants";
+import { LocaleSwitcher } from "./locale-switcher";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -31,15 +32,20 @@ export default function NavBar() {
             Devin<span className="text-emerald-600">bi</span>
             <span className="sr-only">Devinbi Home Page</span>
           </Link>
-          <button
-            type="button"
-            className="block p-2 text-3xl text-white md:hidden"
-            aria-expanded={open}
-            onClick={() => setOpen(true)}
-          >
-            <Menu />
-            <span className="sr-only">Open menu</span>
-          </button>
+          <div className="flex gap-4">
+            <div className="md:hidden">
+              <LocaleSwitcher />
+            </div>
+            <button
+              type="button"
+              className="block p-2 text-3xl text-white md:hidden"
+              aria-expanded={open}
+              onClick={() => setOpen(true)}
+            >
+              <Menu />
+              <span className="sr-only">Open menu</span>
+            </button>
+          </div>
         </div>
         {/* Mobile Nav */}
         <div
@@ -81,6 +87,9 @@ export default function NavBar() {
               </Link>
             </li>
           ))}
+          <li>
+            <LocaleSwitcher />
+          </li>
         </ul>
       </div>
     </nav>
