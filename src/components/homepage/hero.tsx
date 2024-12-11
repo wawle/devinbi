@@ -5,7 +5,7 @@ import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import StarGrid from "../star-grid";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
 

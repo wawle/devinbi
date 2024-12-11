@@ -8,7 +8,7 @@ import StarBackground from "../star-background";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 
-import { FaAppStoreIos, FaNodeJs, FaReact } from "react-icons/fa6";
+import { FaAppStoreIos, FaNodeJs } from "react-icons/fa6";
 import { SiTypescript } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { DiAndroid } from "react-icons/di";

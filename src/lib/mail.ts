@@ -1,6 +1,5 @@
 "use server";
 import nodemailer from "nodemailer";
-
 const SMTP_SERVER_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMTP_SERVER_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 const SITE_MAIL_RECIEVER = process.env.SITE_MAIL_RECIEVER;
@@ -28,7 +27,7 @@ export async function sendMail({
   html?: string;
 }) {
   try {
-    const isVerified = await transporter.verify();
+    await transporter.verify();
   } catch (error) {
     console.error(
       "Something Went Wrong",

@@ -1,8 +1,5 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -13,14 +10,19 @@ import {
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { sendMail } from "@/lib/mail";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const contactFormSchema = z.object({
-    name: z.string().min(2, { message: "nameRequired" }),
-    surname: z.string().min(2, { message: "surnameRequired" }),
-    email: z.string().email({ message: "emailInvalid" }),
+    name: z.string().min(2, { message: "İsim alanı boş bırakılamaz" }),
+    surname: z.string().min(2, { message: "Soyisim alanı boş bırakılamaz" }),
+    email: z.string().email({ message: "Lütfen geçerli bir email giriniz" }),
     message: z.string().min(10, {
-      message: "messageMinLength",
+      message: "Mesaj uzunluğu minimum 10 karakter olamak zorunda",
     }),
   });
 
@@ -34,33 +36,34 @@ export default function ContactForm() {
     },
   });
 
-  // const isLoading = form.formState.isSubmitting;
-  // const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
-  //   const mailText = `Name: ${values.name}\nSurname: ${values.surname}\nEmail: ${values.email}\nMessage: ${values.message}`;
-  //   const response = await sendMail({
-  //     email: values.email,
-  //     subject: "İletişim Formu",
-  //     text: mailText,
-  //   });
-  //   if (response?.messageId) {
-  //     toast.success(t("messageSuccess"));
-  //   } else {
-  //     toast.error(t("messageFail"));
-  //   }
-  // };
+  const isLoading = form.formState.isSubmitting;
+  const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
+    const mailText = `Name: ${values.name}\nSurname: ${values.surname}\nEmail: ${values.email}\nMessage: ${values.message}`;
+    const response = await sendMail({
+      email: values.email,
+      subject: "İletişim Formu",
+      text: mailText,
+    });
+    if (response?.messageId) {
+      toast.success("Mesaj gönderildi");
+      form.reset();
+    } else {
+      toast.error("Mesaj gönderilirken bir hata oluştu.");
+    }
+  };
 
   return (
     <Form {...form}>
       <form
         className="w-full max-w-3xl items-center"
-        // onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(onSubmit)}
       >
         <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="w-full max-w-lg lg:col-span-2">
+              <FormItem className="w-full max-w-xl lg:col-span-2">
                 <FormControl>
                   <Input
                     className="py-6 placeholder:font-semibold"
@@ -76,7 +79,7 @@ export default function ContactForm() {
             control={form.control}
             name="surname"
             render={({ field }) => (
-              <FormItem className="w-full max-w-lg lg:col-span-2">
+              <FormItem className="w-full max-w-xl lg:col-span-2">
                 <FormControl>
                   <Input
                     className="py-6 placeholder:font-semibold"
@@ -92,7 +95,7 @@ export default function ContactForm() {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="w-full max-w-lg lg:col-span-2">
+              <FormItem className="w-full max-w-xl lg:col-span-2">
                 <FormControl>
                   <Input
                     className="py-6 placeholder:font-semibold"
@@ -108,7 +111,7 @@ export default function ContactForm() {
             control={form.control}
             name="message"
             render={({ field }) => (
-              <FormItem className="w-full max-w-lg lg:col-span-2">
+              <FormItem className="w-full max-w-xl lg:col-span-2">
                 <FormControl>
                   <Textarea
                     className="min-h-32 font-semibold"
@@ -120,15 +123,13 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
-          <div className="col-span-3 flex justify-center">
-            {/* <Button variant="outline" className="w-full" disabled={isLoading}>
-              {isLoading ? "Sending....." : "Send"}
-            </Button> */}
+          <div className="col-span-3 flex w-full justify-center">
             <Button
-              className="text-cente8 px-10 py-5 hover:text-white"
-              variant="pulseGreen"
+              variant="secondary"
+              className="w-full max-w-xs rounded-full py-6"
+              disabled={isLoading}
             >
-              Submit
+              {isLoading ? "Gönderiliyor....." : "Gönder"}
             </Button>
           </div>
         </div>

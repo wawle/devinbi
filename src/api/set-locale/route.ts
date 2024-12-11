@@ -1,7 +1,7 @@
 // File: src/app/api/set-locale/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { locales, Locale } from "@/lib/locales";
+import { locales } from "@/lib/locales";
 
 export async function POST(request: NextRequest) {
   try {

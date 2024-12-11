@@ -8,8 +8,10 @@ import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
 
 export default function AnimatedContent({
   children,
+  isLeft = true,
 }: {
   children: React.ReactNode;
+  isLeft: boolean;
 }) {
   const container = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -21,21 +23,37 @@ export default function AnimatedContent({
         gsap.set(container.current, { y: 0 });
         return;
       }
-
-      gsap.fromTo(
-        container.current,
-        { y: 50 },
-        {
-          y: 0,
-          ease: "power2.inOut",
-          duration: 1,
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top bottom-=40%",
-            toggleActions: "play pause resume reverse",
+      if (isLeft) {
+        gsap.fromTo(
+          container.current,
+          { x: "100% " },
+          {
+            x: 0,
+            ease: "power2.inOut",
+            duration: 1,
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top bottom-=40%",
+              toggleActions: "play pause resume reverse",
+            },
           },
-        },
-      );
+        );
+      } else {
+        gsap.fromTo(
+          container.current,
+          { x: "-100% " },
+          {
+            x: 0,
+            ease: "power2.inOut",
+            duration: 1,
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top bottom-=40%",
+              toggleActions: "play pause resume reverse",
+            },
+          },
+        );
+      }
     },
     { scope: container },
   );
