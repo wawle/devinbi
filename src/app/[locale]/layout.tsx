@@ -6,16 +6,23 @@ import NavBar from "../../components/navbar";
 import Footer from "@/components/footer";
 import { Locale, locales } from "@/lib/locales";
 import { Toaster } from "sonner";
+import { Roboto } from "next/font/google";
 
-const geistSans = localFont({
-  src: ".././fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: ".././fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// const geistSans = localFont({
+//   src: ".././fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: ".././fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,9 +48,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <GoogleTagManager gtmId="G-B74KGSQKR5" />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}
-      >
+      <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />
         <div className="min-h-screen bg-black">{children}</div>
         <Toaster />
