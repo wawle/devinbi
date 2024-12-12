@@ -8,17 +8,6 @@ import { Locale, locales } from "@/lib/locales";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
 
-// const geistSans = localFont({
-//   src: ".././fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: ".././fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -35,15 +24,14 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
-  const { locale } = await params;
-  console.log({ locale });
+  const { locale } = params;
 
   return (
     <html lang={locale}>
@@ -52,7 +40,6 @@ export default async function RootLayout({
         <NavBar />
         <div className="min-h-screen bg-black">{children}</div>
         <Toaster />
-
         <Footer />
       </body>
     </html>
