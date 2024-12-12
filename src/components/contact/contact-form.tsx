@@ -1,139 +1,84 @@
 "use client";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "../ui/form";
-import { Input } from "../ui/input";
+import { SubmitButton } from "../form/submit-button";
+import FormInput from "../form/form-input";
+import { useActionState } from "react";
+import { ContactFormState } from "@/lib/schemas/contact";
 import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { sendMail } from "@/lib/mail";
-import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import { sendContact } from "@/lib/actions/contact";
 
-export default function ContactForm() {
-  const contactFormSchema = z.object({
-    name: z.string().min(2, { message: "İsim alanı boş bırakılamaz" }),
-    surname: z.string().min(2, { message: "Soyisim alanı boş bırakılamaz" }),
-    email: z.string().email({ message: "Lütfen geçerli bir email giriniz" }),
-    message: z.string().min(10, {
-      message: "Mesaj uzunluğu minimum 10 karakter olamak zorunda",
-    }),
-  });
+interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-  const form = useForm<z.infer<typeof contactFormSchema>>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      surname: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  const isLoading = form.formState.isSubmitting;
-  const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
-    const mailText = `Name: ${values.name}\nSurname: ${values.surname}\nEmail: ${values.email}\nMessage: ${values.message}`;
-    const response = await sendMail({
-      email: values.email,
-      subject: "İletişim Formu",
-      text: mailText,
-    });
-    if (response?.messageId) {
-      toast.success("Mesaj gönderildi");
-      form.reset();
-    } else {
-      toast.error("Mesaj gönderilirken bir hata oluştu.");
-    }
-  };
+export default function ContactForm({ className, ...props }: ContactFormProps) {
+  const [state, action] = useActionState<ContactFormState>(
+    sendContact as any,
+    undefined,
+  );
 
   return (
-    <Form {...form}>
-      <form
-        className="w-full max-w-3xl items-center"
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
-        <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="w-full max-w-xl lg:col-span-2">
-                <FormControl>
-                  <Input
-                    className="py-6 placeholder:font-semibold"
-                    placeholder="Name"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+    <form
+      action={action}
+      className={cn("w-full max-w-3xl items-center", className)}
+    >
+      <div className="flex w-full flex-col items-center justify-center gap-y-4 lg:gap-y-6">
+        <FormInput
+          label="name"
+          id="name"
+          name="name"
+          placeholder="Name"
+          type="text"
+          autoCapitalize="none"
+          autoComplete="name"
+          error={state?.errors?.name?.[0]}
+          className="w-full py-6 placeholder:font-semibold"
+        />
+        <FormInput
+          label="surname"
+          id="surname"
+          name="surname"
+          placeholder="Surname"
+          type="text"
+          autoCapitalize="none"
+          autoComplete="surname"
+          error={state?.errors?.surname?.[0]}
+          className="w-full py-6 placeholder:font-semibold"
+        />
+        <FormInput
+          label="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          type="email"
+          autoCapitalize="none"
+          autoComplete="email"
+          error={state?.errors?.email?.[0]}
+          className="w-full py-6 placeholder:font-semibold"
+        />
+        <FormInput
+          label="message"
+          id="message"
+          name="message"
+          type="text"
+          autoCapitalize="none"
+          autoComplete="off"
+          error={state?.errors?.message?.[0]}
+          RenderInput={() => (
+            <Textarea
+              name="message"
+              placeholder="Message"
+              className="min-h-32 w-full font-semibold"
+            />
+          )}
+        />
+
+        <div className="col-span-3 flex w-full justify-center">
+          <SubmitButton
+            className="w-full max-w-xs rounded-full bg-black py-6 hover:animate-pulse"
+            title="Gönder"
           />
-          <FormField
-            control={form.control}
-            name="surname"
-            render={({ field }) => (
-              <FormItem className="w-full max-w-xl lg:col-span-2">
-                <FormControl>
-                  <Input
-                    className="py-6 placeholder:font-semibold"
-                    placeholder="Surname"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className="w-full max-w-xl lg:col-span-2">
-                <FormControl>
-                  <Input
-                    className="py-6 placeholder:font-semibold"
-                    placeholder="Email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem className="w-full max-w-xl lg:col-span-2">
-                <FormControl>
-                  <Textarea
-                    className="min-h-32 font-semibold"
-                    {...field}
-                    placeholder="Message"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className="col-span-3 flex w-full justify-center">
-            <Button
-              variant="secondary"
-              className="w-full max-w-xs rounded-full py-6"
-              disabled={isLoading}
-            >
-              {isLoading ? "Gönderiliyor....." : "Gönder"}
-            </Button>
-          </div>
         </div>
-      </form>
-    </Form>
+      </div>
+    </form>
   );
 }

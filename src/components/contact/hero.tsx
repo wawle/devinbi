@@ -11,7 +11,7 @@ const ContactHero = () => {
         <div className="glow absolute -z-10 aspect-square w-full max-w-xl rounded-full bg-emerald-400/20 blur-3xl" />
         <AnimatedContent isLeft>
           <div className="mt-12 flex w-full max-w-lg flex-col items-center justify-center gap-12 text-center text-xl lg:max-w-xl">
-            <p className="bg-gradient-to-tr from-white to-emerald-900 bg-clip-text text-center text-5xl not-italic text-transparent">
+            <p className="bg-gradient-to-tr from-white to-emerald-900 bg-clip-text text-center text-5xl not-italic leading-tight text-transparent">
               Let’s work together to turn your ideas into reality!
             </p>
           </div>

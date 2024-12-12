@@ -8,6 +8,7 @@ import StarGrid from "../star-grid";
 import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   const container = useRef(null);
@@ -63,14 +64,16 @@ const Hero = () => {
       <div className="relative w-full space-y-14 text-white" ref={container}>
         <StarGrid />
         <h1 className="hero__heading text-balance text-4xl font-medium opacity-0 md:text-5xl">
-          Yazılımın Geleceğini Şekillendiren
+          <span className="leading-tight">
+            Yazılımın Geleceğini Şekillendiren
+          </span>
           <br />
-          <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic text-transparent">
+          <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
             Akıllı Çözümler
           </em>
         </h1>
 
-        <div className="hero__body clear-start mx-auto max-w-md text-balance opacity-0">
+        <div className="hero__body clear-start mx-auto max-w-md text-balance text-lg opacity-0">
           <p>
             Devinbi, işletmenizi bir adım öteye taşıyan yapay zeka destekli
             yazılım çözümleri sunar. Dinamik ve kullanıcı odaklı
