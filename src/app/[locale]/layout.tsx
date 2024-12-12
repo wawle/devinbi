@@ -21,17 +21,17 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.map((locale) => ({ locale })); // [{ locale: "en" }, { locale: "tr" }]
 }
 
 export default function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: { locale: Locale };
-}>) {
-  const { locale } = params;
+}) {
+  const { locale } = params as { locale: Locale }; // Explicit cast here
 
   return (
     <html lang={locale}>
