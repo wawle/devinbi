@@ -8,7 +8,6 @@ import StarGrid from "../star-grid";
 import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
-import Link from "next/link";
 
 const Hero = () => {
   const container = useRef(null);
