@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import SmallImage from "../../../public/img/small-screenshot.png";
+import LongIMage from "../../../public/img/long-screenshot.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,10 +74,11 @@ const Bento = () => {
                 <Image
                   src={feature.image}
                   alt={feature.title}
-                  className="rounded-lg"
+                  className="rounded-lg object-contain"
                   priority
-                  sizes="100vw"
-                  objectFit="contain"
+                  sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw"
                   fill
                 />
               </div>
@@ -94,28 +97,28 @@ const features = [
     title: "Sonsuz Yenilik",
     content:
       "Yapay zeka ve otomasyonla güçlendirilmiş çığır açan çözümleri keşfedin, işinizi hızla değişen dijital dünyada uyum sağlamak ve büyümek için dönüştürün.",
-    image: "/img/small-screenshot.png",
+    image: SmallImage,
     isWide: false,
   },
   {
     title: "Yapay Zeka Destekli İçgörüler",
     content:
       "Veri destekli kararlar almanızı sağlamak için keskin analizlerle gizli fırsatları keşfedin, trendleri belirleyin ve güvenle yol alırken bilgilere dayalı kararlar alın.",
-    image: "/img/long-screenshot.png",
+    image: LongIMage,
     isWide: true,
   },
   {
     title: "Sorunsuz Entegrasyon",
     content:
       "Çözümlerimiz mevcut araçlarınız ve iş akışlarınızla zahmetsizce entegre olur, sorunsuz bir geçiş ve maksimum verimlilik sağlar.",
-    image: "/img/small-screenshot.png",
+    image: SmallImage,
     isWide: false,
   },
   {
     title: "İlham Veren Tasarımlar",
     content:
       "Hedefinizi güçlendirin ve izleyicilerinizi büyüleyin, kullanıcı deneyimi açısından yeni standartlar belirleyerek kusursuz tasarımlarla.",
-    image: "/img/long-screenshot.png",
+    image: LongIMage,
     isWide: true,
   },
 ];

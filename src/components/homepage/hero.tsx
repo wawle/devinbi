@@ -1,13 +1,14 @@
 "use client";
 
 import Bounded from "../bounded";
-import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
+import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import StarGrid from "../star-grid";
 import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
+import HeroImage from "../../../public/img/hero-image.png";
 
 const Hero = () => {
   const container = useRef(null);
@@ -90,11 +91,12 @@ const Hero = () => {
           <div className="relative aspect-[2672/1604] w-full">
             <Image
               alt="Hero Image"
-              src="/img/hero-image.png"
-              className="rounded-lg"
+              src={HeroImage}
+              className="rounded-lg object-contain"
               priority
-              sizes="100vw"
-              objectFit="contain"
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
               fill
             />
           </div>

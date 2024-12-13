@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import usePrefersReducedMotion from "@/app/hooks/usePrefersReducedMotion";
+import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
 
 export default function AnimatedContent({
   children,

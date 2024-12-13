@@ -72,7 +72,7 @@ const Tech = () => {
           {
             filter: "brightness(1)",
             opacity: 0.7,
-            duration: 0.9,
+            duration: 0.5,
           },
         ],
       });

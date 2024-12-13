@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-
 import { GoogleTagManager } from "@next/third-parties/google";
-import ".././globals.css";
+import "../globals.css";
 import NavBar from "../../components/navbar";
 import Footer from "@/components/footer";
-import { Locale, locales } from "@/lib/locales";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
+import { defaultLocale, Locale, locales } from "@/lib/locales";
 
 const roboto = Roboto({
   weight: "400",
@@ -20,21 +19,24 @@ export const metadata: Metadata = {
     "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
 };
 
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale })); // [{ locale: "en" }, { locale: "tr" }]
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout({
+type Params = Promise<{ locale: Locale }>;
+
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Params;
 }) {
-  const { locale } = params as { locale: Locale }; // Explicit cast here
+  const { locale } = await params; // params asenkron olarak çözülüyor
+  const resolvedLocale = locale || defaultLocale;
 
   return (
-    <html lang={locale}>
+    <html lang={resolvedLocale}>
       <GoogleTagManager gtmId="G-B74KGSQKR5" />
       <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />

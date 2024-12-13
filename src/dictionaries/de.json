@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Willkommen",
+    "description": "Dies ist die Startseite",
+    "welcome_message": "Hallo und willkommen in unserer Anwendung!"
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Erfahren Sie mehr über unser Unternehmen"
+  }
+}

@@ -6,10 +6,13 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { navbarItems } from "@/lib/constants";
 import { LocaleSwitcher } from "./locale-switcher";
+import { useParams } from "next/navigation";
+import { Locale } from "@/lib/locales";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const { locale } = useParams();
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,7 +37,7 @@ export default function NavBar() {
           </Link>
           <div className="flex gap-4">
             <div className="md:hidden">
-              <LocaleSwitcher />
+              <LocaleSwitcher currentLocale={locale as Locale} />
             </div>
             <button
               type="button"
@@ -88,7 +91,7 @@ export default function NavBar() {
             </li>
           ))}
           <li>
-            <LocaleSwitcher />
+            <LocaleSwitcher currentLocale={locale as Locale} />
           </li>
         </ul>
       </div>

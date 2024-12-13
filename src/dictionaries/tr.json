@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Hoşgeldiniz",
+    "description": "Bu ana sayfa",
+    "welcome_message": "Merhaba, uygulamamıza hoş geldiniz!"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Şirketimiz hakkında daha fazla bilgi edinin"
+  }
+}

@@ -1,61 +1,51 @@
-// File: src/components/LocaleSwitcher.tsx
 "use client";
 
-import { Locale, locales } from "@/lib/locales";
 import { usePathname, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Button } from "./ui/button";
+import { locales, Locale } from "@/lib/locales";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
-export function LocaleSwitcher() {
-  const pathname = usePathname();
+interface LocaleSwitcherProps {
+  currentLocale: Locale;
+}
+
+export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
+  currentLocale,
+}) => {
   const router = useRouter();
-  const [currentLocale, setCurrentLocale] = useState<Locale>("en");
+  const pathname = usePathname();
 
-  useEffect(() => {
-    // Detect current locale from pathname
-    const detectedLocale =
-      locales.find(
-        (locale) =>
-          pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-      ) || "en";
-    setCurrentLocale(detectedLocale);
-  }, [pathname]);
-
-  const switchLocale = async (newLocale: Locale) => {
-    // Remove the current locale from the path
-    const pathWithoutLocale = locales.reduce(
-      (path, locale) => path.replace(`/${locale}`, ""),
-      pathname,
-    );
-
-    // Set cookie for locale via server action
-    await fetch("/api/set-locale", {
-      method: "POST",
-      body: JSON.stringify({ locale: newLocale }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    // Navigate to new locale version of the page
-    router.push(`/${newLocale}${pathWithoutLocale}`);
+  const handleLocaleChange = (locale: Locale) => {
+    const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
+    router.push(newPath);
   };
 
   return (
-    <div className="locale-switcher">
-      {locales.map((locale) => (
-        <Button
-          key={locale}
-          onClick={() => switchLocale(locale)}
-          className={`mx-1 rounded px-2 py-1 ${
-            currentLocale === locale
-              ? "bg-emerald-600 text-white hover:text-white"
-              : "bg-white text-black hover:text-white"
-          } `}
-        >
-          {locale === "en" ? "EN" : "TR"}
-        </Button>
-      ))}
+    <div className="flex items-center space-x-2">
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button className="uppercase" variant="outline" size="icon">
+            {currentLocale}
+            <span className="sr-only">Locale Change</span>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          {locales.map((locale, index) => (
+            <DropdownMenuItem
+              key={index.toString()}
+              className="uppercase"
+              onClick={() => handleLocaleChange(locale)}
+            >
+              {locale}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
-}
+};
