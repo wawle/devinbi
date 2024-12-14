@@ -103,6 +103,8 @@ const Tech = () => {
                 each: 0.3,
               },
               duration: 1,
+              borderColor: "#059669",
+              color: "#059669",
             },
             {
               opacity: 0.4,
@@ -111,6 +113,8 @@ const Tech = () => {
                 from: "center",
                 each: 0.3,
               },
+              borderColor: "rgb(236 253 245 / 0.3)",
+              color: "#d1fae5",
             },
           ],
         },
@@ -125,10 +129,14 @@ const Tech = () => {
       <StarBackground />
 
       <div className="relative my-12 text-white">
-        <h3 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium md:text-5xl">
+        {/* <h3 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium md:text-5xl">
           TECH STACK
-        </h3>
-
+        </h3> */}
+        <h1 className="hero__heading text-balance text-center text-4xl font-bold md:text-5xl">
+          <span className="leading-tight">
+            Yazılımın Geleceğini Şekillendiren
+          </span>
+        </h1>
         <div
           className="mt-20 flex flex-col items-center md:flex-row"
           ref={container}
@@ -141,7 +149,7 @@ const Tech = () => {
                   <div className="signal-line rotate-180 bg-gradient-to-t" />
                 </>
               )}
-              <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl text-blue-100 opacity-40 md:text-4xl lg:text-5xl">
+              <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-emerald-50/30 p-3 text-3xl text-emerald-100 opacity-40 md:text-4xl lg:text-5xl">
                 {item.icon && icons[item.icon as keyof typeof icons]}
               </div>
               {index !== tech.length - 1 && (

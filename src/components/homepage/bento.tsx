@@ -3,45 +3,20 @@
 import clsx from "clsx";
 import Bounded from "../bounded";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SmallImage from "../../../public/img/small-screenshot.png";
 import LongIMage from "../../../public/img/long-screenshot.png";
+import StarGrid from "../star-grid";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Bento = () => {
-  const container = useRef(null);
-  gsap.registerPlugin(useGSAP);
-
-  useGSAP(
-    () => {
-      const cards = gsap.utils.toArray<HTMLElement>(".bento_card");
-      cards.forEach((card) => {
-        gsap.fromTo(
-          card,
-          { x: "-60%" },
-          {
-            x: "0%",
-            scrollTrigger: {
-              once: true,
-              trigger: card,
-              start: "bottom bottom",
-              end: "top center",
-              scrub: 3,
-            },
-          },
-        );
-      });
-    },
-    { scope: container },
-  );
-
   return (
     <Bounded className="text-center">
-      <div className="space-y-12" ref={container}>
+      <div className="space-y-12 relative">
+        <StarGrid />
+
         <h1 className="bento_heading mt-4 space-y-12 text-center text-4xl font-medium text-white md:text-5xl">
           Son Teknoloji ile <br />
           <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic text-transparent">
@@ -62,8 +37,8 @@ const Bento = () => {
             <div
               key={index.toString()}
               className={clsx(
-                "glass-container bento_card row-span-3 grid grid-rows-subgrid gap-4 rounded-lg bg-gradient-to-br from-black to-emerald-600 p-4",
-                feature.isWide ? "lg:col-span-2" : "lg:col-span-1",
+                "row-span-3 grid grid-rows-subgrid gap-4 rounded-lg border border-slate-100/20 bg-gradient-to-r from-black to-black p-4",
+                feature.isWide ? "lg:col-span-2" : "lg:col-span-1"
               )}
             >
               <h3 className="text-2xl font-semibold">{feature.title}</h3>

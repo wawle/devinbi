@@ -4,7 +4,6 @@ import Bounded from "../bounded";
 import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import StarGrid from "../star-grid";
 import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
@@ -20,7 +19,7 @@ const Hero = () => {
       if (prefersReducedMotion) {
         gsap.set(
           ".hero__heading, .hero__body, .hero__button, .hero__image, .hero__glow",
-          { opacity: 1 },
+          { opacity: 1 }
         );
         return;
       }
@@ -31,43 +30,45 @@ const Hero = () => {
       tl.fromTo(
         ".hero__heading",
         { scale: 0.8 },
-        { scale: 1, opacity: 1, duration: 0.8 },
+        { scale: 1, opacity: 1, duration: 0.8 }
       );
 
       // Body animasyonu
-      tl.fromTo(".hero__body", { y: 20 }, { y: 0, opacity: 1, duration: 0.8 });
+      tl.fromTo(
+        ".hero__body",
+        { y: 20 },
+        { y: 0, opacity: 1, duration: 0.8 }
+      );
 
       // Button animasyonu
       tl.fromTo(
         ".hero__button",
         { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 },
+        { scale: 1, opacity: 1, duration: 0.8 }
       );
 
       // Image ve Glow animasyonları aynı anda başlar
       tl.fromTo(
         ".hero__image",
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
+        { y: 0, opacity: 1, duration: 0.8 }
       );
       tl.fromTo(
         ".hero__glow",
         { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 },
+        { scale: 1, opacity: 1, duration: 0.8 }
       );
     },
-    { scope: container },
+    { scope: container }
   );
 
   return (
     <Bounded className="text-center">
-      <div className="relative w-full space-y-14 text-white" ref={container}>
-        <StarGrid />
-        <h1 className="hero__heading text-balance text-4xl font-medium opacity-0 md:text-5xl">
-          <span className="leading-tight">
-            Yazılımın Geleceğini Şekillendiren
-          </span>
-          <br />
+      <div
+        className="relative w-full space-y-14 text-white"
+        ref={container}
+      >
+        <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">
           <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
             Akıllı Çözümler
           </em>
@@ -77,12 +78,15 @@ const Hero = () => {
           <p>
             Devinbi, işletmenizi bir adım öteye taşıyan yapay zeka destekli
             yazılım çözümleri sunar. Dinamik ve kullanıcı odaklı
-            tasarımlarımızla, iş süreçlerinizi hızlandırın ve geleceğe hazır
-            olun.
+            tasarımlarımızla, iş süreçlerinizi hızlandırın ve geleceğe
+            hazır olun.
           </p>
         </div>
 
-        <Button variant="pulseGreen" className="hero__button z-10 px-10 py-6">
+        <Button
+          variant="pulseGreen"
+          className="hero__button z-10 px-10 py-6"
+        >
           Hemen Keşfedin
         </Button>
 

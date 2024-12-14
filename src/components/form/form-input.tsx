@@ -38,13 +38,17 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
     return (
       <div className="grid w-full gap-1">
         <Label className="sr-only" htmlFor={inputProps.name}>
-          {label}
+          {label && (
+            <Label className="sr-only" htmlFor={inputProps.name}>
+              {label}
+            </Label>
+          )}
         </Label>
         <CustomInput />
         {error && <FormError message={error} />}
       </div>
     );
-  },
+  }
 );
 
 FormInput.displayName = "FormInput"; // Set display name for debugging purposes

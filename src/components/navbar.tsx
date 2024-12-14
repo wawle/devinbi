@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -8,17 +8,12 @@ import { navbarItems } from "@/lib/constants";
 import { LocaleSwitcher } from "./locale-switcher";
 import { useParams } from "next/navigation";
 import { Locale } from "@/lib/locales";
+import AnimatedLogo from "./animated-logo";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
+
   const { locale } = useParams();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) return null;
 
   return (
     <nav
@@ -32,7 +27,7 @@ export default function NavBar() {
             href="/"
             onClick={() => setOpen(false)}
           >
-            Devin<span className="text-emerald-600">bi</span>
+            <AnimatedLogo />
             <span className="sr-only">Devinbi Home Page</span>
           </Link>
           <div className="flex gap-4">
@@ -54,7 +49,7 @@ export default function NavBar() {
         <div
           className={cn(
             "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/90 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
-            open ? "translate-x-0" : "translate-x-[100%]",
+            open ? "translate-x-0" : "translate-x-[100%]"
           )}
         >
           <button

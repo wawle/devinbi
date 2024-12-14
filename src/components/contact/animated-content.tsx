@@ -32,6 +32,7 @@ export default function AnimatedContent({
             ease: "power2.inOut",
             duration: 1,
             scrollTrigger: {
+              once: true,
               trigger: container.current,
               start: "top bottom-=40%",
               toggleActions: "play pause resume reverse",
@@ -47,6 +48,7 @@ export default function AnimatedContent({
             ease: "power2.inOut",
             duration: 1,
             scrollTrigger: {
+              once: true,
               trigger: container.current,
               start: "top bottom-=40%",
               toggleActions: "play pause resume reverse",

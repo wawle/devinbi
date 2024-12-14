@@ -36,7 +36,7 @@ export default async function RootLayout({
   const resolvedLocale = locale || defaultLocale;
 
   return (
-    <html lang={resolvedLocale}>
+    <html suppressHydrationWarning lang={resolvedLocale}>
       <GoogleTagManager gtmId="G-B74KGSQKR5" />
       <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />

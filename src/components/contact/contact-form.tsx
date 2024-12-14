@@ -14,11 +14,11 @@ export default function ContactForm({
 }: React.HTMLAttributes<HTMLDivElement>) {
   const [state, action] = useActionState<ContactFormState>(
     sendContact as any,
-    undefined,
+    undefined
   );
 
   return (
-    <div className="h-fit w-full" {...props}>
+    <div className="flex h-fit w-full justify-center" {...props}>
       <form
         action={action}
         className={cn("w-full max-w-3xl items-center", className)}
@@ -33,7 +33,7 @@ export default function ContactForm({
             autoCapitalize="none"
             autoComplete="name"
             error={state?.errors?.name?.[0]}
-            className="w-full py-6 placeholder:font-semibold"
+            className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
             label="surname"
@@ -44,7 +44,7 @@ export default function ContactForm({
             autoCapitalize="none"
             autoComplete="surname"
             error={state?.errors?.surname?.[0]}
-            className="w-full py-6 placeholder:font-semibold"
+            className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
             label="email"
@@ -55,7 +55,7 @@ export default function ContactForm({
             autoCapitalize="none"
             autoComplete="email"
             error={state?.errors?.email?.[0]}
-            className="w-full py-6 placeholder:font-semibold"
+            className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
             label="message"
@@ -69,14 +69,14 @@ export default function ContactForm({
               <Textarea
                 name="message"
                 placeholder="Message"
-                className="min-h-32 w-full font-semibold"
+                className="min-h-32 w-full font-semibold border-slate-100/20 focus:border-input"
               />
             )}
           />
 
           <div className="col-span-3 flex w-full justify-center">
             <SubmitButton
-              className="w-full max-w-xs rounded-full bg-black py-6 hover:animate-pulse"
+              className="w-full max-w-xs rounded-full py-6 hover:animate-pulse"
               title="Gönder"
             />
           </div>

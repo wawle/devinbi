@@ -5,9 +5,9 @@ import Tech from "@/components/homepage/tech";
 const Home = () => {
   return (
     <div className="space-y-12">
+      <Tech />
       <Hero />
       <Bento />
-      <Tech />
     </div>
   );
 };
