@@ -14,8 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Bento = () => {
   return (
     <Bounded className="text-center">
-      <div className="space-y-12 relative">
-        <StarGrid />
+      <div className="space-y-12 ">
+        <div className="relative w-screen">
+          <StarGrid />
+        </div>
 
         <h1 className="bento_heading mt-4 space-y-12 text-center text-4xl font-medium text-white md:text-5xl">
           Son Teknoloji ile <br />
@@ -32,7 +34,7 @@ const Bento = () => {
           </p>
         </div>
 
-        <div className="grid max-w-4xl grid-rows-[auto_auto_auto] gap-8 text-white md:gap-10 lg:grid-cols-3">
+        <div className="grid max-w-4xl mx-auto px-4 gap-8 text-white md:gap-10 lg:grid-cols-3">
           {features.map((feature, index) => (
             <div
               key={index.toString()}
