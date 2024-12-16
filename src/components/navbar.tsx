@@ -17,7 +17,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className="md-:py-6 border-b border-emerald-600 bg-black px-4 py-4 md:px-6"
+      className="md-:py-6 border-b border-emerald-600 bg-black px-4 py-4 md:px-6 h-[85px]"
       aria-label="Main"
     >
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">

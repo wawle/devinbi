@@ -102,7 +102,7 @@ export default function StarGrid() {
         ],
       });
     },
-    { scope: container },
+    { scope: container }
   );
 
   return (

@@ -19,7 +19,7 @@ const Bento = () => {
           <StarGrid />
         </div>
 
-        <h1 className="bento_heading mt-4 space-y-12 text-center text-4xl font-medium text-white md:text-5xl">
+        <h1 className="mt-4 space-y-12 z-10 text-center text-4xl font-bold text-white md:text-5xl">
           Son Teknoloji ile <br />
           <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic text-transparent">
             Yeni Nesil
@@ -27,7 +27,7 @@ const Bento = () => {
           Uygulamalar
         </h1>
 
-        <div className="bento_body mx-auto max-w-md text-balance text-center text-white">
+        <div className="mx-auto z-10 max-w-md text-balance text-center text-white">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
             facere!
@@ -39,7 +39,7 @@ const Bento = () => {
             <div
               key={index.toString()}
               className={clsx(
-                "row-span-3 grid grid-rows-subgrid gap-4 rounded-lg border border-slate-100/20 bg-gradient-to-r from-black to-black p-4",
+                "row-span-3 grid grid-rows-subgrid gap-4 rounded-lg z-10 border border-slate-100/20 bg-black p-4",
                 feature.isWide ? "lg:col-span-2" : "lg:col-span-1"
               )}
             >

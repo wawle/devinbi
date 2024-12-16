@@ -8,6 +8,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { Button } from "../ui/button";
 import HeroImage from "../../../public/img/hero-image.png";
+import Link from "next/link";
 
 const Hero = () => {
   const container = useRef(null);
@@ -84,10 +85,13 @@ const Hero = () => {
         </div>
 
         <Button
+          asChild
           variant="pulseGreen"
           className="hero__button z-10 px-10 py-6"
         >
-          Hemen Keşfedin
+          <Link className="" href="/contact">
+            Hemen Keşfedin
+          </Link>
         </Button>
 
         <div className="hero__image glass-container mt-10 w-full max-w-6xl opacity-0">

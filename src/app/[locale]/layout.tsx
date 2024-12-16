@@ -40,7 +40,9 @@ export default async function RootLayout({
       <GoogleTagManager gtmId="G-B74KGSQKR5" />
       <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />
-        <div className="min-h-screen bg-black">{children}</div>
+        <div className="min-h-[calc(100vh-165px)] bg-black">
+          {children}
+        </div>
         <Toaster />
         <Footer />
       </body>
