@@ -1,34 +1,46 @@
 import Link from "next/link";
+import AnimatedLogo from "./animated-logo";
 
 export default async function Footer() {
   return (
-    <footer className="flex justify-center gap-6 border-t border-emerald-600 px-4 py-4 text-white md:px-6 h-20">
+    <footer className="flex flex-col justify-center items-center gap-2 border-t border-emerald-600 px-4 py-4 text-white md:px-6 h-auto">
       <div className="flex w-full max-w-6xl flex-col items-center justify-between md:flex-row">
         <div className="flex items-center justify-between">
           <Link className="z-50 text-3xl font-bold" href="/">
-            Devin<span className="text-emerald-600">bi</span>
-            <span className="sr-only">Devinbi Home Page</span>
+            <AnimatedLogo />
           </Link>
         </div>
         <nav aria-label="Footer">
           <ul className="flex gap-6">
             <li>
-              <Link href="/" className="inline-flex min-h-11 items-center">
+              <Link
+                href="/"
+                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
+              >
                 FooterLink1
               </Link>
             </li>
             <li>
-              <Link href="/" className="inline-flex min-h-11 items-center">
+              <Link
+                href="/"
+                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
+              >
                 FooterLink2
               </Link>
             </li>
             <li>
-              <Link href="/" className="inline-flex min-h-11 items-center">
+              <Link
+                href="/"
+                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
+              >
                 FooterLink3
               </Link>
             </li>
           </ul>
         </nav>
+      </div>
+      <div className="text-start w-full max-w-6xl text-white/40">
+        <p>© Devinbi | Her Hakkı Saklıdır.</p>
       </div>
     </footer>
   );
