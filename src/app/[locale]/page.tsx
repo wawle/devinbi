@@ -1,6 +1,6 @@
-import Bento from "@/components/homepage/bento";
-import Hero from "@/components/homepage/hero";
-import Tech from "@/components/homepage/tech";
+import Bento from "./components/bento";
+import Hero from "./components/hero";
+import Tech from "./components/tech";
 
 const Home = () => {
   return (

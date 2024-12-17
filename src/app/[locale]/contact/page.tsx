@@ -1,6 +1,6 @@
 import Bounded from "@/components/bounded";
-import ContactHero from "@/components/contact/hero";
 import React from "react";
+import ContactHero from "./components/hero";
 
 const ContactPage = () => {
   return (

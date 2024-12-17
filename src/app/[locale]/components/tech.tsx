@@ -2,9 +2,6 @@
 
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import StylizedLogoMark from "../stylized-logo-mark";
-import Bounded from "../bounded";
-import StarBackground from "../star-background";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 
@@ -13,6 +10,9 @@ import { SiTypescript } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { DiAndroid } from "react-icons/di";
 import { TbBrandReactNative } from "react-icons/tb";
+import Bounded from "@/components/bounded";
+import StarBackground from "@/components/star-background";
+import StylizedLogoMark from "@/components/stylized-logo-mark";
 
 const Tech = () => {
   const container = useRef(null);
@@ -89,7 +89,7 @@ const Tech = () => {
             },
           ],
         },
-        "-=1.4",
+        "-=1.4"
       );
 
       tl.to(
@@ -118,10 +118,10 @@ const Tech = () => {
             },
           ],
         },
-        "-=2",
+        "-=2"
       );
     },
-    { scope: container },
+    { scope: container }
   );
 
   return (
@@ -158,7 +158,7 @@ const Tech = () => {
                     "signal-line",
                     index >= Math.floor(tech.length / 2)
                       ? "rotate-180"
-                      : "rotate-0",
+                      : "rotate-0"
                   )}
                 />
               )}

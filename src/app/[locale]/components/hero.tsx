@@ -1,14 +1,14 @@
 "use client";
 
-import Bounded from "../bounded";
 import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
-import { Button } from "../ui/button";
-import HeroImage from "../../../public/img/hero-image.png";
+import HeroImage from "../../../../public/img/hero-image.png";
 import Link from "next/link";
+import Bounded from "@/components/bounded";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const container = useRef(null);

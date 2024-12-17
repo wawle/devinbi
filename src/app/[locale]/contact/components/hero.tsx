@@ -1,6 +1,6 @@
 "use client";
 
-import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import ContactForm from "./contact-form";
 
 const ContactHero = () => {

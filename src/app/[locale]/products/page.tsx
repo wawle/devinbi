@@ -1,5 +1,5 @@
 import Bounded from "@/components/bounded";
-import { Investbi } from "@/components/products/investbi";
+import { Investbi } from "@/app/[locale]/products/components/investbi";
 import React from "react";
 
 const ProductsPage = () => {

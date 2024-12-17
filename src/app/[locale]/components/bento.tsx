@@ -1,13 +1,13 @@
 "use client";
 
 import clsx from "clsx";
-import Bounded from "../bounded";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import SmallImage from "../../../public/img/small-screenshot.png";
-import LongIMage from "../../../public/img/long-screenshot.png";
-import StarGrid from "../star-grid";
+import SmallImage from "../../../../public/img/small-screenshot.png";
+import LongIMage from "../../../../public/img/long-screenshot.png";
+import StarGrid from "@/components/star-grid";
+import Bounded from "@/components/bounded";
 
 gsap.registerPlugin(ScrollTrigger);
 

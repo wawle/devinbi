@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import AnimatedLogo from "../animated-logo";
-import GoldImage from "../../../public/img/gold.png";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
+import AnimatedLogo from "../../../../components/animated-logo";
+import GoldImage from "../../../../../public/img/gold.png";
+import { TextGenerateEffect } from "../../../../components/ui/text-generate-effect";
 
 export function Investbi() {
   const cards = data.map((card, index) => (

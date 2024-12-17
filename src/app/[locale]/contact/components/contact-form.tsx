@@ -1,12 +1,12 @@
 "use client";
 
-import { SubmitButton } from "../form/submit-button";
-import FormInput from "../form/form-input";
 import { useActionState } from "react";
 import { ContactFormState } from "@/lib/schemas/contact";
-import { Textarea } from "../ui/textarea";
 import { cn } from "@/lib/utils";
 import { sendContact } from "@/lib/actions/contact";
+import FormInput from "@/components/form/form-input";
+import { Textarea } from "@/components/ui/textarea";
+import { SubmitButton } from "@/components/form/submit-button";
 
 export default function ContactForm({
   className,
