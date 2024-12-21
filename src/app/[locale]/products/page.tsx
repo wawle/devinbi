@@ -1,17 +1,23 @@
-import Bounded from "@/components/bounded";
-import { Investbi } from "@/app/[locale]/products/components/investbi";
 import React from "react";
+import { ProductCarousel } from "./components/product-carousel";
+import {
+  AIbotData,
+  CMSData,
+  CRMData,
+  InvestBiData,
+} from "@/lib/constants";
 
 const ProductsPage = () => {
   return (
-    <Bounded className="relative text-white">
-      <div className="flex w-full flex-col items-center justify-center gap-8">
-        <h2 className="text-balance text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
-          Products
-        </h2>
-        <Investbi />
-      </div>
-    </Bounded>
+    <div
+      style={{ scrollSnapType: "y mandatory" }}
+      className="max-w-7xl mx-auto h-[calc(100vh-230px)] md:h-[calc(100vh-194px)] text-white  overflow-y-scroll"
+    >
+      <ProductCarousel content={InvestBiData} title="INVEST" />
+      <ProductCarousel content={AIbotData} title="ISCI" />
+      <ProductCarousel content={CMSData} title="CMS" />
+      <ProductCarousel content={CRMData} title="CRM" />
+    </div>
   );
 };
 
