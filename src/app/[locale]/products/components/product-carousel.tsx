@@ -8,12 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
 import GoldImage from "../../../../../public/img/gold.png";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
