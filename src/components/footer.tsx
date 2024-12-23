@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AnimatedLogo from "./animated-logo";
+import { navbarItems } from "@/lib/constants";
 
 export default async function Footer() {
   return (
@@ -12,30 +13,16 @@ export default async function Footer() {
         </div>
         <nav aria-label="Footer">
           <ul className="flex gap-6">
-            <li>
-              <Link
-                href="/"
-                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
-              >
-                FooterLink1
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
-              >
-                FooterLink2
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
-              >
-                FooterLink3
-              </Link>
-            </li>
+            {navbarItems.map((item, index) => (
+              <li key={index.toString()}>
+                <Link
+                  href={item.href}
+                  className="inline-flex min-h-11 items-center text-white/60 hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

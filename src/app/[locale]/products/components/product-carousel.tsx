@@ -79,7 +79,7 @@ export function ProductCarousel({ content, title }: Props) {
               key={index}
             >
               <Card className="bg-transparent max-w-4xl border-emerald-100/20 h-full min-h-96">
-                <CardContent className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 h-full text-white p-0">
+                <CardContent className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
                   <div className="relative h-1/3 md:h-full md:flex-1 w-full md:max-w-96 md:rounded-l-lg min-h-48">
                     <Image
                       className="md:rounded-l-lg object-cover rounded-t-lg md:rounded-tr-none"
