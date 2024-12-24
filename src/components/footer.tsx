@@ -4,7 +4,8 @@ import { navbarItems } from "@/lib/constants";
 
 export default async function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center gap-2 border-t border-emerald-600 px-4 py-4 text-white md:px-6 h-auto">
+    <footer className="relative flex flex-col justify-center items-center gap-2 px-4 py-4 text-white md:px-6 h-auto">
+      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-emerald-600/5 via-emerald-600 to-emerald-600/5" />
       <div className="flex w-full max-w-6xl flex-col items-center justify-between md:flex-row">
         <div className="flex items-center justify-between">
           <Link className="z-50 text-3xl font-bold" href="/">

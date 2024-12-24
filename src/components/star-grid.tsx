@@ -5,8 +5,13 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
+import { cn } from "@/lib/utils";
 
-export default function StarGrid() {
+interface Props {
+  className?: string;
+}
+
+export default function StarGrid({ className }: Props) {
   const container = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
   gsap.registerPlugin(useGSAP);
@@ -110,7 +115,7 @@ export default function StarGrid() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 935 425"
-      className="absolute top-0"
+      className={cn("absolute top-0", className)}
       id="star-grid"
       ref={container}
       opacity={0}
