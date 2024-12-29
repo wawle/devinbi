@@ -20,7 +20,7 @@ const ContactHero = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-8 p-12">
-      <h2 className="text-balance text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
+      <h2 className="text-4xl font-bold md:text-5xl md:leading-relaxed bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
         {dict?.getInTouch}
       </h2>
       <div className="flex w-full max-w-lg flex-col items-center justify-center text-center text-xl lg:max-w-xl">

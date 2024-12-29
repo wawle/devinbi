@@ -31,7 +31,11 @@ export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
     <div className="flex items-center justify-center space-x-2">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="uppercase" variant="ghost" size="icon">
+          <Button
+            className="uppercase [&_svg]:size-5"
+            variant="ghost"
+            size="icon"
+          >
             <Globe />
             <span className="sr-only">Locale Change</span>
           </Button>

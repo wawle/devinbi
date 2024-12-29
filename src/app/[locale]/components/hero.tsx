@@ -73,7 +73,7 @@ const Hero = () => {
         <StarGrid />
       </div>
       <div
-        className="relative w-full space-y-10 py-4 text-white"
+        className="relative w-full space-y-10 py-12 text-white"
         ref={container}
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">

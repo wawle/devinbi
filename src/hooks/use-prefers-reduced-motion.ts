@@ -1,20 +1,14 @@
 import React from "react";
 
 const QUERY = "(prefers-reduced-motion: no-preference)";
-const isRenderingOnServer = typeof window === "undefined";
 
 export default function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(
-    () => (isRenderingOnServer ? null : !window.matchMedia(QUERY).matches)
-  );
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    React.useState(false); // Başlangıç varsayılanı
 
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
-
-    // Set the initial state on the client if it was null during SSR
-    if (prefersReducedMotion === null) {
-      setPrefersReducedMotion(!mediaQueryList.matches);
-    }
+    setPrefersReducedMotion(!mediaQueryList.matches); // Tarayıcıdan alınan gerçek durumu ayarla
 
     const listener = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(!event.matches);
@@ -25,7 +19,7 @@ export default function usePrefersReducedMotion() {
     return () => {
       mediaQueryList.removeEventListener("change", listener);
     };
-  }, [prefersReducedMotion]);
+  }, []);
 
   return prefersReducedMotion;
 }

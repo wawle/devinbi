@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import { Locale } from "@/lib/locales";
 import AnimatedLogo from "./animated-logo";
 import { useDictionary } from "@/hooks/use-dictionary";
+import { Button } from "./ui/button";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function NavBar() {
     <nav className="relative " aria-label="Main">
       <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-emerald-600/5 via-emerald-600 to-emerald-600/5" />
       <div className="mx-auto flex max-w-6xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black px-4 md:px-6 h-[85px]">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-full">
           <Link
             className="z-50 text-3xl font-bold"
             href="/"
@@ -36,21 +37,21 @@ export default function NavBar() {
 
             {/* TODO: Shadcn Butonu kullan */}
 
-            <button
-              type="button"
-              className="block p-2 text-3xl text-white md:hidden"
+            <Button
+              variant="ghost"
+              className="block p-2 h-auto [&_svg]:size-6 text-white md:hidden"
               aria-expanded={open}
               onClick={() => setOpen(true)}
             >
-              <Menu size={20} />
+              <Menu height={30} width={30} />
               <span className="sr-only">Open menu</span>
-            </button>
+            </Button>
           </div>
         </div>
         {/* Mobile Nav */}
         <div
           className={cn(
-            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/95 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
+            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/95 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden h-full",
             open ? "translate-x-0" : "translate-x-[100%]"
           )}
         >
