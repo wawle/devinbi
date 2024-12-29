@@ -10,6 +10,7 @@ import Link from "next/link";
 import Bounded from "@/components/bounded";
 import { Button } from "@/components/ui/button";
 import { useDictionary } from "@/hooks/use-dictionary";
+import StarGrid from "@/components/star-grid";
 
 const Hero = () => {
   const container = useRef(null);
@@ -67,9 +68,12 @@ const Hero = () => {
   );
 
   return (
-    <Bounded className="text-center">
+    <Bounded className="text-center relative">
+      <div className="relative w-screen">
+        <StarGrid />
+      </div>
       <div
-        className="relative w-full space-y-14 text-white"
+        className="relative w-full space-y-10 py-4 text-white"
         ref={container}
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">

@@ -3,6 +3,7 @@ import { ProductCarousel } from "./components/product-carousel";
 import CRMImage from "../../../../public/img/crm.png";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/lib/locales";
+import StarGrid from "@/components/star-grid";
 
 interface Props {
   params: Promise<{ lang: Locale }>;
@@ -40,6 +41,9 @@ const ProductsPage = async ({ params }: Props) => {
       style={{ scrollSnapType: "y mandatory" }}
       className="max-w-7xl mx-auto h-[calc(100vh-230px)] md:h-[calc(100vh-194px)] text-white overflow-y-scroll"
     >
+      <div className="relative w-screen">
+        <StarGrid />
+      </div>
       <ProductCarousel content={CRMData} title="CRM" />
     </div>
   );

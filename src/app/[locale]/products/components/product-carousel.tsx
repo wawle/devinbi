@@ -56,7 +56,7 @@ export function ProductCarousel({ content, title }: Props) {
   return (
     <div
       style={{ scrollSnapAlign: "start" }}
-      className="h-full px-12 py-4 md:py-8 md:px-20"
+      className="h-full px-12 py-4 md:py-8 md:px-20 bg-black/90 z-10"
     >
       <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent flex justify-center">
         <span className="text-white">{title}</span>
