@@ -13,10 +13,12 @@ import { TbBrandReactNative } from "react-icons/tb";
 import Bounded from "@/components/bounded";
 import StarBackground from "@/components/star-background";
 import StylizedLogoMark from "@/components/stylized-logo-mark";
+import { useDictionary } from "@/hooks/use-dictionary";
 
 const Tech = () => {
   const container = useRef(null);
   gsap.registerPlugin(useGSAP);
+  const dict = useDictionary("tech");
 
   const icons = {
     nodejs: <FaNodeJs />,
@@ -129,18 +131,10 @@ const Tech = () => {
       <StarBackground />
 
       <div className="relative my-12 text-white">
-        {/* <h3 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium md:text-5xl">
-          TECH STACK
-        </h3> */}
         <h1 className="hero__heading text-balance text-center text-4xl font-bold md:text-5xl">
-          <span className="leading-tight">
-            Yazılımın Geleceğini Şekillendiren
-          </span>
+          <span className="leading-tight">{dict?.title}</span>
         </h1>
-        <div
-          className="mt-20 flex flex-col items-center md:flex-row"
-          ref={container}
-        >
+        <div className="mt-20 flex items-center" ref={container}>
           {tech.map((item, index) => (
             <React.Fragment key={index}>
               {index === Math.floor(tech.length / 2) && (

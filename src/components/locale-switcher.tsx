@@ -9,6 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+import { Globe, LanguagesIcon } from "lucide-react";
 
 interface LocaleSwitcherProps {
   currentLocale: Locale;
@@ -26,19 +28,25 @@ export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
   };
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center justify-center space-x-2">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="uppercase" variant="outline" size="icon">
-            {currentLocale}
+          <Button className="uppercase" variant="ghost" size="icon">
+            <Globe />
             <span className="sr-only">Locale Change</span>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent
+          align="end"
+          className="bg-black/80 text-white border-emerald-600/20"
+        >
           {locales.map((locale, index) => (
             <DropdownMenuItem
               key={index.toString()}
-              className="uppercase"
+              className={cn(
+                "uppercase cursor-pointer",
+                locale === currentLocale && "bg-neutral-900"
+              )}
               onClick={() => handleLocaleChange(locale)}
             >
               {locale}

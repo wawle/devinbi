@@ -1,17 +1,25 @@
 "use client";
 
-import clsx from "clsx";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import SmallImage from "../../../../public/img/small-screenshot.png";
-import LongIMage from "../../../../public/img/long-screenshot.png";
+import AiImage from "../../../../public/img/ai.png";
+import MobileAppImage from "../../../../public/img/mobile-app.png";
+import WebsiteImage from "../../../../public/img/website.png";
+import SecurityImage from "../../../../public/img/security.png";
 import StarGrid from "@/components/star-grid";
 import Bounded from "@/components/bounded";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useDictionary } from "@/hooks/use-dictionary";
+import { cn } from "@/lib/utils";
 
 const Bento = () => {
+  const dict = useDictionary("bento");
+
+  const featureImages = {
+    featureMobile: MobileAppImage,
+    featureWeb: WebsiteImage,
+    featureAi: AiImage,
+    featureSecurity: SecurityImage,
+  };
+
   return (
     <Bounded className="text-center">
       <div className="space-y-12 ">
@@ -20,37 +28,31 @@ const Bento = () => {
         </div>
 
         <h1 className="mt-4 space-y-12 z-10 text-center text-4xl font-bold text-white md:text-5xl">
-          Son Teknoloji ile <br />
+          {dict?.titleFirst} <br />
           <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic text-transparent">
-            Yeni Nesil
+            {dict?.titleGreen}
           </em>{" "}
-          Uygulamalar
+          {dict?.titleLast}
         </h1>
 
-        <div className="mx-auto z-10 max-w-md text-balance text-center text-white">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est,
-            facere!
-          </p>
-        </div>
-
-        <div className="grid max-w-4xl mx-auto px-4 gap-8 text-white md:gap-10 lg:grid-cols-3">
+        <div className="grid max-w-4xl mx-auto px-4 gap-8 text-white md:gap-10 lg:grid-cols-2">
           {features.map((feature, index) => (
             <div
               key={index.toString()}
-              className={clsx(
-                "row-span-3 grid grid-rows-subgrid gap-4 rounded-lg z-10 border border-slate-100/20 bg-black p-4",
-                feature.isWide ? "lg:col-span-2" : "lg:col-span-1"
+              className={cn(
+                "row-span-3 grid grid-rows-subgrid mx-auto rounded-lg z-10 border border-slate-100/20 bg-black/70 px-4 py-6"
               )}
             >
-              <h3 className="text-2xl font-semibold">{feature.title}</h3>
-              <div className="max-w-md text-balance">
-                <p>{feature.content}</p>
+              <h3 className="text-2xl font-semibold">
+                {dict?.[feature.title]}
+              </h3>
+              <div className="max-w-sm lg:max-w-md mx-auto text-balance">
+                <p>{dict?.[feature.content]}</p>
               </div>
-              <div className="relative h-36 w-full">
+              <div className="relative aspect-square w-full max-h-56">
                 <Image
                   src={feature.image}
-                  alt={feature.title}
+                  alt={dict?.[feature.title] || ""}
                   className="rounded-lg object-contain"
                   priority
                   sizes="(max-width: 768px) 100vw,
@@ -71,31 +73,23 @@ export default Bento;
 
 const features = [
   {
-    title: "Sonsuz Yenilik",
-    content:
-      "Yapay zeka ve otomasyonla güçlendirilmiş çığır açan çözümleri keşfedin, işinizi hızla değişen dijital dünyada uyum sağlamak ve büyümek için dönüştürün.",
-    image: SmallImage,
-    isWide: false,
+    title: "featureMobileTitle",
+    content: "featureMobileContent",
+    image: MobileAppImage,
   },
   {
-    title: "Yapay Zeka Destekli İçgörüler",
-    content:
-      "Veri destekli kararlar almanızı sağlamak için keskin analizlerle gizli fırsatları keşfedin, trendleri belirleyin ve güvenle yol alırken bilgilere dayalı kararlar alın.",
-    image: LongIMage,
-    isWide: true,
+    title: "featureWebTitle",
+    content: "featureWebContent",
+    image: WebsiteImage,
   },
   {
-    title: "Sorunsuz Entegrasyon",
-    content:
-      "Çözümlerimiz mevcut araçlarınız ve iş akışlarınızla zahmetsizce entegre olur, sorunsuz bir geçiş ve maksimum verimlilik sağlar.",
-    image: SmallImage,
-    isWide: false,
+    title: "featureAiTitle",
+    content: "featureAiContent",
+    image: AiImage,
   },
   {
-    title: "İlham Veren Tasarımlar",
-    content:
-      "Hedefinizi güçlendirin ve izleyicilerinizi büyüleyin, kullanıcı deneyimi açısından yeni standartlar belirleyerek kusursuz tasarımlarla.",
-    image: LongIMage,
-    isWide: true,
+    title: "featureSecurityTitle",
+    content: "featureSecurityContent",
+    image: SecurityImage,
   },
 ];

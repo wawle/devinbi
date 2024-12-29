@@ -1,11 +1,55 @@
 {
-  "home": {
-    "title": "Hoşgeldiniz",
-    "description": "Bu ana sayfa",
-    "welcome_message": "Merhaba, uygulamamıza hoş geldiniz!"
+  "navbar": {
+    "home": "ANA SAYFA",
+    "products": "ÜRÜNLER",
+    "contact": "İLETİŞİM"
   },
-  "about": {
-    "title": "Hakkımızda",
-    "description": "Şirketimiz hakkında daha fazla bilgi edinin"
+  "common": {
+    "contactButton": "İletişime Geçin"
+  },
+  "tech": {
+    "title": "Yazılımın Geleceğini Şekillendiren"
+  },
+  "hero": {
+    "title": "Akıllı Çözümler",
+    "description": "Devinbi, işletmenizi bir adım öteye taşıyan yapay zeka destekli yazılım çözümleri sunar. Dinamik ve kullanıcı odaklı tasarımlarımızla, iş süreçlerinizi hızlandırın ve geleceğe hazır olun."
+  },
+  "bento": {
+    "titleFirst": "Son Teknoloji ile",
+    "titleGreen": "Yeni Nesil",
+    "titleLast": "Yazılım Çözümleri",
+    "featureMobileTitle": "Mobil Uygulamalar",
+    "featureMobileContent": "Modern teknolojilerle donatılmış, kullanıcı dostu ve işlevsel mobil uygulamalar geliştirerek hedef kitlenize kolayca ulaşmanızı sağlıyoruz.",
+
+    "featureWebTitle": "Web Uygulamaları ve Siteleri",
+    "featureWebContent": "Şirketinizin dijital varlığını güçlendiren, hızlı ve etkileyici web uygulamaları ve siteleri tasarlayıp geliştiriyoruz.",
+
+    "featureAiTitle": "Yapay Zeka ile Akıllı Çözümler",
+    "featureAiContent": "Yapay zeka destekli teknolojilerle, veri analizi ve otomasyon süreçlerinde üstün performans sunarak rekabet gücünüzü artırıyoruz.",
+
+    "featureSecurityTitle": "Hızlı ve Güvenli Geliştirme",
+    "featureSecurityContent": "Hızlı prototipleme ve güvenli yazılım geliştirme süreçlerimizle projelerinizi zamanında ve en yüksek kaliteyle teslim ediyoruz."
+  },
+  "contact": {
+    "ideas": "Fikirlerinizi gerçeğe dönüştürmek için birlikte çalışalım!",
+    "getInTouch": "İletişime Geç",
+    "name": "İsim",
+    "surname": "Soyisim",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "send": "Gönder"
+  },
+  "products": {
+    "crmTitle1": "İşlerinizi kolaylıkla yönetin.",
+    "crmContent1": "İş süreçlerinizi daha verimli hale getirmek için tüm müşteri ilişkilerinizi ve projelerinizi tek bir platformda yönetin. İletişim, takip ve raporlama süreçlerini kolayca düzenleyin.",
+
+    "crmTitle2": "Verimli müşteri yönetimi.",
+    "crmContent2": "Müşteri ilişkilerinizi güçlendirin, geçmiş etkileşimleri izleyin ve her bir müşteriye özel stratejiler geliştirin. CRM, işletmenizin büyümesine katkı sağlar.",
+
+    "crmTitle3": "Kolay takip ve raporlama.",
+    "crmContent3": "Satış süreçlerinizi ve müşteri etkileşimlerini tek bir panelden kolayca takip edin. Analizler ve raporlar ile işinizin yönünü belirleyin.",
+
+    "crmTitle4": "Entegre çözümlerle büyüme.",
+    "crmContent4": "CRM sisteminizle diğer iş yazılımlarınızı entegre edin. İş süreçlerinizde zaman kazanın ve daha akıllı kararlar alın."
   }
 }

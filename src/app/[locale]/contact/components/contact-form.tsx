@@ -8,17 +8,19 @@ import FormInput from "@/components/form/form-input";
 import { Textarea } from "@/components/ui/textarea";
 import { SubmitButton } from "@/components/form/submit-button";
 
-export default function ContactForm({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+interface Props {
+  dict: Record<string, string> | null;
+  className?: string;
+}
+
+export default function ContactForm({ className, dict }: Props) {
   const [state, action] = useActionState<ContactFormState>(
     sendContact as any,
     undefined
   );
 
   return (
-    <div className="flex h-fit w-full justify-center" {...props}>
+    <div className="flex h-fit w-full justify-center z-10 bg-black/70">
       <form
         action={action}
         className={cn("w-full max-w-3xl items-center", className)}
@@ -28,7 +30,7 @@ export default function ContactForm({
             label="name"
             id="name"
             name="name"
-            placeholder="Name"
+            placeholder={dict?.name || "Name"}
             type="text"
             autoCapitalize="none"
             autoComplete="name"
@@ -39,7 +41,7 @@ export default function ContactForm({
             label="surname"
             id="surname"
             name="surname"
-            placeholder="Surname"
+            placeholder={dict?.surname || "Surname"}
             type="text"
             autoCapitalize="none"
             autoComplete="surname"
@@ -50,7 +52,7 @@ export default function ContactForm({
             label="email"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder={dict?.email || "Email"}
             type="email"
             autoCapitalize="none"
             autoComplete="email"
@@ -68,7 +70,7 @@ export default function ContactForm({
             RenderInput={() => (
               <Textarea
                 name="message"
-                placeholder="Message"
+                placeholder={dict?.message || "Message"}
                 className="min-h-32 w-full font-semibold border-slate-100/20 focus:border-input"
               />
             )}

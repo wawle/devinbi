@@ -5,14 +5,17 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
-import HeroImage from "../../../../public/img/hero-image.png";
+import HeroImage from "../../../../public/img/monitoring.png";
 import Link from "next/link";
 import Bounded from "@/components/bounded";
 import { Button } from "@/components/ui/button";
+import { useDictionary } from "@/hooks/use-dictionary";
 
 const Hero = () => {
   const container = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const dict = useDictionary("hero");
+  const dictCommon = useDictionary("common");
   gsap.registerPlugin(useGSAP);
 
   useGSAP(
@@ -71,17 +74,12 @@ const Hero = () => {
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">
           <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
-            Akıllı Çözümler
+            {dict?.title}
           </em>
         </h1>
 
         <div className="hero__body clear-start mx-auto max-w-md text-balance text-lg opacity-0">
-          <p>
-            Devinbi, işletmenizi bir adım öteye taşıyan yapay zeka destekli
-            yazılım çözümleri sunar. Dinamik ve kullanıcı odaklı
-            tasarımlarımızla, iş süreçlerinizi hızlandırın ve geleceğe
-            hazır olun.
-          </p>
+          <p>{dict?.description}</p>
         </div>
 
         <Button
@@ -90,13 +88,13 @@ const Hero = () => {
           className="hero__button z-10 px-10 py-6"
         >
           <Link className="" href="/contact">
-            Hemen Keşfedin
+            {dictCommon?.contactButton}
           </Link>
         </Button>
 
         <div className="hero__image glass-container mt-10 w-full max-w-6xl opacity-0">
           <div className="hero__glow absolute inset-0 -z-10 opacity-0 blur-2xl filter" />
-          <div className="relative aspect-[2672/1604] w-full">
+          <div className="relative aspect-square max-w-[600px] w-full mx-auto">
             <Image
               alt="Hero Image"
               src={HeroImage}

@@ -11,14 +11,13 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
-import GoldImage from "../../../../../public/img/gold.png";
+import GoldImage from "../../../../../public/img/monitoring.png";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { DotButton } from "@/components/ui/dot-button";
 
 interface Props {
   title: string;
   content: {
-    category: string;
     src: StaticImageData;
     title: string;
     content: string;
@@ -79,10 +78,10 @@ export function ProductCarousel({ content, title }: Props) {
               key={index}
             >
               <Card className="bg-transparent max-w-4xl border-emerald-100/20 h-full min-h-96">
-                <CardContent className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
-                  <div className="relative h-1/3 md:h-full md:flex-1 w-full md:max-w-96 md:rounded-l-lg min-h-48">
+                <CardContent className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
+                  <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl max-h-80">
                     <Image
-                      className="md:rounded-l-lg object-cover rounded-t-lg md:rounded-tr-none"
+                      className="object-cover md:object-contain rounded-t-xl"
                       src={item.src || GoldImage}
                       loading="lazy"
                       decoding="async"
@@ -91,11 +90,11 @@ export function ProductCarousel({ content, title }: Props) {
                     />
                   </div>
 
-                  <div className="px-6 max-w-4xl flex-1 flex flex-col gap-2 sm:gap-6 md:gap-8 text-pretty py-6">
+                  <div className="px-6 max-w-4xl flex-1 flex flex-col gap-2 sm:gap-6 md:gap-8 text-pretty py-6 text-center">
                     <p className="text-lg sm:text-xl md:text-2xl font-semibold text-emerald-600">
                       {item.title}
                     </p>
-                    <p className="text-white/60 sm:text-base">
+                    <p className="text-white/60 sm:text-base max-w-2xl">
                       {item.content}
                     </p>
                   </div>

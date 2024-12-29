@@ -31,7 +31,7 @@ const AnimatedLogo = ({ logoText = "Devin", className }: Props) => {
           );
         },
       });
-    }, 3000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);

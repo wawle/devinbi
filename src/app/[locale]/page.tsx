@@ -4,7 +4,7 @@ import Tech from "./components/tech";
 
 const Home = () => {
   return (
-    <div className="space-y-12">
+    <div className="space-y-4 lg:space-y-12">
       <Tech />
       <Hero />
       <Bento />

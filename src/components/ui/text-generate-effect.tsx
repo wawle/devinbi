@@ -51,9 +51,5 @@ export const TextGenerateEffect = ({
     );
   };
 
-  return (
-    <div className={cn("font-bold", className)}>
-      <div className="mt-4">{renderWords()}</div>
-    </div>
-  );
+  return <div className={cn("font-bold", className)}>{renderWords()}</div>;
 };

@@ -2,33 +2,30 @@ import React from "react";
 
 const QUERY = "(prefers-reduced-motion: no-preference)";
 const isRenderingOnServer = typeof window === "undefined";
-const getInitialState = () => {
-  // For our initial server render, we won't know if the user
-  // prefers reduced motion, but it doesn't matter. This value
-  // will be overwritten on the client, before any animations
-  // occur.
-  return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
-};
+
 export default function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] =
-    React.useState(getInitialState);
+  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(
+    () => (isRenderingOnServer ? null : !window.matchMedia(QUERY).matches)
+  );
+
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
-    const listener = (event: any) => {
+
+    // Set the initial state on the client if it was null during SSR
+    if (prefersReducedMotion === null) {
+      setPrefersReducedMotion(!mediaQueryList.matches);
+    }
+
+    const listener = (event: MediaQueryListEvent) => {
       setPrefersReducedMotion(!event.matches);
     };
-    if (mediaQueryList.addEventListener) {
-      mediaQueryList.addEventListener("change", listener);
-    } else {
-      mediaQueryList.addListener(listener);
-    }
+
+    mediaQueryList.addEventListener("change", listener);
+
     return () => {
-      if (mediaQueryList.removeEventListener) {
-        mediaQueryList.removeEventListener("change", listener);
-      } else {
-        mediaQueryList.removeListener(listener);
-      }
+      mediaQueryList.removeEventListener("change", listener);
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
   return prefersReducedMotion;
 }
