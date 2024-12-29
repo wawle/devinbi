@@ -5,14 +5,12 @@ import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/lib/locales";
 
 interface Props {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ lang: Locale }>;
 }
 
 const ProductsPage = async ({ params }: Props) => {
-  const { locale } = await params;
-  const dict = await getDictionary("products", locale);
+  const lang = (await params).lang;
+  const dict = await getDictionary("products", lang);
 
   const CRMData = [
     {
@@ -36,8 +34,6 @@ const ProductsPage = async ({ params }: Props) => {
       content: dict?.crmContent3,
     },
   ];
-
-  console.log({ dict });
 
   return (
     <div

@@ -13,13 +13,6 @@ import { cn } from "@/lib/utils";
 const Bento = () => {
   const dict = useDictionary("bento");
 
-  const featureImages = {
-    featureMobile: MobileAppImage,
-    featureWeb: WebsiteImage,
-    featureAi: AiImage,
-    featureSecurity: SecurityImage,
-  };
-
   return (
     <Bounded className="text-center">
       <div className="space-y-12 ">

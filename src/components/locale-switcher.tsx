@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Globe, LanguagesIcon } from "lucide-react";
+import { Globe } from "lucide-react";
 
 interface LocaleSwitcherProps {
   currentLocale: Locale;
