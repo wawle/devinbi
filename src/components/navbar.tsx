@@ -50,7 +50,7 @@ export default function NavBar() {
         {/* Mobile Nav */}
         <div
           className={cn(
-            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/90 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
+            "ga-4 fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col items-end bg-black/95 pr-4 pt-14 transition-transform duration-300 ease-in-out motion-reduce:transition-none md:hidden",
             open ? "translate-x-0" : "translate-x-[100%]"
           )}
         >
@@ -69,7 +69,7 @@ export default function NavBar() {
               <Link
                 key={index.toString()}
                 href={item.href}
-                className="inline-flex min-h-11 items-center"
+                className="inline-flex min-h-11 items-center uppercase text-xl"
                 onClick={() => setOpen(false)}
               >
                 {dictionary?.[item.dictionary]}

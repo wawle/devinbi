@@ -12,10 +12,10 @@ export default async function Footer({ locale }: Props) {
   const dictionary = await getDictionary("navbar", locale);
 
   return (
-    <footer className="relative flex flex-col md:flex-row justify-between items-center gap-2 px-4 py-4 text-white md:px-6 h-auto">
+    <footer className="relative text-white flex items-center justify-center px-4 md:px-6 py-4 md:h-[68px]">
       <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-emerald-600/5 via-emerald-600 to-emerald-600/5" />
-      <div className="flex w-full max-w-6xl flex-col items-center justify-between md:flex-row">
-        <div className="flex items-center justify-between">
+      <div className="flex w-full max-w-6xl flex-col items-center justify-between md:flex-row px-4 md:px-6">
+        <div className="flex items-center justify-between shrink-0">
           <Link className="z-50 text-3xl font-bold" href="/">
             <AnimatedLogo />
           </Link>
@@ -34,9 +34,9 @@ export default async function Footer({ locale }: Props) {
             ))}
           </ul>
         </nav>
-      </div>
-      <div className="text-center md:text-end w-full max-w-6xl text-white/40">
-        <p className="capitalize">© Devinbi | Her Hakkı Saklıdır.</p>
+        <div className="text-center md:text-end w-full max-w-6xl text-white/40">
+          <p className="capitalize">© Devinbi | Her Hakkı Saklıdır.</p>
+        </div>
       </div>
     </footer>
   );

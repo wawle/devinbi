@@ -38,7 +38,7 @@ export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="bg-black/80 text-white border-emerald-600/20"
+          className="bg-black/90 text-white border-emerald-600/20"
         >
           {locales.map((locale, index) => (
             <DropdownMenuItem

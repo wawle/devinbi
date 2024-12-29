@@ -130,11 +130,14 @@ const Tech = () => {
     <Bounded className="relative overflow-hidden">
       <StarBackground />
 
-      <div className="relative my-12 text-white">
+      <div className="relative md:my-12 text-white">
         <h1 className="hero__heading text-balance text-center text-4xl font-bold md:text-5xl">
           <span className="leading-tight">{dict?.title}</span>
         </h1>
-        <div className="mt-20 flex items-center" ref={container}>
+        <div
+          className="mt-20 hidden sm:flex items-center "
+          ref={container}
+        >
           {tech.map((item, index) => (
             <React.Fragment key={index}>
               {index === Math.floor(tech.length / 2) && (

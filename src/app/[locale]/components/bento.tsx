@@ -33,7 +33,7 @@ const Bento = () => {
             <div
               key={index.toString()}
               className={cn(
-                "row-span-3 grid grid-rows-subgrid mx-auto rounded-lg z-10 border border-slate-100/20 bg-black/70 px-4 py-6"
+                "row-span-3 grid grid-rows-subgrid mx-auto rounded-lg z-10 border border-slate-100/20 bg-black/70 px-2 md:px-4 py-6"
               )}
             >
               <h3 className="text-2xl font-semibold">

@@ -69,7 +69,7 @@ export function ProductCarousel({ content, title }: Props) {
             forceWheelAxis: "x",
           }),
         ]}
-        className="mx-auto py-4 md:py-8 h-[calc(100%-60px)] md:h-[calc(100%-50px)]"
+        className="mx-auto py-4 md:py-8 h-[calc(100%-50px)] md:h-[calc(100%-50px)]"
       >
         <CarouselContent className="h-full">
           {content.map((item, index) => (
@@ -77,8 +77,8 @@ export function ProductCarousel({ content, title }: Props) {
               className="h-full flex justify-center"
               key={index}
             >
-              <Card className="bg-transparent max-w-4xl border-emerald-100/20 h-full min-h-96">
-                <CardContent className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
+              <Card className="bg-transparent max-w-4xl border-emerald-100/20 h-full min-h-80">
+                <CardContent className="flex flex-col items-center gap-1 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
                   <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl max-h-80">
                     <Image
                       className="object-cover md:object-contain rounded-t-xl"
@@ -90,11 +90,11 @@ export function ProductCarousel({ content, title }: Props) {
                     />
                   </div>
 
-                  <div className="px-6 max-w-4xl flex-1 flex flex-col gap-2 sm:gap-6 md:gap-8 text-pretty py-6 text-center">
-                    <p className="text-lg sm:text-xl md:text-2xl font-semibold text-emerald-600">
+                  <div className="px-6 max-w-4xl flex-1 flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 text-pretty md:py-6 text-center">
+                    <p className="text-base md:text-xl lg:text-2xl font-semibold text-emerald-600">
                       {item.title}
                     </p>
-                    <p className="text-white/60 sm:text-base max-w-2xl">
+                    <p className="text-white/60 text-xs sm:text-base max-w-2xl">
                       {item.content}
                     </p>
                   </div>
@@ -103,8 +103,8 @@ export function ProductCarousel({ content, title }: Props) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-10" />
-        <CarouselNext className="-right-10" />
+        <CarouselPrevious className="-left-10 hidden md:flex" />
+        <CarouselNext className="-right-10 hidden md:flex" />
         {/* Dot Navigation */}
         <div className="flex justify-center my-3">
           {Array.from({ length: count }).map((_, index) => (
