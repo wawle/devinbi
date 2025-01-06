@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 type BoundedProps = {
   as?: React.ElementType;
@@ -14,7 +14,7 @@ export default function Bounded({
 }: BoundedProps) {
   return (
     <Comp
-      className={clsx("px-4 py-14 h-full md:px-6 md:py-12", className)}
+      className={cn("px-4 py-14 h-full md:px-6 md:py-12", className)}
       {...restProps}
     >
       <div className="mx-auto h-full flex w-full max-w-6xl flex-col items-center">

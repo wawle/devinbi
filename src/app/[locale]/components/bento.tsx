@@ -14,7 +14,7 @@ const Bento = () => {
   const dict = useDictionary("bento");
 
   return (
-    <Bounded className="text-center">
+    <Bounded className="text-center py-0">
       <div className="space-y-12 ">
         <div className="relative w-screen">
           <StarGrid />
