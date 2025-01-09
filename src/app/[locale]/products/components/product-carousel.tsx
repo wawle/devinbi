@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
-import GoldImage from "../../../../../public/img/monitoring.png";
+import DefaultImage from "../../../../../public/img/monitoring.png";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { DotButton } from "@/components/ui/dot-button";
 
@@ -58,7 +58,7 @@ export function ProductCarousel({ content, title }: Props) {
       style={{ scrollSnapAlign: "start" }}
       className="h-full px-12 py-4 md:py-8 md:px-20 bg-black/90 z-10"
     >
-      <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent flex justify-center">
+      <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent flex justify-center">
         <span className="text-white">{title}</span>
         Bi
       </h2>
@@ -77,12 +77,12 @@ export function ProductCarousel({ content, title }: Props) {
               className="h-full flex justify-center"
               key={index}
             >
-              <Card className="bg-transparent max-w-4xl border-emerald-100/20 h-full min-h-80">
-                <CardContent className="flex flex-col items-center gap-1 sm:gap-6 md:gap-8 lg:gap-4 h-full text-white p-0">
-                  <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl max-h-80">
+              <Card className="bg-transparent max-w-4xl border-green-100/20 min-h-80">
+                <CardContent className="flex flex-col items-center gap-1 sm:gap-6 md:gap-8 lg:gap-4 text-white p-0">
+                  <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl min-h-36 max-h-[50%] xl:max-h-96">
                     <Image
                       className="object-cover md:object-contain rounded-t-xl"
-                      src={item.src || GoldImage}
+                      src={item.src || DefaultImage}
                       loading="lazy"
                       decoding="async"
                       alt="Product Image"
@@ -91,9 +91,9 @@ export function ProductCarousel({ content, title }: Props) {
                   </div>
 
                   <div className="px-6 max-w-4xl flex-1 flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 text-pretty md:py-6 text-center">
-                    <p className="text-base md:text-xl lg:text-2xl font-semibold text-[#008529]">
+                    <h2 className="text-base sm:text-lg uppercase md:text-xl lg:text-2xl font-semibold text-[#008529]">
                       {item.title}
-                    </p>
+                    </h2>
                     <p className="text-white/60 text-xs sm:text-base max-w-2xl">
                       {item.content}
                     </p>

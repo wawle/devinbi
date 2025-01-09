@@ -20,7 +20,7 @@ export default async function Footer({ locale }: Props) {
             <AnimatedLogo />
           </Link>
         </div>
-        <nav aria-label="Footer" className="md:hidden">
+        {/* <nav aria-label="Footer" className="md:hidden">
           <ul className="flex gap-6">
             {navbarItems.map((item, index) => (
               <li key={index.toString()}>
@@ -33,7 +33,7 @@ export default async function Footer({ locale }: Props) {
               </li>
             ))}
           </ul>
-        </nav>
+        </nav> */}
         <div className="text-center md:text-end w-full max-w-6xl text-white/40">
           <p className="capitalize">© Devinbi | Her Hakkı Saklıdır.</p>
         </div>

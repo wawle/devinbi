@@ -77,7 +77,7 @@ const Hero = () => {
         ref={container}
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">
-          <em className="bg-gradient-to-r from-emerald-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent">
+          <em className="bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent">
             {dict?.title}
           </em>
         </h1>
@@ -89,7 +89,7 @@ const Hero = () => {
         <Button
           asChild
           variant="pulseGreen"
-          className="hero__button z-10 px-10 py-6"
+          className="hero__button z-10 px-10 py-6 bg-black"
         >
           <Link className="" href="/contact">
             {dictCommon?.contactButton}

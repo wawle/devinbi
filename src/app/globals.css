@@ -72,7 +72,7 @@
 }
 
 .glass-container::before {
-  @apply absolute -inset-[10px] -z-10 rounded-xl border border-emerald-100/20 bg-emerald-200/10 backdrop-blur-md;
+  @apply absolute -inset-[10px] -z-10 rounded-xl border border-green-100/20 bg-green-200/10 backdrop-blur-md;
   content: "";
 }
 

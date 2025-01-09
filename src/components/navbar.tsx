@@ -11,6 +11,8 @@ import { Locale } from "@/lib/locales";
 import AnimatedLogo from "./animated-logo";
 import { useDictionary } from "@/hooks/use-dictionary";
 import { Button } from "./ui/button";
+import Logo from "../../public/img/logo.png";
+import Image from "next/image";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -22,14 +24,17 @@ export default function NavBar() {
       <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
       <div className="mx-auto flex max-w-6xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black px-4 md:px-6 h-[85px]">
         <div className="flex items-center justify-between h-full">
-          <Link
-            className="z-50 text-3xl font-bold"
-            href="/"
-            onClick={() => setOpen(false)}
-          >
-            <AnimatedLogo />
-            <span className="sr-only">Devinbi Home Page</span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <Image alt="Devinbi Logo" height={50} width={50} src={Logo} />
+            <Link
+              className="z-50 text-3xl font-bold"
+              href="/"
+              onClick={() => setOpen(false)}
+            >
+              <AnimatedLogo />
+              <span className="sr-only">Devinbi Home Page</span>
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <div className="md:hidden">
               <LocaleSwitcher currentLocale={locale as Locale} />

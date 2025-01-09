@@ -146,7 +146,7 @@ const Tech = () => {
                   <div className="signal-line rotate-180 bg-gradient-to-t" />
                 </>
               )}
-              <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-emerald-50/30 p-3 text-3xl text-emerald-100 opacity-40 md:text-4xl lg:text-5xl">
+              <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-green-50/30 p-3 text-3xl text-green-100 opacity-40 md:text-4xl lg:text-5xl">
                 {item.icon && icons[item.icon as keyof typeof icons]}
               </div>
               {index !== tech.length - 1 && (

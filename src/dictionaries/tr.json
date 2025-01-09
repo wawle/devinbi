@@ -40,16 +40,16 @@
     "send": "Gönder"
   },
   "products": {
-    "crmTitle1": "İşlerinizi kolaylıkla yönetin.",
+    "crmTitle1": "İşlerinizi kolaylıkla yönetin",
     "crmContent1": "İş süreçlerinizi daha verimli hale getirmek için tüm müşteri ilişkilerinizi ve projelerinizi tek bir platformda yönetin. İletişim, takip ve raporlama süreçlerini kolayca düzenleyin.",
 
-    "crmTitle2": "Verimli müşteri yönetimi.",
+    "crmTitle2": "Verimli müşteri yönetimi",
     "crmContent2": "Müşteri ilişkilerinizi güçlendirin, geçmiş etkileşimleri izleyin ve her bir müşteriye özel stratejiler geliştirin. CRM, işletmenizin büyümesine katkı sağlar.",
 
-    "crmTitle3": "Kolay takip ve raporlama.",
+    "crmTitle3": "Kolay takip ve raporlama",
     "crmContent3": "Satış süreçlerinizi ve müşteri etkileşimlerini tek bir panelden kolayca takip edin. Analizler ve raporlar ile işinizin yönünü belirleyin.",
 
-    "crmTitle4": "Entegre çözümlerle büyüme.",
+    "crmTitle4": "Entegre çözümlerle büyüme",
     "crmContent4": "CRM sisteminizle diğer iş yazılımlarınızı entegre edin. İş süreçlerinizde zaman kazanın ve daha akıllı kararlar alın."
   }
 }

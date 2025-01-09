@@ -44,7 +44,7 @@ const ProductsPage = async ({ params }: Props) => {
       </div>
       <div
         style={{ scrollSnapType: "y mandatory" }}
-        className="max-w-7xl mx-auto h-[calc(100vh-230px)] md:h-[calc(100vh-194px)] text-white overflow-y-scroll"
+        className="max-w-7xl mx-auto h-[calc(100vh-177px)] md:h-[calc(100vh-155px)] text-white overflow-y-scroll"
       >
         <ProductCarousel content={CRMData} title="CRM" />
       </div>

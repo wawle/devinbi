@@ -40,16 +40,16 @@
     "send": "Send"
   },
   "products": {
-    "crmTitle1": "Manage Your Work Easily.",
+    "crmTitle1": "Manage Your Work Easily",
     "crmContent1": "Manage all your customer relationships and projects on a single platform to make your workflows more efficient. Easily organize communication, tracking, and reporting processes.",
 
-    "crmTitle2": "Efficient Customer Management.",
+    "crmTitle2": "Efficient Customer Management",
     "crmContent2": "Strengthen your customer relationships, track past interactions, and develop personalized strategies for each customer. CRM contributes to your business growth.",
 
-    "crmTitle3": "Easy Tracking and Reporting.",
+    "crmTitle3": "Easy Tracking and Reporting",
     "crmContent3": "Easily track your sales processes and customer interactions from a single panel. Determine the direction of your business with analytics and reports.",
 
-    "crmTitle4": "Grow with Integrated Solutions.",
+    "crmTitle4": "Grow with Integrated Solutions",
     "crmContent4": "Integrate your CRM system with other business software. Save time in your workflows and make smarter decisions."
   }
 }

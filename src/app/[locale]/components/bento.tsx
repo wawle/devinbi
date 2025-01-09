@@ -22,7 +22,7 @@ const Bento = () => {
 
         <h1 className="mt-4 space-y-12 z-10 text-center text-4xl font-bold text-white md:text-5xl">
           {dict?.titleFirst} <br />
-          <em className="bg-gradient-to-r from-emerald-400 to-[#008529] bg-clip-text not-italic text-transparent">
+          <em className="bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic text-transparent">
             {dict?.titleGreen}
           </em>{" "}
           {dict?.titleLast}
