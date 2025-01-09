@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         pulseGreen:
-          "w-fit rounded-full border border-emerald-600 bg-emerald-600/10 font-semibold text-emerald-600 transition-colors duration-100 hover:animate-pulse hover:border-emerald-600 hover:text-emerald-600",
+          "w-fit rounded-full border border-[#008529] bg-[#008529]/10 font-semibold text-[#008529] transition-colors duration-100 hover:animate-pulse hover:border-[#008529] hover:text-[#008529]",
       },
       size: {
         default: "h-9 px-4 py-2",

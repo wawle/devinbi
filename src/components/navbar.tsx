@@ -19,7 +19,7 @@ export default function NavBar() {
 
   return (
     <nav className="relative " aria-label="Main">
-      <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-emerald-600/5 via-emerald-600 to-emerald-600/5" />
+      <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
       <div className="mx-auto flex max-w-6xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black px-4 md:px-6 h-[85px]">
         <div className="flex items-center justify-between h-full">
           <Link

@@ -58,7 +58,7 @@ export function ProductCarousel({ content, title }: Props) {
       style={{ scrollSnapAlign: "start" }}
       className="h-full px-12 py-4 md:py-8 md:px-20 bg-black/90 z-10"
     >
-      <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent flex justify-center">
+      <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-emerald-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent flex justify-center">
         <span className="text-white">{title}</span>
         Bi
       </h2>
@@ -91,7 +91,7 @@ export function ProductCarousel({ content, title }: Props) {
                   </div>
 
                   <div className="px-6 max-w-4xl flex-1 flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 text-pretty md:py-6 text-center">
-                    <p className="text-base md:text-xl lg:text-2xl font-semibold text-emerald-600">
+                    <p className="text-base md:text-xl lg:text-2xl font-semibold text-[#008529]">
                       {item.title}
                     </p>
                     <p className="text-white/60 text-xs sm:text-base max-w-2xl">

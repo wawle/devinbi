@@ -77,7 +77,7 @@ const Hero = () => {
         ref={container}
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">
-          <em className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text not-italic leading-tight text-transparent">
+          <em className="bg-gradient-to-r from-emerald-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent">
             {dict?.title}
           </em>
         </h1>

@@ -13,7 +13,7 @@ export default async function Footer({ locale }: Props) {
 
   return (
     <footer className="relative text-white flex items-center justify-center md:h-[68px]">
-      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-emerald-600/5 via-emerald-600 to-emerald-600/5" />
+      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
       <div className="flex w-full max-w-6xl flex-col items-center justify-between md:flex-row px-4 md:px-6 py-4">
         <div className="flex items-center justify-between shrink-0">
           <Link className="z-50 text-3xl font-bold" href="/">

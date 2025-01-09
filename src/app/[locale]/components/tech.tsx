@@ -105,8 +105,8 @@ const Tech = () => {
                 each: 0.3,
               },
               duration: 1,
-              borderColor: "#059669",
-              color: "#059669",
+              borderColor: "#008529",
+              color: "#008529",
             },
             {
               opacity: 0.4,

@@ -44,7 +44,7 @@ const AnimatedLogo = ({ logoText = "Devin", className }: Props) => {
       {logoText}
       <span
         ref={textRef}
-        className="inline-block text-emerald-600 w-9" // inline-block, rotate için gerekli
+        className="inline-block text-[#008529] w-9" // inline-block, rotate için gerekli
       >
         {text}
       </span>

@@ -66,8 +66,8 @@ function StarBackground() {
           y2="500"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0.12"></stop>
+          <stop stopColor="#008529" stopOpacity="0"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0.12"></stop>
         </linearGradient>
         <linearGradient
           id="paint1_linear_254_9762"
@@ -77,8 +77,8 @@ function StarBackground() {
           y2="344.831"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0.3"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0"></stop>
+          <stop stopColor="#008529" stopOpacity="0.3"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0"></stop>
         </linearGradient>
         <linearGradient
           id="paint2_linear_254_9762"
@@ -88,8 +88,8 @@ function StarBackground() {
           y2="500"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0.12"></stop>
+          <stop stopColor="#008529" stopOpacity="0"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0.12"></stop>
         </linearGradient>
         <linearGradient
           id="paint3_linear_254_9762"
@@ -99,8 +99,8 @@ function StarBackground() {
           y2="344.831"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0.3"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0"></stop>
+          <stop stopColor="#008529" stopOpacity="0.3"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0"></stop>
         </linearGradient>
         <linearGradient
           id="paint4_linear_254_9762"
@@ -110,8 +110,8 @@ function StarBackground() {
           y2="500"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0.12"></stop>
+          <stop stopColor="#008529" stopOpacity="0"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0.12"></stop>
         </linearGradient>
         <linearGradient
           id="paint5_linear_254_9762"
@@ -121,8 +121,8 @@ function StarBackground() {
           y2="344.831"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#059669" stopOpacity="0.3"></stop>
-          <stop offset="1" stopColor="#059669" stopOpacity="0"></stop>
+          <stop stopColor="#008529" stopOpacity="0.3"></stop>
+          <stop offset="1" stopColor="#008529" stopOpacity="0"></stop>
         </linearGradient>
       </defs>
     </svg>

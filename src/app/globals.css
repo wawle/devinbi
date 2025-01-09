@@ -83,7 +83,7 @@
   background-image: linear-gradient(
     var(--rotation),
     rgba(255, 255, 255, 0) 50%,
-    #059669 50%,
+    #008529 50%,
     rgba(255, 255, 255, 0) 70%
   );
   background-size: 400% 400%;
@@ -113,7 +113,7 @@
 }
 
 .embla__dot.is-selected:after {
-  background-color: #059669;
+  background-color: #008529;
   opacity: 1;
 }
 
@@ -129,6 +129,6 @@ body {
 
 @layer utilities {
   .nav-hover-btn {
-    @apply relative cursor-pointer text-sm uppercase after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-emerald-600 after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
+    @apply relative cursor-pointer text-sm uppercase after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#008529] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white;
   }
 }
