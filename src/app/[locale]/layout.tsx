@@ -43,7 +43,7 @@ export default async function RootLayout({
         <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-153px)] bg-black">
           {children}
         </div>
-        <Footer locale={locale} />
+        <Footer />
         <Toaster />
       </body>
     </html>

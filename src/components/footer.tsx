@@ -1,15 +1,8 @@
 import Link from "next/link";
 import AnimatedLogo from "./animated-logo";
-import { navbarItems } from "@/lib/constants";
-import { getDictionary } from "@/lib/dictionary";
-import { Locale } from "@/lib/locales";
 
-interface Props {
-  locale: Locale;
-}
-
-export default async function Footer({ locale }: Props) {
-  const dictionary = await getDictionary("navbar", locale);
+export default async function Footer() {
+  // const dictionary = await getDictionary("navbar", locale);
 
   return (
     <footer className="relative text-white flex items-center justify-center md:h-[68px]">
