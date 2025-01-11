@@ -11,7 +11,6 @@ interface Props {
 
 const ProductsPage = async ({ params }: Props) => {
   const { locale } = await params;
-  console.log({ locale });
   const dict = await getDictionary("products", locale);
 
   const CRMData = [
@@ -42,10 +41,7 @@ const ProductsPage = async ({ params }: Props) => {
       <div className="relative w-screen">
         <StarGrid />
       </div>
-      <div
-        style={{ scrollSnapType: "y mandatory" }}
-        className="max-w-7xl mx-auto h-[calc(100vh-177px)] md:h-[calc(100vh-155px)] text-white overflow-y-scroll"
-      >
+      <div className="max-w-7xl mx-auto text-white ">
         <ProductCarousel content={CRMData} title="CRM" />
       </div>
     </div>

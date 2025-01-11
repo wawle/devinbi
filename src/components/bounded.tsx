@@ -17,7 +17,7 @@ export default function Bounded({
       className={cn("px-4 py-14 h-full md:px-6 md:py-12", className)}
       {...restProps}
     >
-      <div className="mx-auto h-full flex w-full max-w-6xl flex-col items-center">
+      <div className="mx-auto h-full flex w-full max-w-7xl flex-col items-center">
         {children}
       </div>
     </Comp>

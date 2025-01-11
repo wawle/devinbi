@@ -54,10 +54,7 @@ export function ProductCarousel({ content, title }: Props) {
   };
 
   return (
-    <div
-      style={{ scrollSnapAlign: "start" }}
-      className="h-full px-12 py-4 md:py-8 md:px-20 bg-black/90 z-10"
-    >
+    <div className="h-full px-12 py-4 md:py-8 md:px-20 bg-black/90 z-10">
       <h2 className="text-balance text-center text-4xl font-bold md:text-5xl bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent flex justify-center">
         <span className="text-white">{title}</span>
         Bi
@@ -69,14 +66,11 @@ export function ProductCarousel({ content, title }: Props) {
             forceWheelAxis: "x",
           }),
         ]}
-        className="mx-auto py-4 md:py-8 h-[calc(100%-50px)] md:h-[calc(100%-50px)]"
+        className="mx-auto py-4 md:py-8"
       >
         <CarouselContent className="h-full">
           {content.map((item, index) => (
-            <CarouselItem
-              className="h-full flex justify-center"
-              key={index}
-            >
+            <CarouselItem className="h-full flex justify-center" key={index}>
               <Card className="bg-transparent max-w-4xl border-green-100/20 min-h-80">
                 <CardContent className="flex flex-col items-center gap-1 sm:gap-6 md:gap-8 lg:gap-4 text-white p-0">
                   <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl min-h-36 max-h-[50%] xl:max-h-96">

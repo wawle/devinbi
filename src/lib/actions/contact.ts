@@ -4,7 +4,7 @@ import { sendMail } from "./mail";
 
 export async function sendContact(
   previousState: ContactFormState,
-  formData: FormData,
+  formData: FormData
 ): Promise<ContactFormState> {
   // get form data
   const formBody = {
@@ -13,8 +13,6 @@ export async function sendContact(
     email: formData.get("email"),
     message: formData.get("message"),
   };
-
-  console.log({ formBody });
 
   // Validate form fields
   const validatedFields = contactFormSchema.safeParse(formBody);
