@@ -1,0 +1,55 @@
+{
+  "navbar": {
+    "home": "HOME",
+    "products": "PRODUCTS",
+    "contact": "CONTACT"
+  },
+  "common": {
+    "contactButton": "Get in Touch"
+  },
+  "tech": {
+    "title": "Shaping the Future of Software"
+  },
+  "hero": {
+    "title": "Smart Solutions",
+    "description": "Devinbi offers AI-powered software solutions that take your business to the next level. Accelerate your workflows and be ready for the future with our dynamic and user-centric designs."
+  },
+  "bento": {
+    "titleFirst": "With Cutting-Edge",
+    "titleGreen": "Next-Generation",
+    "titleLast": "Software Solutions",
+    "featureMobileTitle": "Mobile Applications",
+    "featureMobileContent": "We develop user-friendly and functional mobile applications equipped with modern technologies, enabling you to easily reach your target audience.",
+
+    "featureWebTitle": "Web Applications and Websites",
+    "featureWebContent": "We design and develop fast and impactful web applications and websites that strengthen your company's digital presence.",
+
+    "featureAiTitle": "AI-Powered Smart Solutions",
+    "featureAiContent": "With AI-powered technologies, we offer superior performance in data analysis and automation processes to boost your competitiveness.",
+
+    "featureSecurityTitle": "Fast and Secure Development",
+    "featureSecurityContent": "With rapid prototyping and secure software development processes, we deliver your projects on time and with the highest quality."
+  },
+  "contact": {
+    "ideas": "Let's work together to turn your ideas into reality!",
+    "getInTouch": "Get in Touch",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "products": {
+    "crmTitle1": "Manage Your Work Easily",
+    "crmContent1": "Manage all your customer relationships and projects on a single platform to make your workflows more efficient. Easily organize communication, tracking, and reporting processes.",
+
+    "crmTitle2": "Efficient Customer Management",
+    "crmContent2": "Strengthen your customer relationships, track past interactions, and develop personalized strategies for each customer. CRM contributes to your business growth.",
+
+    "crmTitle3": "Easy Tracking and Reporting",
+    "crmContent3": "Easily track your sales processes and customer interactions from a single panel. Determine the direction of your business with analytics and reports.",
+
+    "crmTitle4": "Grow with Integrated Solutions",
+    "crmContent4": "Integrate your CRM system with other business software. Save time in your workflows and make smarter decisions."
+  }
+}
