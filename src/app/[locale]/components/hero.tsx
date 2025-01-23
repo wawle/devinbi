@@ -36,7 +36,11 @@ const Hero = () => {
       );
 
       // Body animasyonu
-      tl.fromTo(".hero__body", { y: 20 }, { y: 0, opacity: 1, duration: 0.8 });
+      tl.fromTo(
+        ".hero__body",
+        { y: 20 },
+        { y: 0, opacity: 1, duration: 0.8 }
+      );
 
       // Button animasyonu
       tl.fromTo(
@@ -66,7 +70,7 @@ const Hero = () => {
         <StarGrid />
       </div>
       <div
-        className="relative w-full space-y-10 py-12 text-white"
+        className="relative w-full space-y-10 py-12 text-white overflow-hidden"
         ref={container}
       >
         <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">

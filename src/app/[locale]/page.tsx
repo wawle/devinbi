@@ -1,10 +1,11 @@
+import { Suspense } from "react";
 import Bento from "./components/bento";
 import Hero from "./components/hero";
 import Tech from "./components/tech";
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-full">
       <Tech />
       <Hero />
       <Bento />

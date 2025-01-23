@@ -37,11 +37,9 @@ const ProductsPage = async ({ params }: Props) => {
   ];
 
   return (
-    <div>
-      <div className="relative w-screen">
+    <div className="overflow-x-hidden">
+      <div className="max-w-7xl mx-auto text-white relative">
         <StarGrid />
-      </div>
-      <div className="max-w-7xl mx-auto text-white ">
         <ProductCarousel content={CRMData} title="CRM" />
       </div>
     </div>
