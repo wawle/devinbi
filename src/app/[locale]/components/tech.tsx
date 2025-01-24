@@ -131,7 +131,7 @@ const Tech = () => {
       <StarBackground />
 
       <div className="relative md:my-12 py-12 text-white">
-        <h1 className="hero__heading text-balance flex items-center justify-center text-4xl font-bold md:text-5xl h-[45px] md:h-[60px]">
+        <h1 className="hero__heading text-balance text-center flex items-center justify-center text-4xl font-bold md:text-5xl h-[45px] md:h-[60px]">
           <span className="leading-tight">{dict?.title}</span>
         </h1>
         <div

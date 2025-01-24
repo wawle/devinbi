@@ -70,7 +70,10 @@ export function ProductCarousel({ content, title }: Props) {
       >
         <CarouselContent className="h-full">
           {content.map((item, index) => (
-            <CarouselItem className="h-full flex justify-center" key={index}>
+            <CarouselItem
+              className="h-full flex justify-center"
+              key={index}
+            >
               <Card className="bg-transparent max-w-4xl border-green-100/20 min-h-80">
                 <CardContent className="flex flex-col items-center gap-1 sm:gap-6 md:gap-8 lg:gap-4 text-white p-0">
                   <div className="aspect-[3014/1642] relative md:flex-1 w-full rounded-t-xl min-h-36 max-h-[50%] xl:max-h-96">
@@ -84,7 +87,7 @@ export function ProductCarousel({ content, title }: Props) {
                     />
                   </div>
 
-                  <div className="px-6 max-w-4xl flex-1 flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 text-pretty md:py-6 text-center">
+                  <div className="px-6 max-w-4xl flex-1 flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 text-pretty pb-6 md:py-6 text-center">
                     <h2 className="text-base sm:text-lg uppercase md:text-xl lg:text-2xl font-semibold text-[#008529]">
                       {item.title}
                     </h2>

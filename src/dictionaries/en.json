@@ -2,6 +2,7 @@
   "navbar": {
     "home": "HOME",
     "products": "PRODUCTS",
+    "services": "SERVICES",
     "contact": "CONTACT"
   },
   "common": {
@@ -51,5 +52,21 @@
 
     "crmTitle4": "Grow with Integrated Solutions",
     "crmContent4": "Integrate your CRM system with other business software. Save time in your workflows and make smarter decisions."
+  },
+  "services": {
+    "title": "Professional Software Services",
+    "description": "We provide custom solutions that will take your business one step ahead in the digital world.",
+
+    "startupTitle": "Startup Solutions",
+    "startupContent": "We provide all the software support you need for your new venture. From MVP development to scalable applications, we support your startup's growth.",
+
+    "enterpriseTitle": "Enterprise Software Solutions",
+    "enterpriseContent": "We develop scalable and secure software solutions tailored to your company's needs. We offer custom applications that optimize your business processes and increase your efficiency.",
+
+    "webTitle": "Custom Web Applications",
+    "webContent": "User-friendly and high-performance web applications developed with modern technologies. We support your business's digital transformation in the best way possible.",
+
+    "mobileTitle": "Mobile App Development",
+    "mobileContent": "We develop native and cross-platform mobile applications for iOS and Android platforms. We provide high-performance mobile solutions that prioritize user experience."
   }
 }
