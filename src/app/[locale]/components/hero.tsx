@@ -89,7 +89,7 @@ const Hero = () => {
             <Image
               alt="Hero Image"
               src={HeroImage}
-              className="rounded-lg object-contain"
+              className="object-contain"
               priority
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,

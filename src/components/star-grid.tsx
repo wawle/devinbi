@@ -115,7 +115,7 @@ export default function StarGrid({ className }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 935 425"
-      className={cn("absolute top-0", className)}
+      className={cn("absolute top-0 z-0", className)}
       id="star-grid"
       ref={container}
       opacity={0}
