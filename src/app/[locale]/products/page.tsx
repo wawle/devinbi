@@ -1,9 +1,9 @@
-import React from "react";
-import { ProductCarousel } from "./components/product-carousel";
+import React, { Suspense } from "react";
 import CRMImage from "../../../../public/img/crm.png";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/lib/locales";
-import StarGrid from "@/components/star-grid";
+import { HorizontalScrollCards } from "./components/horizontal-gallery";
+import Loading from "./components/loading";
 
 interface Props {
   params: Promise<{ locale: Locale }>;
@@ -37,14 +37,11 @@ const ProductsPage = async ({ params }: Props) => {
   ];
 
   return (
-    <div>
-      <div className="relative w-screen">
-        <StarGrid />
-      </div>
-      <div className="max-w-7xl mx-auto text-white ">
-        <ProductCarousel content={CRMData} title="CRM" />
-      </div>
-    </div>
+    <main className="mx-auto text-white relative overflow-x-hidden">
+      <Suspense fallback={<Loading />}>
+        <HorizontalScrollCards items={CRMData} />
+      </Suspense>
+    </main>
   );
 };
 

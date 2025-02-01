@@ -5,7 +5,7 @@ import StarGrid from "@/components/star-grid";
 
 const ContactPage = () => {
   return (
-    <Bounded className="relative text-white">
+    <Bounded className="relative text-white py-12">
       <StarGrid />
       <ContactHero />
     </Bounded>

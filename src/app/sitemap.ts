@@ -6,6 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrls = [
     "",
     "/products",
+    "/services",
     "/contact",
     // Diğer sayfalarınızı buraya ekleyebilirsiniz
   ];

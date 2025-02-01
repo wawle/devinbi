@@ -2,6 +2,7 @@
   "navbar": {
     "home": "ANA SAYFA",
     "products": "ÜRÜNLER",
+    "services": "HİZMETLERİMİZ",
     "contact": "İLETİŞİM"
   },
   "common": {
@@ -51,5 +52,21 @@
 
     "crmTitle4": "Entegre çözümlerle büyüme",
     "crmContent4": "CRM sisteminizle diğer iş yazılımlarınızı entegre edin. İş süreçlerinizde zaman kazanın ve daha akıllı kararlar alın."
+  },
+  "services": {
+    "title": "Profesyonel Yazılım Hizmetlerimiz",
+    "description": "İşletmenizi dijital dünyada bir adım öne taşıyacak özel çözümler sunuyoruz.",
+
+    "startupTitle": "Startup Çözümleri",
+    "startupContent": "Yeni girişiminiz için ihtiyacınız olan tüm yazılım desteğini sağlıyoruz. MVP geliştirmeden ölçeklenebilir uygulamalara kadar, startup'ınızın büyümesine destek oluyoruz.",
+
+    "enterpriseTitle": "Kurumsal Yazılım Çözümleri",
+    "enterpriseContent": "Şirketinizin ihtiyaçlarına özel, ölçeklenebilir ve güvenli yazılım çözümleri geliştiriyoruz. İş süreçlerinizi optimize eden, verimliliğinizi artıran özel uygulamalar sunuyoruz.",
+
+    "webTitle": "Özel Web Uygulamaları",
+    "webContent": "Modern teknolojilerle geliştirilmiş, kullanıcı dostu ve performanslı web uygulamaları. İşletmenizin dijital dönüşümünü en iyi şekilde destekliyoruz.",
+
+    "mobileTitle": "Mobil Uygulama Geliştirme",
+    "mobileContent": "iOS ve Android platformları için native ve cross-platform mobil uygulamalar geliştiriyoruz. Kullanıcı deneyimini ön planda tutan, performanslı mobil çözümler sunuyoruz."
   }
 }

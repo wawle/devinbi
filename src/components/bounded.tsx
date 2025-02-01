@@ -14,10 +14,10 @@ export default function Bounded({
 }: BoundedProps) {
   return (
     <Comp
-      className={cn("px-4 py-14 h-full md:px-6 md:py-12", className)}
+      className={cn("px-4 py-14 md:px-6 md:py-12", className)}
       {...restProps}
     >
-      <div className="mx-auto h-full flex w-full max-w-7xl flex-col items-center">
+      <div className="mx-auto h-full flex w-full max-w-7xl flex-col items-center overflow-x-hidden">
         {children}
       </div>
     </Comp>

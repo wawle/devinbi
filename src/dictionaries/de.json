@@ -2,6 +2,7 @@
   "navbar": {
     "home": "STARTSEITE",
     "products": "PRODUKTE",
+    "services": "DIENSTLEISTUNGEN",
     "contact": "KONTAKT"
   },
   "common": {
@@ -51,5 +52,21 @@
 
     "crmTitle4": "Wachstum mit integrierten Lösungen",
     "crmContent4": "Integrieren Sie Ihr CRM-System mit anderer Unternehmenssoftware. Sparen Sie Zeit in Ihren Arbeitsabläufen und treffen Sie intelligentere Entscheidungen."
+  },
+  "services": {
+    "title": "Professionelle Softwaredienstleistungen",
+    "description": "Wir bieten maßgeschneiderte Lösungen, die Ihr Unternehmen in der digitalen Welt einen Schritt voranbringen.",
+
+    "startupTitle": "Startup-Lösungen",
+    "startupContent": "Wir bieten alle Softwareunterstützung, die Sie für Ihr neues Unternehmen benötigen. Von der MVP-Entwicklung bis hin zu skalierbaren Anwendungen unterstützen wir das Wachstum Ihres Startups.",
+
+    "enterpriseTitle": "Unternehmenssoftwarelösungen",
+    "enterpriseContent": "Wir entwickeln skalierbare und sichere Softwarelösungen, die auf die Bedürfnisse Ihres Unternehmens zugeschnitten sind. Wir bieten maßgeschneiderte Anwendungen, die Ihre Geschäftsprozesse optimieren und Ihre Effizienz steigern.",
+
+    "webTitle": "Individuelle Webanwendungen",
+    "webContent": "Benutzerfreundliche und leistungsstarke Webanwendungen, entwickelt mit modernen Technologien. Wir unterstützen die digitale Transformation Ihres Unternehmens bestmöglich.",
+
+    "mobileTitle": "Mobile App-Entwicklung",
+    "mobileContent": "Wir entwickeln native und plattformübergreifende mobile Anwendungen für iOS und Android. Wir bieten leistungsstarke mobile Lösungen, die den Benutzer in den Mittelpunkt stellen."
   }
 }
