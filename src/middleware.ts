@@ -7,37 +7,31 @@ const LOCALE_COOKIE = "NEXT_LOCALE";
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Önce cookie'den locale kontrolü yap
+  // Check if the path already has a valid locale
+  const pathLocale = pathname.split("/")[1];
+  if (locales.includes(pathLocale as any)) {
+    // If path has a valid locale, just update cookie if needed and continue
+    const response = NextResponse.next();
+    if (pathLocale !== request.cookies.get(LOCALE_COOKIE)?.value) {
+      response.cookies.set(LOCALE_COOKIE, pathLocale);
+    }
+    return response;
+  }
+
+  // If no locale in path, get from cookie or browser
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
   const userLocale =
     cookieLocale && locales.includes(cookieLocale as any)
       ? cookieLocale
       : getLocale(request);
 
-  // Sadece root path için locale redirect yap
-  if (pathname === "/") {
-    return NextResponse.redirect(new URL(`/${userLocale}`, request.url));
-  }
-
-  // Diğer pathler için locale eksikse redirect yap
-  const pathnameIsMissingLocale = locales.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  // Redirect to add locale to path
+  return NextResponse.redirect(
+    new URL(
+      `/${userLocale}${pathname === "/" ? "" : pathname}`,
+      request.url
+    )
   );
-
-  if (pathnameIsMissingLocale) {
-    return NextResponse.redirect(
-      new URL(`/${userLocale}${pathname}`, request.url)
-    );
-  }
-
-  // Eğer path'de locale varsa ve cookie yoksa veya farklıysa, cookie'yi güncelle
-  const pathLocale = pathname.split("/")[1];
-  if (locales.includes(pathLocale as any) && pathLocale !== cookieLocale) {
-    const response = NextResponse.next();
-    response.cookies.set(LOCALE_COOKIE, pathLocale);
-    return response;
-  }
 }
 
 function getLocale(request: NextRequest): string {
