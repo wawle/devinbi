@@ -17,7 +17,7 @@ import Image from "next/image";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const { locale } = useParams();
-  const dictionary = useDictionary("navbar");
+  const { dictionary: dict } = useDictionary("navbar");
 
   return (
     <nav className="relative " aria-label="Main">
@@ -83,7 +83,7 @@ export default function NavBar() {
                 className="inline-flex min-h-11 items-center uppercase text-xl"
                 onClick={() => setOpen(false)}
               >
-                {dictionary?.[item.dictionary]}
+                {dict?.[item.dictionary]}
               </Link>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function NavBar() {
           {navbarItems.map((item, index) => (
             <li key={index.toString()}>
               <Link href={item.href} className="nav-hover-btn">
-                {dictionary?.[item.dictionary]}
+                {dict?.[item.dictionary]}
               </Link>
             </li>
           ))}

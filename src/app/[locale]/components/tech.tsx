@@ -18,7 +18,7 @@ import { useDictionary } from "@/hooks/use-dictionary";
 const Tech = () => {
   const container = useRef(null);
   gsap.registerPlugin(useGSAP);
-  const dict = useDictionary("tech");
+  const { dictionary: dict } = useDictionary("tech");
 
   const icons = {
     nodejs: <FaNodeJs />,

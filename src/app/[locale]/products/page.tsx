@@ -38,9 +38,9 @@ const ProductsPage = async ({ params }: Props) => {
 
   return (
     <main className="mx-auto text-white relative overflow-x-hidden">
-      {/* <Suspense fallback={<Loading />}> */}
-      <HorizontalScrollCards items={CRMData} />
-      {/* </Suspense> */}
+      <Suspense fallback={<Loading />}>
+        <HorizontalScrollCards items={CRMData} />
+      </Suspense>
     </main>
   );
 };

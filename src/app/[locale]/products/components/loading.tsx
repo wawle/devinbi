@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import Image from "next/image";
 import React from "react";
 
 const Loading = () => {

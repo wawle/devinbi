@@ -13,7 +13,7 @@ import StarGrid from "@/components/star-grid";
 const Hero = () => {
   const container = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const dict = useDictionary("hero");
+  const { dictionary: dict } = useDictionary("hero");
   gsap.registerPlugin(useGSAP);
 
   useGSAP(
