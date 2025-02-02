@@ -1,76 +1,81 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { defaultLocale, locales } from "./lib/locales";
-
-const LOCALE_COOKIE = "NEXT_LOCALE";
+import { Locale, locales } from "./lib/locales";
+import { cookies } from "next/headers";
 
 export function middleware(request: NextRequest) {
+  return localeMiddleware(request);
+}
+
+const localeMiddleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
 
-  // Ignore non-page routes
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.includes("/favicon.ico") ||
-    pathname.includes(".")
-  ) {
+  console.log({ pathname });
+
+  // Path'den locale bilgisini al
+  const pathLocale = pathname.split("/")[1];
+
+  // Eğer path'de geçerli bir locale varsa, devam et
+  if (locales.includes(pathLocale as any)) {
+    await setLocaleCookie(pathLocale as Locale);
     return NextResponse.next();
   }
 
-  // Get the pathname locale
-  const pathLocale = pathname.split("/")[1];
+  // Locale belirleme
+  const locale = await getLocale(request);
 
-  // Create URL for response
+  // Yeni URL oluştur ve locale ekle
+  const url = getUrl(request, locale);
+
+  console.log({ url });
+
+  return NextResponse.redirect(url);
+};
+
+const getUrl = (request: NextRequest, locale: Locale) => {
   const url = new URL(request.url);
+  url.pathname =
+    url.pathname === "/" ? `/${locale}` : `/${locale}${url.pathname}`;
 
-  // If path has valid locale
-  if (locales.includes(pathLocale as any)) {
-    const response = NextResponse.next();
+  return url;
+};
 
-    // Always ensure cookie matches path locale
-    response.cookies.set(LOCALE_COOKIE, pathLocale, {
-      path: "/",
-      maxAge: 60 * 60 * 24 * 365, // 1 year
-      sameSite: "strict",
-    });
+const getLocale = async (request: NextRequest): Promise<Locale> => {
+  let locale: Locale = "en";
+  const acceptLanguage = request.headers.get("accept-language");
+  const cookieLocale = await getLocaleCookie();
 
-    return response;
-  }
-
-  // If no valid locale in path, determine locale
-  let locale = defaultLocale;
-
-  // First try from cookie
-  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
-  if (cookieLocale && locales.includes(cookieLocale as any)) {
-    locale = cookieLocale;
-  } else {
-    // Then try from Accept-Language header
-    const acceptLanguage = request.headers.get("accept-language");
-    if (acceptLanguage) {
-      const browserLocale = acceptLanguage.split(",")[0].split("-")[0];
-      if (locales.includes(browserLocale as any)) {
-        locale = browserLocale;
-      }
+  if (cookieLocale) {
+    locale = cookieLocale as Locale;
+  } else if (acceptLanguage) {
+    const browserLocale = acceptLanguage.split(",")[0].split("-")[0];
+    if (locales.includes(browserLocale as any)) {
+      locale = browserLocale as Locale;
     }
   }
 
-  // Build new path with locale
-  url.pathname = pathname === "/" ? `/${locale}` : `/${locale}${pathname}`;
+  return locale;
+};
 
-  // Create response with redirect
-  const response = NextResponse.redirect(url);
+const getLocaleCookie = async () => {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("locale")?.value;
+  return locale;
+};
 
-  // Set cookie for future requests
-  response.cookies.set(LOCALE_COOKIE, locale, {
+const setLocaleCookie = async (locale: Locale) => {
+  const cookieStore = await cookies();
+  cookieStore.set("locale", locale, {
     path: "/",
     maxAge: 60 * 60 * 24 * 365, // 1 year
+    httpOnly: true,
     sameSite: "strict",
   });
-
-  return response;
-}
+};
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    // Sadece sayfa rotalarını yakala
+    "/((?!_next|api|favicon.ico|.*\\.).*)",
+  ],
 };

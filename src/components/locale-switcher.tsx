@@ -25,6 +25,7 @@ export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
   const handleLocaleChange = (locale: Locale) => {
     const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
     router.push(newPath);
+    router.refresh();
   };
 
   return (
