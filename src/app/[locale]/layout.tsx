@@ -5,7 +5,7 @@ import NavBar from "../../components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
-import { defaultLocale, Locale, locales } from "@/lib/locales";
+import { Locale, locales } from "@/lib/locales";
 
 const roboto = Roboto({
   weight: "400",
@@ -33,10 +33,9 @@ export default async function RootLayout({
   params: Params;
 }) {
   const { locale } = await params; // params asenkron olarak çözülüyor
-  const resolvedLocale = locale || defaultLocale;
 
   return (
-    <html suppressHydrationWarning lang={resolvedLocale}>
+    <html suppressHydrationWarning lang={locale}>
       <GoogleTagManager gtmId="G-B74KGSQKR5" />
       <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />
