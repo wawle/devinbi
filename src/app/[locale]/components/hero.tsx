@@ -66,7 +66,7 @@ const Hero = () => {
 
   return (
     <Bounded className="text-center relative py-0">
-      <div className="relative w-screen">
+      <div className="relative w-full">
         <StarGrid />
       </div>
       <div
