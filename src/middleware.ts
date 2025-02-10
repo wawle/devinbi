@@ -10,8 +10,6 @@ export function middleware(request: NextRequest) {
 const localeMiddleware = async (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
 
-  console.log({ pathname });
-
   // Path'den locale bilgisini al
   const pathLocale = pathname.split("/")[1];
 
@@ -26,8 +24,6 @@ const localeMiddleware = async (request: NextRequest) => {
 
   // Yeni URL oluştur ve locale ekle
   const url = getUrl(request, locale);
-
-  console.log({ url });
 
   return NextResponse.redirect(url);
 };
