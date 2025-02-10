@@ -7,6 +7,8 @@ import { sendContact } from "@/lib/actions/contact";
 import FormInput from "@/components/form/form-input";
 import { Textarea } from "@/components/ui/textarea";
 import { SubmitButton } from "@/components/form/submit-button";
+import { useParams } from "next/navigation";
+import { Locale } from "@/lib/locales";
 
 interface Props {
   dict: Record<string, string> | null;
@@ -14,8 +16,11 @@ interface Props {
 }
 
 export default function ContactForm({ className, dict }: Props) {
-  const [state, action] = useActionState<ContactFormState>(
-    sendContact as any,
+  const { locale } = useParams();
+  const [state, action] = useActionState<ContactFormState, FormData>(
+    (prevState: ContactFormState | undefined, formData: FormData) => {
+      return sendContact(prevState, formData, locale as Locale);
+    },
     undefined
   );
 
@@ -35,6 +40,7 @@ export default function ContactForm({ className, dict }: Props) {
             autoCapitalize="none"
             autoComplete="name"
             error={state?.errors?.name?.[0]}
+            defaultValue={state?.data?.name || ""}
             className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
@@ -46,6 +52,7 @@ export default function ContactForm({ className, dict }: Props) {
             autoCapitalize="none"
             autoComplete="surname"
             error={state?.errors?.surname?.[0]}
+            defaultValue={state?.data?.surname || ""}
             className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
@@ -57,6 +64,7 @@ export default function ContactForm({ className, dict }: Props) {
             autoCapitalize="none"
             autoComplete="email"
             error={state?.errors?.email?.[0]}
+            defaultValue={state?.data?.email || ""}
             className="w-full py-6 placeholder:font-semibold border-slate-100/20 focus:border-input"
           />
           <FormInput
@@ -71,6 +79,7 @@ export default function ContactForm({ className, dict }: Props) {
               <Textarea
                 name="message"
                 placeholder={dict?.message || "Message"}
+                defaultValue={state?.data?.message || ""}
                 className="min-h-32 w-full font-semibold border-slate-100/20 focus:border-input"
               />
             )}
@@ -79,7 +88,7 @@ export default function ContactForm({ className, dict }: Props) {
           <div className="col-span-3 flex w-full justify-center">
             <SubmitButton
               className="w-full max-w-xs rounded-full py-6 hover:animate-pulse"
-              title="Gönder"
+              title={dict?.send || "Send"}
             />
           </div>
         </div>

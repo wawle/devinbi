@@ -1,13 +1,14 @@
 import { z } from "zod";
 
-export const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "İsim alanı boş bırakılamaz" }),
-  surname: z.string().min(2, { message: "Soyisim alanı boş bırakılamaz" }),
-  email: z.string().email({ message: "Lütfen geçerli bir email giriniz" }),
-  message: z.string().min(10, {
-    message: "Mesaj uzunluğu minimum 10 karakter olamak zorunda",
-  }),
-});
+export const contactFormSchema = (dict: any) =>
+  z.object({
+    name: z.string().min(1, { message: dict.nameRequired }),
+    surname: z.string().min(1, { message: dict.surnameRequired }),
+    email: z.string().email({ message: dict.emailInvalid }),
+    message: z.string().min(10, {
+      message: dict.messageMin,
+    }),
+  });
 
 export type ContactFormState =
   | {
@@ -18,5 +19,11 @@ export type ContactFormState =
         message?: string[];
       };
       message?: string;
+      data?: {
+        name?: string;
+        surname?: string;
+        email?: string;
+        message?: string;
+      };
     }
   | undefined;

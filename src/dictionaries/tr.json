@@ -38,7 +38,13 @@
     "surname": "Soyisim",
     "email": "E-posta",
     "message": "Mesaj",
-    "send": "Gönder"
+    "send": "Gönder",
+    "nameRequired": "İsim alanı boş bırakılamaz",
+    "surnameRequired": "Soyisim alanı boş bırakılamaz",
+    "emailInvalid": "Lütfen geçerli bir email giriniz",
+    "messageMin": "Mesaj uzunluğu minimum 10 karakter olamak zorunda",
+    "success": "Mesajınız başarıyla gönderildi",
+    "error": "Mesaj gönderilirken bir hata oluştu"
   },
   "products": {
     "crmTitle1": "İşlerinizi kolaylıkla yönetin",

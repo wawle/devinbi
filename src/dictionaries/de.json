@@ -6,64 +6,70 @@
     "contact": "KONTAKT"
   },
   "common": {
-    "contactButton": "Kontaktieren Sie uns"
+    "contactButton": "Kontakt aufnehmen"
   },
   "tech": {
     "title": "Die Zukunft der Software gestalten"
   },
   "hero": {
     "title": "Intelligente Lösungen",
-    "description": "Devinbi bietet KI-gestützte Softwarelösungen, die Ihr Unternehmen auf die nächste Stufe bringen. Beschleunigen Sie Ihre Arbeitsabläufe und seien Sie mit unseren dynamischen und benutzerzentrierten Designs bereit für die Zukunft."
+    "description": "Devinbi bietet KI-gestützte Softwarelösungen, die Ihr Unternehmen auf die nächste Stufe heben. Beschleunigen Sie Ihre Arbeitsabläufe und seien Sie mit unseren dynamischen und benutzerorientierten Designs für die Zukunft gerüstet."
   },
   "bento": {
     "titleFirst": "Mit modernster",
     "titleGreen": "Next-Generation",
-    "titleLast": "Softwarelösungen",
+    "titleLast": "Software-Lösungen",
     "featureMobileTitle": "Mobile Anwendungen",
-    "featureMobileContent": "Wir entwickeln benutzerfreundliche und funktionale mobile Anwendungen mit modernster Technologie, damit Sie Ihre Zielgruppe einfach erreichen können.",
+    "featureMobileContent": "Wir entwickeln benutzerfreundliche und funktionale mobile Anwendungen mit modernen Technologien, damit Sie Ihre Zielgruppe einfach erreichen können.",
 
     "featureWebTitle": "Webanwendungen und Websites",
-    "featureWebContent": "Wir entwerfen und entwickeln schnelle und beeindruckende Webanwendungen und Websites, die die digitale Präsenz Ihres Unternehmens stärken.",
+    "featureWebContent": "Wir gestalten und entwickeln schnelle und wirkungsvolle Webanwendungen und Websites, die die digitale Präsenz Ihres Unternehmens stärken.",
 
     "featureAiTitle": "KI-gestützte intelligente Lösungen",
-    "featureAiContent": "Mit KI-gestützten Technologien bieten wir überlegene Leistung in der Datenanalyse und Automatisierung, um Ihre Wettbewerbsfähigkeit zu steigern.",
+    "featureAiContent": "Mit KI-gestützten Technologien bieten wir überlegene Leistung in der Datenanalyse und bei Automatisierungsprozessen, um Ihre Wettbewerbsfähigkeit zu steigern.",
 
     "featureSecurityTitle": "Schnelle und sichere Entwicklung",
-    "featureSecurityContent": "Mit schneller Prototypenentwicklung und sicheren Softwareentwicklungsprozessen liefern wir Ihre Projekte termingerecht und in höchster Qualität."
+    "featureSecurityContent": "Mit schnellen Prototyping- und sicheren Softwareentwicklungsprozessen liefern wir Ihre Projekte pünktlich und in höchster Qualität."
   },
   "contact": {
-    "ideas": "Lassen Sie uns gemeinsam daran arbeiten, Ihre Ideen in die Realität umzusetzen!",
-    "getInTouch": "Kontaktieren Sie uns",
+    "ideas": "Lassen Sie uns zusammenarbeiten, um Ihre Ideen Wirklichkeit werden zu lassen!",
+    "getInTouch": "Kontakt aufnehmen",
     "name": "Name",
     "surname": "Nachname",
     "email": "E-Mail",
     "message": "Nachricht",
-    "send": "Senden"
+    "send": "Senden",
+    "nameRequired": "Das Namensfeld darf nicht leer sein",
+    "surnameRequired": "Das Nachnamenfeld darf nicht leer sein",
+    "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet",
+    "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten"
   },
   "products": {
-    "crmTitle1": "Verwalten Sie Ihre Arbeit mühelos",
-    "crmContent1": "Verwalten Sie alle Kundenbeziehungen und Projekte auf einer einzigen Plattform, um Ihre Arbeitsabläufe effizienter zu gestalten. Organisieren Sie Kommunikations-, Nachverfolgungs- und Berichtserstellungsprozesse ganz einfach.",
+    "crmTitle1": "Verwalten Sie Ihre Arbeit einfach",
+    "crmContent1": "Verwalten Sie alle Ihre Kundenbeziehungen und Projekte auf einer einzigen Plattform, um Ihre Arbeitsabläufe effizienter zu gestalten. Organisieren Sie Kommunikations-, Tracking- und Berichtsprozesse einfach.",
 
     "crmTitle2": "Effizientes Kundenmanagement",
     "crmContent2": "Stärken Sie Ihre Kundenbeziehungen, verfolgen Sie vergangene Interaktionen und entwickeln Sie personalisierte Strategien für jeden Kunden. CRM trägt zum Wachstum Ihres Unternehmens bei.",
 
-    "crmTitle3": "Einfache Nachverfolgung und Berichterstellung",
-    "crmContent3": "Verfolgen Sie Ihre Verkaufsprozesse und Kundeninteraktionen einfach über ein zentrales Panel. Bestimmen Sie mit Analysen und Berichten die Ausrichtung Ihres Unternehmens.",
+    "crmTitle3": "Einfaches Tracking und Reporting",
+    "crmContent3": "Verfolgen Sie Ihre Verkaufsprozesse und Kundeninteraktionen einfach über ein einziges Panel. Bestimmen Sie die Richtung Ihres Unternehmens mit Analysen und Berichten.",
 
-    "crmTitle4": "Wachstum mit integrierten Lösungen",
+    "crmTitle4": "Wachsen mit integrierten Lösungen",
     "crmContent4": "Integrieren Sie Ihr CRM-System mit anderer Unternehmenssoftware. Sparen Sie Zeit in Ihren Arbeitsabläufen und treffen Sie intelligentere Entscheidungen."
   },
   "services": {
-    "title": "Professionelle Softwaredienstleistungen",
+    "title": "Professionelle Software-Dienstleistungen",
     "description": "Wir bieten maßgeschneiderte Lösungen, die Ihr Unternehmen in der digitalen Welt einen Schritt voranbringen.",
 
     "startupTitle": "Startup-Lösungen",
-    "startupContent": "Wir bieten alle Softwareunterstützung, die Sie für Ihr neues Unternehmen benötigen. Von der MVP-Entwicklung bis hin zu skalierbaren Anwendungen unterstützen wir das Wachstum Ihres Startups.",
+    "startupContent": "Wir bieten alle Software-Unterstützung, die Sie für Ihr neues Unternehmen benötigen. Von der MVP-Entwicklung bis hin zu skalierbaren Anwendungen unterstützen wir das Wachstum Ihres Startups.",
 
-    "enterpriseTitle": "Unternehmenssoftwarelösungen",
+    "enterpriseTitle": "Enterprise-Softwarelösungen",
     "enterpriseContent": "Wir entwickeln skalierbare und sichere Softwarelösungen, die auf die Bedürfnisse Ihres Unternehmens zugeschnitten sind. Wir bieten maßgeschneiderte Anwendungen, die Ihre Geschäftsprozesse optimieren und Ihre Effizienz steigern.",
 
-    "webTitle": "Individuelle Webanwendungen",
+    "webTitle": "Maßgeschneiderte Webanwendungen",
     "webContent": "Benutzerfreundliche und leistungsstarke Webanwendungen, entwickelt mit modernen Technologien. Wir unterstützen die digitale Transformation Ihres Unternehmens bestmöglich.",
 
     "mobileTitle": "Mobile App-Entwicklung",
