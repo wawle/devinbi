@@ -16,18 +16,22 @@ const Bento = () => {
 
   return (
     <Bounded className="text-center py-0 pb-10">
-      <div className="space-y-12 ">
-        <div className="relative w-screen">
+      <div className="space-y-12 w-full">
+        <div className="relative w-full">
           <StarGrid />
         </div>
 
-        <h1 className="mt-4 space-y-12 z-10 text-center text-4xl font-bold text-white md:text-5xl">
-          {dict?.titleFirst} <br />
-          <em className="bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic text-transparent">
-            {dict?.titleGreen}
-          </em>{" "}
-          {dict?.titleLast}
-        </h1>
+        {!dict ? (
+          <Skeleton className="h-24 w-full" />
+        ) : (
+          <h1 className="mt-4 space-y-12 z-10 text-center text-4xl font-bold text-white md:text-5xl">
+            {dict?.titleFirst} <br />
+            <em className="bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic text-transparent">
+              {dict?.titleGreen}
+            </em>{" "}
+            {dict?.titleLast}
+          </h1>
+        )}
 
         <div className="grid max-w-4xl mx-auto px-4 gap-8 text-white md:gap-10 lg:grid-cols-2 w-full">
           {features.map((feature, index) => (
