@@ -78,7 +78,7 @@ const Hero = () => {
   // Prevent hydration mismatch by not rendering content until mounted
   if (!isMounted) {
     return (
-      <Bounded className="text-center relative py-0">
+      <Bounded className="text-center relative py-0 overflow-hidden">
         <div className="relative w-full">
           <StarGrid />
         </div>
@@ -100,7 +100,7 @@ const Hero = () => {
   }
 
   return (
-    <Bounded className="text-center relative py-0">
+    <Bounded className="text-center relative py-0 overflow-hidden">
       <div className="relative w-full">
         <StarGrid />
       </div>
