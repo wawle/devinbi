@@ -25,7 +25,14 @@ const localeMiddleware = async (request: NextRequest) => {
   // Yeni URL oluştur ve locale ekle
   const url = getUrl(request, locale);
 
-  return NextResponse.redirect(url);
+  // 301 (permanent) redirect kullanarak SEO dostu yönlendirme yap
+  return NextResponse.redirect(url, {
+    status: 301,
+    headers: {
+      "Cache-Control": "public, max-age=31536000",
+      Vary: "Accept-Language",
+    },
+  });
 };
 
 const getUrl = (request: NextRequest, locale: Locale) => {

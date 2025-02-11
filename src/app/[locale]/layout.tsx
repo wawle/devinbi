@@ -13,11 +13,27 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Devinbi",
-  description:
-    "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const { locale } = params;
+
+  return {
+    title: "Devinbi",
+    description:
+      "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+    alternates: {
+      canonical: `https://devinbi.com/${locale}`,
+      languages: {
+        en: `https://devinbi.com/en`,
+        tr: `https://devinbi.com/tr`,
+        de: `https://devinbi.com/de`,
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
