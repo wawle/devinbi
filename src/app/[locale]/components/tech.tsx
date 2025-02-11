@@ -150,7 +150,11 @@ const Tech = () => {
                 {item.icon && icons[item.icon as keyof typeof icons]}
               </div>
               {index !== tech.length - 1 && (
-                <div className={cn("signal-line")} />
+                <div
+                  className={cn("signal-line", {
+                    "rotate-180": index >= Math.floor(tech.length / 2),
+                  })}
+                />
               )}
             </React.Fragment>
           ))}

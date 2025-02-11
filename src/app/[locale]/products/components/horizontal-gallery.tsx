@@ -37,27 +37,30 @@ export const HorizontalScrollCards: React.FC<
         scrollTriggerInstance.kill();
       }
 
-      const cards = section.querySelectorAll(".card");
-      let totalWidth = 0;
-      cards.forEach((card) => {
-        totalWidth += (card as HTMLElement).offsetWidth + 34;
-      });
+      // Only apply GSAP animation for desktop screens
+      if (window.innerWidth >= 1024) {
+        const cards = section.querySelectorAll(".card");
+        let totalWidth = 0;
+        cards.forEach((card) => {
+          totalWidth += (card as HTMLElement).offsetWidth + 34;
+        });
 
-      gsap.to(section, {
-        x: () => -(totalWidth - document.documentElement.clientWidth),
-        ease: "none",
-        scrollTrigger: {
-          trigger: trigger,
-          start: "top top",
-          end: () =>
-            `+=${totalWidth - document.documentElement.clientWidth}`,
-          scrub: 0.5,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
+        gsap.to(section, {
+          x: () => -(totalWidth - document.documentElement.clientWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: trigger,
+            start: "top top",
+            end: () =>
+              `+=${totalWidth - document.documentElement.clientWidth}`,
+            scrub: 0.5,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
 
-      scrollTriggerInstance = ScrollTrigger.getAll().slice(-1)[0];
+        scrollTriggerInstance = ScrollTrigger.getAll().slice(-1)[0];
+      }
     };
 
     // Initial creation
@@ -85,15 +88,18 @@ export const HorizontalScrollCards: React.FC<
 
   return (
     <div className="overflow-hidden px-4 md:px-6">
-      <div ref={triggerRef} className="h-screen w-full">
+      <div
+        ref={triggerRef}
+        className="h-[calc(100vh-178px)] lg:h-screen w-full"
+      >
         <div
           ref={sectionRef}
-          className="flex gap-8 h-screen items-center will-change-transform"
+          className="flex gap-8 h-[calc(100vh-178px)] lg:h-screen items-center will-change-transform lg:transform lg:translate-x-0 overflow-x-auto touch-pan-x lg:overflow-x-hidden"
         >
           {items.map((item, index) => (
             <Card
               key={index}
-              className="card flex-shrink-0 w-[80vw] max-w-lg h-[70vh] max-h-[750px] bg-transparent border-white/20"
+              className="card flex-shrink-0 w-[80vw] max-w-lg h-[70vh] max-h-[750px] bg-transparent border-white/20 snap-center"
             >
               <CardContent className="flex flex-col h-full text-center">
                 <div className="relative w-full h-2/3">

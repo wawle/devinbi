@@ -33,7 +33,7 @@ export async function sendMail({
       "Something Went Wrong",
       SMTP_SERVER_USERNAME,
       SMTP_SERVER_PASSWORD,
-      error,
+      error
     );
     return;
   }
@@ -44,7 +44,5 @@ export async function sendMail({
     text: text,
     html: html ? html : "",
   });
-  console.log("Message Sent", info.messageId);
-  console.log("Mail sent to", SITE_MAIL_RECIEVER);
   return info;
 }

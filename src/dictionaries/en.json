@@ -38,7 +38,13 @@
     "surname": "Surname",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "nameRequired": "Name field cannot be empty",
+    "surnameRequired": "Surname field cannot be empty",
+    "emailInvalid": "Please enter a valid email",
+    "messageMin": "Message must be at least 10 characters long",
+    "success": "Your message has been sent successfully",
+    "error": "An error occurred while sending your message"
   },
   "products": {
     "crmTitle1": "Manage Your Work Easily",
