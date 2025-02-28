@@ -30,14 +30,21 @@ jobs:
           if [ "$BRANCH" == "dev" ]; then
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
-              git pull origin dev && \
+              git pull origin dev
 
-              # Build the Docker image (you can specify the exact tag)
+              echo '📌 Docker Temizliği Başlıyor...'
+              docker stop devinbi_test || true
+              docker rm devinbi_test || true
+              docker container prune -f
+              docker image prune -a -f
+              docker volume prune -f
+              docker builder prune -a -f
+              docker network prune -f
+              docker system prune -a --volumes -f
+              echo '✅ Docker Temizliği Tamamlandı.'
+
+              # Build the Docker image
               docker build -t devinbi_test:latest .
-
-              # Stop and remove the old container
-              docker stop devinbi_test
-              docker rm devinbi_test
 
               # Run a new container with the latest image
               docker run -d -p 3001:3000 --name devinbi_test devinbi_test:latest
@@ -45,14 +52,21 @@ jobs:
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
               cd /var/www/prod/devinbi && \
-              git pull origin main && \
+              git pull origin main
               
-              # Build the Docker image (you can specify the exact tag)
-              docker build -t devinbi_prod:latest .
+              echo '📌 Docker Temizliği Başlıyor...'
+              docker stop devinbi_prod || true
+              docker rm devinbi_prod || true
+              docker container prune -f
+              docker image prune -a -f
+              docker volume prune -f
+              docker builder prune -a -f
+              docker network prune -f
+              docker system prune -a --volumes -f
+              echo '✅ Docker Temizliği Tamamlandı.'
 
-              # Stop and remove the old container
-              docker stop devinbi_prod
-              docker rm devinbi_prod
+              # Build the Docker image
+              docker build -t devinbi_prod:latest .
 
               # Run a new container with the latest image
               docker run -d -p 3000:3000 --name devinbi_prod devinbi_prod:latest
