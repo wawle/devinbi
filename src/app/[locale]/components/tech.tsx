@@ -129,7 +129,6 @@ const Tech = () => {
   return (
     <Bounded className="relative overflow-hidden">
       <StarBackground />
-
       <div className="relative md:my-12 py-12 text-white flex flex-col gap-20 w-full">
         <h1 className="hero__heading text-balance text-center flex items-center justify-center text-4xl font-bold md:text-5xl h-[45px] md:h-[60px]">
           <span className="leading-tight">{dict?.title}</span>
