@@ -1,5 +1,7 @@
 import Link from "next/link";
 import AnimatedLogo from "./animated-logo";
+import Logo from "../../public/img/logo.png";
+import Image from "next/image";
 
 export default async function Footer() {
   // const dictionary = await getDictionary("navbar", locale);
@@ -10,7 +12,16 @@ export default async function Footer() {
       <div className="flex w-full max-w-7xl flex-col items-center justify-between md:flex-row px-4 md:px-6 py-4">
         <div className="flex items-center justify-between shrink-0">
           <Link className="z-50 text-3xl font-bold" href="/">
-            <AnimatedLogo />
+            <div className="flex items-center gap-2">
+              <Image
+                alt="Devinbi Logo"
+                height={50}
+                width={50}
+                src={Logo}
+              />
+              <AnimatedLogo />
+              <span className="sr-only">Devinbi Home Page</span>
+            </div>{" "}
           </Link>
         </div>
         {/* <nav aria-label="Footer" className="md:hidden">

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image, { StaticImageData } from "next/image";
 
 interface ProductGalleryProps {
+  productTitle: string;
   items: {
     src: StaticImageData;
     title: string;
@@ -12,10 +13,14 @@ interface ProductGalleryProps {
 }
 
 export const ProductGallery: React.FC<ProductGalleryProps> = ({
+  productTitle,
   items,
 }) => {
   return (
-    <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] flex justify-center items-center pb-2">
+    <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] flex flex-col justify-center items-center pb-2">
+      <h2 className="text-3xl font-bold my-2 text-brand-green">
+        {productTitle}
+      </h2>
       <div className="w-full h-full gap-4 flex items-center overflow-x-auto p-4">
         {items.map((item, index) => (
           <Card

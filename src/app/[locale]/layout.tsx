@@ -18,7 +18,7 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale };
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   return {
     title: "Devinbi",
