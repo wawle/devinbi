@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import CRMImage from "../../../../public/img/crm.png";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/lib/locales";
-import { HorizontalScrollCards } from "./components/horizontal-gallery";
 import Loading from "./components/loading";
+import { ProductGallery } from "./components/product-gallery";
 
 interface Props {
   params: Promise<{ locale: Locale }>;
@@ -39,7 +39,7 @@ const ProductsPage = async ({ params }: Props) => {
   return (
     <main className="mx-auto text-white relative overflow-x-hidden">
       <Suspense fallback={<Loading />}>
-        <HorizontalScrollCards items={CRMData} />
+        <ProductGallery items={CRMData} />
       </Suspense>
     </main>
   );
