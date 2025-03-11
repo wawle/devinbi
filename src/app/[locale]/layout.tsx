@@ -1,6 +1,7 @@
+import "../globals.css";
+
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
-import "../globals.css";
 import NavBar from "../../components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale };
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   return {
     title: "Devinbi",
