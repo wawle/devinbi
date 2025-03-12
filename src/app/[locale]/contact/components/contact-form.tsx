@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { ContactFormState } from "@/lib/schemas/contact";
 import { cn } from "@/lib/utils";
 import { sendContact } from "@/lib/actions/contact";
@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { SubmitButton } from "@/components/form/submit-button";
 import { useParams } from "next/navigation";
 import { Locale } from "@/lib/locales";
+import { toast } from "sonner";
 
 interface Props {
   dict: Record<string, string> | null;
@@ -18,11 +19,22 @@ interface Props {
 export default function ContactForm({ className, dict }: Props) {
   const { locale } = useParams();
   const [state, action] = useActionState<ContactFormState, FormData>(
-    (prevState: ContactFormState | undefined, formData: FormData) => {
-      return sendContact(prevState, formData, locale as Locale);
+    (state: ContactFormState, formData: FormData) => {
+      return sendContact(formData, locale as Locale);
     },
     undefined
   );
+
+  useEffect(() => {
+    if (state?.message == "success") {
+      toast.success(dict?.success || "Message sent successfully");
+    }
+    if (state?.message == "error") {
+      toast.error(
+        dict?.error || "An error occurred while sending the message"
+      );
+    }
+  }, [state, dict]);
 
   return (
     <div className="flex h-fit w-full justify-center z-10 bg-black/70">

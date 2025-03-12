@@ -1,6 +1,5 @@
 "use server";
 
-import { toast } from "sonner";
 import { contactFormSchema, ContactFormState } from "../schemas/contact";
 import { sendMail } from "./mail";
 import { getDictionary } from "../dictionary";
@@ -17,7 +16,6 @@ interface ContactDictionary {
 }
 
 export async function sendContact(
-  previousState: ContactFormState,
   formData: FormData,
   locale: Locale = "tr"
 ): Promise<ContactFormState> {
@@ -54,16 +52,10 @@ export async function sendContact(
     text: mailText,
   });
 
-  if (response?.messageId) {
-    toast.success(dict.success || "Message sent successfully");
-  } else {
-    toast.error(
-      dict.error || "An error occurred while sending the message"
-    );
-  }
-
   return {
-    data: formBody,
+    data: response?.messageId
+      ? { name: "", surname: "", email: "", message: "" }
+      : formBody,
     message: response?.messageId ? "success" : "error",
   };
 }
