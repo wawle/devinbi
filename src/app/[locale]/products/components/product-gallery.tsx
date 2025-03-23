@@ -36,6 +36,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
                   className="object-contain rounded-t-xl"
                 />
               </div>
+
               <div className="p-6 text-white">
                 <h3 className="text-2xl font-bold mb-4 text-green-500">
                   {item.title}
