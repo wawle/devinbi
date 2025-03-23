@@ -25,17 +25,17 @@ const ContactHero = () => {
         <Loading />
       ) : (
         <div className="flex w-full flex-col items-center justify-center gap-8 p-12">
-          <h2 className="text-4xl font-bold md:text-5xl md:leading-relaxed bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text text-transparent">
+          <h2 className="text-3xl xl:text-4xl font-bold md:text-5xl md:leading-relaxed bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text text-transparent">
             {dict?.getInTouch}
           </h2>
-          <div className="flex w-full max-w-lg flex-col items-center justify-center text-center text-xl lg:max-w-xl">
+          <div className="flex w-full max-w-lg flex-col items-center justify-center text-center text-lg xl:text-xl lg:max-w-xl">
             {words ? (
               <TextGenerateEffect
-                className="text-3xl leading-normal text-white dark:text-white mt-0"
+                className="text-2xl xl:text-3xl leading-normal text-white dark:text-white mt-0"
                 words={dict?.ideas}
               />
             ) : (
-              <p className="text-3xl leading-normal text-white dark:text-white">
+              <p className="text-2xl xl:text-3xl leading-normal text-white dark:text-white">
                 {dict?.ideas}
               </p>
             )}

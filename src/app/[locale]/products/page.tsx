@@ -40,7 +40,7 @@ const ProductsPage = async ({ params }: Props) => {
   };
 
   return (
-    <main className="mx-auto text-white relative overflow-x-hidden">
+    <main className="mx-auto text-white relative overflow-x-hidden py-12">
       <Suspense fallback={<Loading />}>
         <ProductGallery
           productTitle={CRMData.productTitle}
