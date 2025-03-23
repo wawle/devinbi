@@ -18,7 +18,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
 }) => {
   return (
     <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] flex flex-col justify-center items-center pb-2">
-      <h2 className="text-3xl font-bold my-2 text-brand-green">
+      <h2 className="text-3xl font-bold my-6 text-brand-green">
         {productTitle}
       </h2>
       <div className="w-full h-full gap-4 flex items-center overflow-x-auto p-4">
