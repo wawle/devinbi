@@ -1,7 +1,7 @@
 import "../globals.css";
 
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import NavBar from "../../components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
@@ -55,6 +55,7 @@ export default async function RootLayout({
   return (
     <html suppressHydrationWarning lang={locale}>
       <GoogleTagManager gtmId="GTM-WG2FMNW9" />
+      <GoogleAnalytics gaId="G-B74KGSQKR5" />
       <Script id="clarity-script" strategy="afterInteractive">
         {`
             (function(c,l,a,r,i,t,y){
