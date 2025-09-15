@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
 import { Locale, locales } from "@/lib/locales";
+import Script from "next/script";
 
 const roboto = Roboto({
   weight: "400",
@@ -53,7 +54,16 @@ export default async function RootLayout({
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <GoogleTagManager gtmId="G-B74KGSQKR5" />
+      <GoogleTagManager gtmId="GTM-WG2FMNW9" />
+      <Script id="clarity-script" strategy="afterInteractive">
+        {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");
+          `}
+      </Script>
       <body className={`${roboto.className} bg-black antialiased`}>
         <NavBar />
         <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] bg-black">
