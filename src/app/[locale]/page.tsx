@@ -2,15 +2,8 @@ import Bento from "./components/bento";
 import Hero from "./components/hero";
 import Tech from "./components/tech";
 import { Metadata } from "next";
-import { Locale } from "@/lib/locales";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: Locale };
-}): Promise<Metadata> {
-  const { locale } = await params;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Devinbi - Innovative Software Solutions",
     description:

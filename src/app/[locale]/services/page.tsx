@@ -3,15 +3,8 @@ import Hero from "./components/hero";
 import Bounded from "@/components/bounded";
 import StarGrid from "@/components/star-grid";
 import { Metadata } from "next";
-import { Locale } from "@/lib/locales";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: Locale };
-}): Promise<Metadata> {
-  const { locale } = await params;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Our Services",
     description:

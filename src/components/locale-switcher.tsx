@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Globe } from "lucide-react";
+import { Languages } from "lucide-react";
 
 interface LocaleSwitcherProps {
   currentLocale: Locale;
@@ -37,7 +37,7 @@ export const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
             variant="ghost"
             size="icon"
           >
-            <Globe />
+            <Languages />
             <span className="sr-only">Locale Change</span>
           </Button>
         </DropdownMenuTrigger>

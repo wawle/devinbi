@@ -3,15 +3,8 @@ import React from "react";
 import ContactHero from "./components/hero";
 import StarGrid from "@/components/star-grid";
 import { Metadata } from "next";
-import { Locale } from "@/lib/locales";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: Locale };
-}): Promise<Metadata> {
-  const { locale } = await params;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Contact Us",
     description:
