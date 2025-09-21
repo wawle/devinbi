@@ -45,7 +45,7 @@ jobs:
               docker build -t devinbi_prod:latest . && \
               docker stop devinbi_prod || true && \
               docker rm devinbi_prod || true && \
-              docker run -d -p 3000:3000 --name devinbi_prod --restart unless-stopped -e NODE_ENV=production investbi_next_prod:latest && \
+              docker run -d -p 3000:3000 --name devinbi_prod --restart unless-stopped -e NODE_ENV=production devinbi_prod:latest && \
               docker image prune -f && \
               docker system prune -a --volumes -f
             "
