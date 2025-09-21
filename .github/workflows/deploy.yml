@@ -31,44 +31,22 @@ jobs:
             ssh $USER@$SERVER "
               cd /var/www/test/devinbi && \
               git pull origin dev
-
-              echo '📌 Docker Temizliği Başlıyor...'
-              docker stop devinbi_test || true
-              docker rm devinbi_test || true
-              docker container prune -f
-              docker image prune -a -f
-              docker volume prune -f
-              docker builder prune -a -f
-              docker network prune -f
+              docker build -t devinbi_test:latest . && \
+              docker stop devinbi_test || true && \
+              docker rm devinbi_test || true && \
+              docker run -d -p 3001:3000 --name devinbi_test --restart unless-stopped -e NODE_ENV=production devinbi_test:latest && \
+              docker image prune -f && \
               docker system prune -a --volumes -f
-              echo '✅ Docker Temizliği Tamamlandı.'
-
-              # Build the Docker image
-              docker build -t devinbi_test:latest .
-
-              # Run a new container with the latest image
-              docker run -d -p 3001:3000 --name devinbi_test devinbi_test:latest
             "
           elif [ "$BRANCH" == "main" ]; then
             ssh $USER@$SERVER "
               cd /var/www/prod/devinbi && \
               git pull origin main
-              
-              echo '📌 Docker Temizliği Başlıyor...'
-              docker stop devinbi_prod || true
-              docker rm devinbi_prod || true
-              docker container prune -f
-              docker image prune -a -f
-              docker volume prune -f
-              docker builder prune -a -f
-              docker network prune -f
+              docker build -t devinbi_prod:latest . && \
+              docker stop devinbi_prod || true && \
+              docker rm devinbi_prod || true && \
+              docker run -d -p 3000:3000 --name devinbi_prod --restart unless-stopped -e NODE_ENV=production investbi_next_prod:latest && \
+              docker image prune -f && \
               docker system prune -a --volumes -f
-              echo '✅ Docker Temizliği Tamamlandı.'
-
-              # Build the Docker image
-              docker build -t devinbi_prod:latest .
-
-              # Run a new container with the latest image
-              docker run -d -p 3000:3000 --name devinbi_prod devinbi_prod:latest
             "
           fi
