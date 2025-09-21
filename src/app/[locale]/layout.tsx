@@ -22,64 +22,70 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devinbi.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Devinbi";
+  const siteDescription =
+    process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
+    "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.";
+  const siteKeywords = process.env.NEXT_PUBLIC_SITE_KEYWORDS?.split(",") || [
+    "software development",
+    "web development",
+    "mobile app development",
+    "custom software",
+    "technology solutions",
+    "digital transformation",
+    "Devinbi",
+  ];
+  const twitterHandle = process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@devinbi";
+  const twitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE || "@devinbi";
+
   return {
     title: {
-      default: "Devinbi - Innovative Software Solutions",
-      template: "%s | Devinbi",
+      default: `${siteName} - Innovative Software Solutions`,
+      template: `%s | ${siteName}`,
     },
-    description:
-      "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
-    keywords: [
-      "software development",
-      "web development",
-      "mobile app development",
-      "custom software",
-      "technology solutions",
-      "digital transformation",
-      "Devinbi",
-    ],
-    authors: [{ name: "Devinbi Team" }],
-    creator: "Devinbi",
-    publisher: "Devinbi",
+    description: siteDescription,
+    keywords: siteKeywords,
+    authors: [{ name: `${siteName} Team` }],
+    creator: siteName,
+    publisher: siteName,
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
-    metadataBase: new URL("https://devinbi.com"),
+    metadataBase: new URL(siteUrl),
     alternates: {
-      canonical: `https://devinbi.com/${locale}`,
+      canonical: `${siteUrl}/${locale}`,
       languages: {
-        en: `https://devinbi.com/en`,
-        tr: `https://devinbi.com/tr`,
-        de: `https://devinbi.com/de`,
+        en: `${siteUrl}/en`,
+        tr: `${siteUrl}/tr`,
+        de: `${siteUrl}/de`,
       },
     },
     openGraph: {
       type: "website",
       locale: locale,
-      url: `https://devinbi.com/${locale}`,
-      siteName: "Devinbi",
-      title: "Devinbi - Innovative Software Solutions",
-      description:
-        "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+      url: `${siteUrl}/${locale}`,
+      siteName: siteName,
+      title: `${siteName} - Innovative Software Solutions`,
+      description: siteDescription,
       images: [
         {
           url: "/img/logo.png",
           width: 1200,
           height: 630,
-          alt: "Devinbi - Innovative Software Solutions",
+          alt: `${siteName} - Innovative Software Solutions`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Devinbi - Innovative Software Solutions",
-      description:
-        "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+      title: `${siteName} - Innovative Software Solutions`,
+      description: siteDescription,
       images: ["/img/logo.png"],
-      creator: "@devinbi",
-      site: "@devinbi",
+      creator: twitterHandle,
+      site: twitterSite,
     },
     robots: {
       index: true,
@@ -93,9 +99,9 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: "your-google-verification-code",
-      yandex: "your-yandex-verification-code",
-      yahoo: "your-yahoo-verification-code",
+      google: process.env.GOOGLE_VERIFICATION_CODE,
+      yandex: process.env.YANDEX_VERIFICATION_CODE,
+      yahoo: process.env.YAHOO_VERIFICATION_CODE,
     },
   };
 }
@@ -117,8 +123,12 @@ export default async function RootLayout({
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <GoogleTagManager gtmId="GTM-WG2FMNW9" />
-      <GoogleAnalytics gaId="G-B74KGSQKR5" />
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID as string}
+      />
+      <GoogleAnalytics
+        gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string}
+      />
       <Script id="clarity-script" strategy="afterInteractive">
         {`
             (function(c,l,a,r,i,t,y){
