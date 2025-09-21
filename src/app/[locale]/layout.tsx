@@ -23,9 +23,30 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return {
-    title: "Devinbi",
+    title: {
+      default: "Devinbi - Innovative Software Solutions",
+      template: "%s | Devinbi",
+    },
     description:
       "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+    keywords: [
+      "software development",
+      "web development",
+      "mobile app development",
+      "custom software",
+      "technology solutions",
+      "digital transformation",
+      "Devinbi",
+    ],
+    authors: [{ name: "Devinbi Team" }],
+    creator: "Devinbi",
+    publisher: "Devinbi",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL("https://devinbi.com"),
     alternates: {
       canonical: `https://devinbi.com/${locale}`,
       languages: {
@@ -33,6 +54,48 @@ export async function generateMetadata({
         tr: `https://devinbi.com/tr`,
         de: `https://devinbi.com/de`,
       },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale,
+      url: `https://devinbi.com/${locale}`,
+      siteName: "Devinbi",
+      title: "Devinbi - Innovative Software Solutions",
+      description:
+        "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+      images: [
+        {
+          url: "/img/logo.png",
+          width: 1200,
+          height: 630,
+          alt: "Devinbi - Innovative Software Solutions",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Devinbi - Innovative Software Solutions",
+      description:
+        "Software company Devinbi offers cutting-edge web and mobile app solutions, leveraging modern technology for innovative, custom software development.",
+      images: ["/img/logo.png"],
+      creator: "@devinbi",
+      site: "@devinbi",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "your-google-verification-code",
+      yandex: "your-yandex-verification-code",
+      yahoo: "your-yahoo-verification-code",
     },
   };
 }
