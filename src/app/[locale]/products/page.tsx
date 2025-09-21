@@ -9,7 +9,7 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   await params;
 
@@ -49,12 +49,12 @@ export async function generateMetadata({
 }
 
 interface Props {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }
 
 const ProductsPage = async ({ params }: Props) => {
   const { locale } = await params;
-  const dict = await getDictionary("products", locale);
+  const dict = await getDictionary("products", locale as Locale);
 
   const CRMData = {
     productTitle: "Devin CRM",
