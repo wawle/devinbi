@@ -1,153 +1,117 @@
 "use client";
+import { motion } from "motion/react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
-import usePrefersReducedMotion from "@/hooks/use-prefers-reduced-motion";
-import { useGSAP } from "@gsap/react";
-import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
-import gsap from "gsap";
-import HeroImage from "../../../../public/img/monitoring.png";
-import Bounded from "@/components/bounded";
-import { useDictionary } from "@/hooks/use-dictionary";
-import StarGrid from "@/components/star-grid";
-import { Skeleton } from "@/components/ui/skeleton";
-
-const Hero = () => {
-  const container = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
-  const { dictionary: dict } = useDictionary("hero");
-  const [isMounted, setIsMounted] = useState(false);
-  gsap.registerPlugin(useGSAP);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useGSAP(
-    () => {
-      if (!isMounted) return;
-
-      if (prefersReducedMotion) {
-        gsap.set(
-          ".hero__heading, .hero__body, .hero__button, .hero__image, .hero__glow",
-          { opacity: 1 }
-        );
-        return;
-      }
-
-      const tl = gsap.timeline({ defaults: { ease: "power1.inOut" } });
-
-      // Heading animasyonu
-      tl.fromTo(
-        ".hero__heading",
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 }
-      );
-
-      // Body animasyonu
-      tl.fromTo(
-        ".hero__body",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=0.4"
-      );
-
-      // Button animasyonu
-      tl.fromTo(
-        ".hero__button",
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 }
-      );
-
-      // Image ve Glow animasyonları aynı anda başlar
-      tl.fromTo(
-        ".hero__image",
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=0.4"
-      );
-      tl.fromTo(
-        ".hero__glow",
-        { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8 },
-        "<"
-      );
-    },
-    { scope: container, dependencies: [dict, isMounted] }
-  );
-
-  // Prevent hydration mismatch by not rendering content until mounted
-  if (!isMounted) {
-    return (
-      <Bounded className="text-center relative py-0 overflow-hidden">
-        <div className="relative w-full">
-          <StarGrid />
-        </div>
-        <div className="relative w-full space-y-10 py-12 text-white overflow-hidden">
-          <div className="flex justify-center">
-            <Skeleton className="w-1/2 h-14" />
-          </div>
-          <div className="flex justify-center">
-            <Skeleton className="h-28 w-1/3" />
-          </div>
-          <div className="hero__image glass-container mt-10 w-full max-w-7xl">
-            <div className="relative aspect-square max-w-[600px] w-full mx-auto">
-              <Skeleton className="w-full h-full absolute" />
-            </div>
-          </div>
-        </div>
-      </Bounded>
-    );
-  }
-
+export function Hero() {
+  const router = useRouter();
   return (
-    <Bounded className="text-center relative py-0 overflow-hidden">
-      <div className="relative w-full">
-        <StarGrid />
-      </div>
-      <div
-        className="relative w-full space-y-10 py-12 text-white overflow-hidden"
-        ref={container}
-      >
-        {!dict ? (
-          <div className="flex justify-center">
-            <Skeleton className="w-1/2 h-14" />
-          </div>
-        ) : (
-          <h1 className="hero__heading text-balance text-4xl font-bold opacity-0 md:text-5xl">
-            <em className="bg-gradient-to-r from-green-400 to-[#008529] bg-clip-text not-italic leading-tight text-transparent">
-              {dict?.title}
-            </em>
-          </h1>
-        )}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
+          >
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm text-primary">AI-Powered Development</span>
+          </motion.div>
 
-        {!dict ? (
-          <div className="flex justify-center">
-            <Skeleton className="h-28 w-1/3" />
-          </div>
-        ) : (
-          <div className="hero__body clear-start mx-auto max-w-md text-balance text-lg opacity-0">
-            <p>{dict?.description}</p>
-          </div>
-        )}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+          >
+            Building Smarter
+            <br />
+            <span className="text-primary">Digital Experiences</span>
+            <br />
+            with AI
+          </motion.h1>
 
-        <div className="hero__image glass-container mt-10 w-full max-w-7xl opacity-0">
-          <div className="hero__glow absolute inset-0 -z-10 opacity-0 blur-2xl filter" />
-          <div className="relative aspect-square max-w-[600px] w-full mx-auto">
-            <Image
-              alt="Hero Image"
-              src={HeroImage}
-              className="object-contain"
-              priority
-              sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-              fill
-            />
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10"
+          >
+            We craft cutting-edge web and mobile applications from concept to
+            launch. Powered by artificial intelligence, scaled for the future.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Button
+              onClick={() => router.push("/contact")}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 group"
+            >
+              Start Your Project
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              onClick={() => router.push("/projects")}
+              size="lg"
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary/10 px-8 py-6"
+            >
+              View Our Work
+            </Button>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-20"
+          >
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                50+
+              </div>
+              <div className="text-sm text-gray-400">Projects Delivered</div>
+            </div>
+            <div className="text-center border-x border-white/10">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                15+
+              </div>
+              <div className="text-sm text-gray-400">AI Integrations</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                98%
+              </div>
+              <div className="text-sm text-gray-400">Client Satisfaction</div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </Bounded>
-  );
-};
 
-export default Hero;
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-1.5 bg-primary rounded-full"
+          />
+        </div>
+      </motion.div>
+    </section>
+  );
+}

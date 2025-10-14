@@ -1,8 +1,5 @@
-import ServicesList from "./components/services-list";
-import Hero from "./components/hero";
-import Bounded from "@/components/bounded";
-import StarGrid from "@/components/star-grid";
 import { Metadata } from "next";
+import { Services } from "../components/services";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -42,10 +39,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ServicesPage() {
   return (
-    <Bounded className="relative flex min-h-screen flex-col items-center justify-between py-12">
-      <StarGrid />
-      <Hero />
-      <ServicesList />
-    </Bounded>
+    <div className="pt-20">
+      <Services />
+    </div>
   );
 }

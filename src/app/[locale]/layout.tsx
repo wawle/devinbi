@@ -3,14 +3,15 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import NavBar from "../../components/navbar";
-import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
 import { Locale, locales } from "@/lib/locales";
 import Script from "next/script";
+import { Footer } from "@/components/footer";
+import { MatrixBackground } from "./components/matrix-background";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["100", "300", "500", "700", "900"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -139,6 +140,7 @@ export default async function RootLayout({
           `}
       </Script>
       <body className={`${roboto.className} bg-black antialiased`}>
+        <MatrixBackground />
         <NavBar />
         <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] bg-black">
           {children}

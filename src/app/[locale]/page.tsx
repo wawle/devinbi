@@ -1,7 +1,6 @@
-import Bento from "./components/bento";
-import Hero from "./components/hero";
-import Tech from "./components/tech";
 import { Metadata } from "next";
+import { Hero } from "./components/hero";
+import { About } from "./components/about";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -41,11 +40,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const Home = () => {
   return (
-    <div className="w-full">
-      <Tech />
+    <>
       <Hero />
-      <Bento />
-    </div>
+      <About />
+    </>
   );
 };
 

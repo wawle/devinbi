@@ -8,8 +8,8 @@ export const navbarItems = [
     dictionary: "services",
   },
   {
-    href: "/products",
-    dictionary: "products",
+    href: "/projects",
+    dictionary: "projects",
   },
   {
     href: "/contact",

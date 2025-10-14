@@ -1,8 +1,6 @@
-import Bounded from "@/components/bounded";
 import React from "react";
-import ContactHero from "./components/hero";
-import StarGrid from "@/components/star-grid";
 import { Metadata } from "next";
+import { Contact } from "../components/contact";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -42,10 +40,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const ContactPage = () => {
   return (
-    <Bounded className="relative text-white py-12">
-      <StarGrid />
-      <ContactHero />
-    </Bounded>
+    <>
+      <Contact />
+    </>
   );
 };
 

@@ -38,7 +38,8 @@ const AnimatedLogo = ({ logoText = "Devin", className }: Props) => {
   return (
     <p
       className={
-        (cn("inline-flex gap-1 justify-center items-center"), className)
+        (cn("inline-flex gap-1 justify-center items-center text-white"),
+        className)
       }
     >
       {logoText}
