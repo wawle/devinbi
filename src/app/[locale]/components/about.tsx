@@ -126,7 +126,7 @@ export function About() {
             </div>
             <div className="relative">
               <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">5+</div>
+                <div className="text-5xl font-bold text-primary mb-2">9+</div>
                 <div className="text-gray-300">Years Experience</div>
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl" />

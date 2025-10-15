@@ -82,7 +82,7 @@ export function MatrixBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ opacity: 0.25, zIndex: 1 }}
+      style={{ opacity: 0.15, zIndex: 1 }}
     />
   );
 }

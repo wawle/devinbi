@@ -15,7 +15,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 rounded-full mb-6"
           >
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-primary">AI-Powered Development</span>
@@ -53,7 +53,7 @@ export function Hero() {
             <Button
               onClick={() => router.push("/contact")}
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 group"
+              className="bg-primary hover:bg-primary/70 text-white px-8 py-6 group"
             >
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

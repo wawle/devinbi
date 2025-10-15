@@ -20,7 +20,7 @@ export default function NavBar() {
   const { dictionary: dict } = useDictionary("navbar");
 
   return (
-    <nav className="relative " aria-label="Main">
+    <nav className="relative" aria-label="Main">
       <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
       <div className="mx-auto flex max-w-7xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black/50 px-4 md:px-6 h-[85px]">
         <div className="flex items-center justify-between h-full">
@@ -39,8 +39,6 @@ export default function NavBar() {
             <div className="md:hidden">
               <LocaleSwitcher currentLocale={locale as Locale} />
             </div>
-
-            {/* TODO: Shadcn Butonu kullan */}
 
             <Button
               variant="ghost"

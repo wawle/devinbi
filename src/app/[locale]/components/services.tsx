@@ -5,6 +5,7 @@ import { useInView } from "motion/react";
 import { useRef } from "react";
 import { Globe, Smartphone, Brain, Package, Wrench } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export function Services() {
   const ref = useRef(null);
@@ -155,12 +156,12 @@ export function Services() {
               Every project is unique. Let's discuss your specific requirements
               and build something amazing together.
             </p>
-            <button
+            <Button
               onClick={() => router.push("/contact")}
-              className="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg transition-colors"
+              className="px-8 py-5 bg-primary hover:bg-primary/70 text-white rounded-lg transition-colors"
             >
               Get in Touch
-            </button>
+            </Button>
           </div>
         </motion.div>
       </div>

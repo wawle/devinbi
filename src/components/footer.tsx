@@ -5,10 +5,13 @@ import Link from "next/link";
 import AnimatedLogo from "./animated-logo";
 import Image from "next/image";
 import Logo from "../../public/img/logo.png";
+import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
-    <footer className="relative bg-black/50 border-t border-white/10 py-12 relative z-10">
+    <footer className="relative bg-black/50 py-4 z-10">
+      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -20,11 +23,11 @@ export function Footer() {
                 <span className="sr-only">Devinbi Home Page</span>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm max-w-md mb-4">
+            <p className="text-gray-400 text-sm max-w-lg mb-4">
               Building smarter digital experiences with AI. From concept to
               launch, we're your trusted development partner.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <Link
                 href="#"
                 className="w-10 h-10 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-lg flex items-center justify-center transition-colors"
@@ -46,7 +49,7 @@ export function Footer() {
               >
                 <Github className="w-5 h-5 text-gray-400 hover:text-primary" />
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -99,10 +102,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+      </div>
+      {/* Bottom Bar */}
+      <div className="py-4  border-t border-white/10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-between">
+          <p className="text-gray-400 text-sm md:mb-0">
             © 2025 Devinbi. All rights reserved.
           </p>
           <div className="flex space-x-6">
@@ -121,7 +125,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
     </footer>
   );
 }

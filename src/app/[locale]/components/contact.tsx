@@ -3,10 +3,19 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef, useState } from "react";
-import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Mail, Send, CheckCircle2 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+
+import FormInput from "@/components/form/form-input";
+import { SubmitButton } from "@/components/form/submit-button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function Contact() {
   const ref = useRef(null);
@@ -140,75 +149,57 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm text-gray-300 mb-2"
-                  >
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="John Doe"
-                    className=" border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
-                    required
-                  />
-                </div>
+                <FormInput
+                  label="Your Name"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
+                  required
+                />
+
+                <FormInput
+                  label="Email Address"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
+                  required
+                />
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm text-gray-300 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john@example.com"
-                    className=" border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
-                    required
-                  />
+                  <Select name="project" required>
+                    <SelectTrigger className="w-full text-sm border border-white/10 rounded-lg text-gray-500 focus:border-primary">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="web">Web Development</SelectItem>
+                      <SelectItem value="mobile">Mobile Development</SelectItem>
+                      <SelectItem value="ai">AI Integration</SelectItem>
+                      <SelectItem value="product">
+                        Product Development
+                      </SelectItem>
+                      <SelectItem value="support">Support & Scaling</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="project"
-                    className="block text-sm text-gray-300 mb-2"
-                  >
-                    Project Type
-                  </label>
-                  <select
-                    id="project"
-                    className="w-full text-sm px-3 py-2  border border-white/10 rounded-lg text-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                    required
-                  >
-                    <option value="">Select a service</option>
-                    <option value="web">Web Development</option>
-                    <option value="mobile">Mobile Development</option>
-                    <option value="ai">AI Integration</option>
-                    <option value="product">Product Development</option>
-                    <option value="support">Support & Scaling</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm text-gray-300 mb-2"
-                  >
-                    Tell Us About Your Project
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Describe your project, goals, and timeline..."
-                    rows={5}
-                    className=" border-white/10 text-white placeholder:text-gray-500 focus:border-primary resize-none"
-                    required
-                  />
-                </div>
+                <FormInput
+                  label="Tell Us About Your Project"
+                  id="message"
+                  name="message"
+                  RenderInput={() => (
+                    <Textarea
+                      id="message"
+                      placeholder="Describe your project, goals, and timeline..."
+                      rows={5}
+                      className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary resize-none"
+                      required
+                    />
+                  )}
+                />
 
                 <Button
                   type="submit"

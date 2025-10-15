@@ -1,22 +1,24 @@
-import { Button } from "../ui/button";
-import { Icons } from "@/lib/icons";
+"use client";
 
-interface Props {
+import { Button } from "@/components/ui/button";
+import { useFormStatus } from "react-dom";
+
+interface SubmitButtonProps {
   title: string;
   className?: string;
-  disabled?: boolean;
 }
 
-export function SubmitButton({ title, className, disabled }: Props) {
+export function SubmitButton({ title, className }: SubmitButtonProps) {
+  const { pending } = useFormStatus();
+
   return (
     <Button
-      variant="pulseGreen"
-      disabled={disabled}
       type="submit"
+      aria-disabled={pending}
       className={className}
+      disabled={pending}
     >
-      {disabled && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
-      {title}
+      {pending ? "Sending..." : title}
     </Button>
   );
 }
