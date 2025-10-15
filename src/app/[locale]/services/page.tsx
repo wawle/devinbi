@@ -39,8 +39,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ServicesPage() {
   return (
-    <div className="pt-20">
+    <>
       <Services />
-    </div>
+    </>
   );
 }

@@ -113,7 +113,7 @@ export function Contact() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-black/50 to-transparent border border-primary/30 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-black/90 to-transparent border border-white/10 rounded-xl p-8">
               <Mail className="w-10 h-10 text-primary mb-4" />
               <h4 className="text-white font-semibold mb-2">Email Us</h4>
               <p className="text-gray-400 text-sm mb-4">
@@ -133,7 +133,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-gradient-to-b from-black/50 to-transparent border border-white/10 rounded-xl p-8"
+            className="bg-gradient-to-b from-black/90 to-transparent border border-white/10 rounded-xl p-8"
           >
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">

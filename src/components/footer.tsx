@@ -13,7 +13,7 @@ export function Footer() {
       <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-4">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link className="z-50 text-3xl font-bold bg-white" href="/">

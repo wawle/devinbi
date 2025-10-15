@@ -55,9 +55,9 @@ const ProjectsPage = async ({ params }: Props) => {
   const dict = await getDictionary("products", locale as Locale);
 
   return (
-    <div className="pt-20">
+    <>
       <Projects />
-    </div>
+    </>
   );
 };
 

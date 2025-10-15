@@ -2,70 +2,88 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { ExternalLink, ArrowRight } from "lucide-react";
-import { useRouter } from "next/navigation";
+import type { LucideIcon } from "lucide-react";
+import {
+  Bot,
+  Music4,
+  Receipt,
+  ShoppingCart,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 
 export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const router = useRouter();
 
-  const projects = [
-    {
-      title: "AI-Powered Analytics Platform",
-      category: "Web Application",
-      description:
-        "Advanced analytics dashboard with machine learning insights and predictive modeling for enterprise clients.",
-      tech: ["React", "Python", "TensorFlow", "AWS"],
-      impact: "40% increase in decision-making speed",
-    },
-    {
-      title: "Healthcare Mobile App",
-      category: "Mobile Development",
-      description:
-        "HIPAA-compliant telemedicine platform connecting patients with healthcare providers seamlessly.",
-      tech: ["React Native", "Node.js", "PostgreSQL"],
-      impact: "50K+ active users",
-    },
+  type Project = {
+    title: string;
+    category: string;
+    description: string;
+    tech: string[];
+    impact: string;
+    icon: LucideIcon;
+  };
+
+  const projects: Project[] = [
     {
       title: "E-commerce Marketplace",
-      category: "Full-Stack Solution",
+      category: "Commerce Platform",
       description:
-        "Multi-vendor marketplace with AI-powered recommendations and real-time inventory management.",
-      tech: ["Next.js", "Stripe", "Redis", "MongoDB"],
-      impact: "$2M+ in transactions",
+        "Scalable multi-vendor marketplace with intuitive product discovery and high-converting checkout flows.",
+      tech: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+      impact: "Enabled 120+ vendors to sell online",
+      icon: ShoppingCart,
     },
     {
-      title: "Smart Logistics System",
-      category: "Enterprise Software",
+      title: "Social Platform",
+      category: "Community Experience",
       description:
-        "AI-driven logistics optimization platform reducing delivery times and operational costs.",
-      tech: ["Vue.js", "FastAPI", "ML Models"],
-      impact: "30% cost reduction",
+        "Engaging social community with real-time interactions, content feeds, and personalized discovery.",
+      tech: ["React", "Node.js", "WebSockets", "Redis"],
+      impact: "Grew to 85K monthly active members",
+      icon: Users,
     },
     {
-      title: "Social Learning Platform",
-      category: "EdTech",
+      title: "AI Music Generator App",
+      category: "Creative AI",
       description:
-        "Interactive learning platform with AI tutoring, progress tracking, and gamification features.",
-      tech: ["React", "Node.js", "OpenAI", "WebRTC"],
-      impact: "100K+ students enrolled",
+        "Text-to-track composition engine with collaborative playlists and export-ready stems.",
+      tech: ["Next.js", "Python", "PyTorch", "AWS"],
+      impact: "Produced 12K+ unique tracks in beta",
+      icon: Music4,
     },
     {
-      title: "Real Estate CRM",
+      title: "AI Powered Chatbot",
+      category: "Customer Support",
+      description:
+        "Conversational assistant with domain-tuned responses, sentiment detection, and live agent handoff.",
+      tech: ["TypeScript", "Next.js", "OpenAI", "Pinecone"],
+      impact: "Resolved 78% of inquiries autonomously",
+      icon: Bot,
+    },
+    {
+      title: "Investment Tracker App",
+      category: "Fintech Dashboard",
+      description:
+        "Portfolio analytics suite with automated insights, alerts, and multi-brokerage aggregation.",
+      tech: ["React", "Node.js", "GraphQL", "Supabase"],
+      impact: "Monitored $450M+ in assets",
+      icon: TrendingUp,
+    },
+    {
+      title: "Invoicing App",
       category: "SaaS Platform",
       description:
-        "Comprehensive CRM for real estate agents with automated lead nurturing and property management.",
-      tech: ["TypeScript", "GraphQL", "Prisma"],
-      impact: "5x lead conversion rate",
+        "Automated billing workspace with smart reminders, payment tracking, and PDF export workflows.",
+      tech: ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
+      impact: "Cut payment cycles by 40%",
+      icon: Receipt,
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="py-24 bg-[#0a0a0a] relative overflow-hidden"
-    >
+    <section id="projects" className="py-24 relative overflow-hidden">
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         ref={ref}
@@ -98,20 +116,19 @@ export function Projects() {
               className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 group"
             >
               {/* Project Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,133,40,0.1)_50%,transparent_75%)] bg-[length:250%_250%] group-hover:animate-[shimmer_2s_ease-in-out_infinite] transition-all" />
+              <div className="aspect-video bg-black/80 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                    <ExternalLink className="w-8 h-8 text-primary" />
+                    <project.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 bg-black/50">
                 <div className="text-xs text-primary mb-2">
                   {project.category}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-sm text-gray-400 mb-4">
@@ -131,10 +148,7 @@ export function Projects() {
                 </div>
 
                 {/* Impact */}
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-300">{project.impact}</span>
-                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
-                </div>
+                <div className="text-sm text-gray-300">{project.impact}</div>
               </div>
             </motion.div>
           ))}
@@ -150,13 +164,6 @@ export function Projects() {
             Want to see more? We've delivered 50+ projects across various
             industries.
           </p>
-          <button
-            onClick={() => router.push("/contact")}
-            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors group"
-          >
-            Let's discuss your project
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
         </motion.div>
       </div>
     </section>
