@@ -1,64 +1,46 @@
-import React, { Suspense } from "react";
-import { getDictionary } from "@/lib/dictionary";
-import { Locale } from "@/lib/locales";
+import React from "react";
 import { Metadata } from "next";
 import { Projects } from "../components/projects";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  await params;
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Project Portfolio | Devinbi";
+  const description =
+    "Review Devinbi’s recent work: AI-powered marketplaces, social platforms, creative AI apps, smart chatbots, fintech dashboards, and billing solutions delivered for global clients.";
+  const image = "/img/logo.png";
 
   return {
-    title: "Our Products",
-    description:
-      "Explore our innovative software products including Devin CRM, custom web applications, mobile apps, and enterprise solutions designed to transform your business.",
+    title,
+    description,
     keywords: [
-      "software products",
-      "Devin CRM",
-      "custom web applications",
-      "mobile apps",
-      "enterprise solutions",
-      "business software",
-      "Devinbi products",
+      "Devinbi case studies",
+      "AI marketplace project",
+      "custom chatbot development",
+      "creative AI applications",
+      "fintech product development",
+      "SaaS invoicing platform",
     ],
     openGraph: {
-      title: "Our Products | Devinbi",
-      description:
-        "Explore our innovative software products including Devin CRM, custom web applications, mobile apps, and enterprise solutions designed to transform your business.",
+      title,
+      description,
       images: [
         {
-          url: "/img/crm.png",
+          url: image,
           width: 1200,
           height: 630,
-          alt: "Devinbi Products - Devin CRM",
+          alt: "Devinbi Project Portfolio",
         },
       ],
     },
     twitter: {
-      title: "Our Products | Devinbi",
-      description:
-        "Explore our innovative software products including Devin CRM, custom web applications, mobile apps, and enterprise solutions designed to transform your business.",
-      images: ["/img/crm.png"],
+      title,
+      description,
+      images: [image],
     },
   };
 }
 
-interface Props {
-  params: Promise<{ locale: string }>;
-}
-
-const ProjectsPage = async ({ params }: Props) => {
-  const { locale } = await params;
-  const dict = await getDictionary("products", locale as Locale);
-
-  return (
-    <>
-      <Projects />
-    </>
-  );
+const ProjectsPage = async () => {
+  return <Projects />;
 };
 
 export default ProjectsPage;

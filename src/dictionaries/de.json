@@ -313,5 +313,69 @@
     "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
     "success": "Ihre Nachricht wurde erfolgreich gesendet",
     "error": "Beim Senden der Nachricht ist ein Fehler aufgetreten"
+  },
+  "privacy": {
+    "metaTitle": "Datenschutzerklärung",
+    "metaDescription": "Erfahren Sie, wie Devinbi Ihre personenbezogenen Daten in unseren digitalen Produkten und Services sammelt, nutzt und schützt.",
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: 10. Januar 2025",
+    "intro": "Der Schutz Ihrer persönlichen Daten hat bei Devinbi höchste Priorität. Diese Erklärung beschreibt, welche Daten wir sammeln, wie wir sie verwenden und welche Möglichkeiten Sie haben, Ihre Informationen zu verwalten.",
+    "sections": [
+      {
+        "title": "Welche Daten wir sammeln",
+        "description": "Wir erfassen nur die Informationen, die für eine sichere und effiziente Bereitstellung unserer Leistungen erforderlich sind.",
+        "items": [
+          "Kontaktdaten wie Name, E-Mail-Adresse und Unternehmensangaben",
+          "Projektinformationen und Anforderungen, die über Formulare oder direkte Kommunikation geteilt werden",
+          "Nutzungsdaten wie Geräteinformationen, Browsertyp und Interaktionsmetriken",
+          "Technische Protokolle, die uns helfen, unsere Systeme sicher und zuverlässig zu halten"
+        ]
+      },
+      {
+        "title": "Wie wir Ihre Daten verwenden",
+        "description": "Wir nutzen Ihre Daten, um Ihnen ein optimales Erlebnis zu bieten und unsere Geschäftsprozesse zu unterstützen.",
+        "items": [
+          "Bereitstellung und Weiterentwicklung unserer Softwareprodukte und Dienstleistungen",
+          "Beantwortung von Anfragen, Angeboten und Support-Tickets",
+          "Personalisierung von Inhalten, Empfehlungen und Marketingkommunikation",
+          "Überwachung, Prüfung und Schutz unserer Plattformen vor Missbrauch oder Betrug"
+        ]
+      },
+      {
+        "title": "Weitergabe und Offenlegung",
+        "description": "Wir verkaufen Ihre personenbezogenen Daten nicht. Eine Weitergabe erfolgt nur, wenn sie notwendig ist.",
+        "items": [
+          "Vertrauenswürdige Dienstleister, die uns beim Betrieb unserer Infrastruktur unterstützen",
+          "Professionelle Berater wie Rechts- und Finanzexpert:innen",
+          "Behörden oder Aufsichtsstellen, sofern dies gesetzlich vorgeschrieben ist oder unsere Rechte zu schützen sind"
+        ]
+      },
+      {
+        "title": "Ihre Rechte und Wahlmöglichkeiten",
+        "description": "Sie behalten die volle Kontrolle darüber, wie Ihre Informationen erhoben und verwendet werden.",
+        "items": [
+          "Zugriff auf Ihre personenbezogenen Daten anfordern, sie berichtigen oder löschen lassen",
+          "Marketingkommunikation jederzeit abbestellen",
+          "Unter bestimmten gesetzlichen Voraussetzungen die Verarbeitung einschränken",
+          "Ihre Daten übertragen lassen, sofern dies technisch möglich ist"
+        ]
+      },
+      {
+        "title": "Datensicherheit und Aufbewahrung",
+        "description": "Wir setzen organisatorische, technische und physische Maßnahmen ein, um Ihre Daten zu schützen.",
+        "items": [
+          "Verschlüsselung und gesicherte Übertragung für Daten während des Transports und im Ruhezustand",
+          "Rollenbasierte Zugriffskontrollen und Schulungen unseres Teams zum Datenschutz",
+          "Regelmäßige Sicherheitsprüfungen, Schwachstellenanalysen und Backups",
+          "Aufbewahrung personenbezogener Daten nur solange es für unsere Services oder gesetzliche Pflichten erforderlich ist"
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Fragen zu dieser Erklärung?",
+      "description": "Wenn Sie Fragen haben oder Ihre Datenschutzrechte ausüben möchten, kontaktieren Sie bitte unser Privacy-Team.",
+      "emailLabel": "E-Mail",
+      "email": "info@devinbi.com"
+    }
   }
 }

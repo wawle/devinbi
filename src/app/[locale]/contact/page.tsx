@@ -3,26 +3,28 @@ import { Metadata } from "next";
 import { Contact } from "../components/contact";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = "Contact Devinbi | Start Your Project";
+  const description =
+    "Schedule a consultation with Devinbi's product team to discuss AI-powered web and mobile development, product strategy, or ongoing support.";
+  const image = "/img/logo.png";
+
   return {
-    title: "Contact Us",
-    description:
-      "Get in touch with Devinbi for your software development needs. Contact our expert team for web development, mobile app development, and custom software solutions.",
+    title,
+    description,
     keywords: [
-      "contact Devinbi",
-      "software development contact",
-      "web development consultation",
-      "mobile app development inquiry",
-      "custom software consultation",
-      "technology consulting",
       "Devinbi contact",
+      "software consultation",
+      "AI development partner",
+      "product strategy workshop",
+      "custom software inquiry",
+      "web and mobile consultation",
     ],
     openGraph: {
-      title: "Contact Us | Devinbi",
-      description:
-        "Get in touch with Devinbi for your software development needs. Contact our expert team for web development, mobile app development, and custom software solutions.",
+      title,
+      description,
       images: [
         {
-          url: "/img/contact.png",
+          url: image,
           width: 1200,
           height: 630,
           alt: "Contact Devinbi",
@@ -30,10 +32,9 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     twitter: {
-      title: "Contact Us | Devinbi",
-      description:
-        "Get in touch with Devinbi for your software development needs. Contact our expert team for web development, mobile app development, and custom software solutions.",
-      images: ["/img/contact.png"],
+      title,
+      description,
+      images: [image],
     },
   };
 }

@@ -17,7 +17,7 @@ import Image from "next/image";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const { locale } = useParams();
-  const { dictionary: dict } = useDictionary("navbar");
+  const { dictionary: dict } = useDictionary<Record<string, string>>("navbar");
 
   return (
     <nav className="relative" aria-label="Main">
@@ -25,6 +25,7 @@ export default function NavBar() {
       <div className="mx-auto flex max-w-7xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black/50 px-4 md:px-6 h-[85px]">
         <div className="flex items-center justify-between h-full">
           <Link
+            dir="ltr"
             className="z-50 text-3xl font-bold"
             href="/"
             onClick={() => setOpen(false)}
@@ -76,7 +77,7 @@ export default function NavBar() {
                 className="inline-flex min-h-11 items-center uppercase text-xl"
                 onClick={() => setOpen(false)}
               >
-                {dict?.[item.dictionary]}
+                {dict?.[item.dictionary] ?? ""}
               </Link>
             ))}
           </div>
@@ -87,7 +88,7 @@ export default function NavBar() {
           {navbarItems.map((item, index) => (
             <li key={index.toString()}>
               <Link href={item.href} className="nav-hover-btn">
-                {dict?.[item.dictionary]}
+                {dict?.[item.dictionary] ?? ""}
               </Link>
             </li>
           ))}

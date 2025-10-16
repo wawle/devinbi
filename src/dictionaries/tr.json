@@ -313,5 +313,69 @@
     "messageMin": "Mesaj en az 10 karakter olmalıdır",
     "success": "Mesajınız başarıyla gönderildi",
     "error": "Mesaj gönderilirken bir hata oluştu"
+  },
+  "privacy": {
+    "metaTitle": "Gizlilik Politikası",
+    "metaDescription": "Devinbi'nin dijital ürün ve hizmetlerinde kişisel verilerinizi nasıl topladığını, kullandığını ve koruduğunu öğrenin.",
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 10 Ocak 2025",
+    "intro": "Devinbi olarak kişisel bilgilerinizin gizliliğini ve güvenliğini çok ciddiye alıyoruz. Bu politika hangi verileri topladığımızı, nasıl kullandığımızı ve bilgilerinizi yönetmek için hangi seçeneklere sahip olduğunuzu açıklar.",
+    "sections": [
+      {
+        "title": "Topladığımız Bilgiler",
+        "description": "Hizmetlerimizi etkili ve güvenli bir şekilde sunmak için yalnızca gerekli verileri topluyoruz.",
+        "items": [
+          "İsim, e-posta adresi ve şirket bilgileri gibi iletişim detayları",
+          "Formlarımız veya doğrudan iletişim yoluyla paylaşılan proje bilgileri ve gereksinimleri",
+          "Cihaz bilgisi, tarayıcı türü ve etkileşim metrikleri gibi kullanım verileri",
+          "Sistemlerimizi güvenli ve dayanıklı tutmamıza yardımcı olan teknik log kayıtları"
+        ]
+      },
+      {
+        "title": "Bilgilerinizi Nasıl Kullanıyoruz",
+        "description": "Verilerinizi en iyi deneyimi sunmak ve iş operasyonlarımızı desteklemek için kullanıyoruz.",
+        "items": [
+          "Yazılım ürünlerimizi ve hizmetlerimizi sunmak ve geliştirmek",
+          "Talep, teklif ve destek isteklerine yanıt vermek",
+          "İçerik, öneri ve pazarlama iletişimlerini kişiselleştirmek",
+          "Platformlarımızı kötüye kullanıma veya dolandırıcılığa karşı izlemek, denetlemek ve korumak"
+        ]
+      },
+      {
+        "title": "Paylaşım ve Açıklama",
+        "description": "Kişisel bilgilerinizi satmıyoruz. Veriler yalnızca gerekli olduğunda paylaşılır.",
+        "items": [
+          "Altyapımızı işletmemize yardımcı olan güvenilir hizmet sağlayıcılar",
+          "Hukuki ve finansal danışmanlar gibi profesyonel danışmanlar",
+          "Yasa gereği veya haklarımızı korumak için gerektiğinde düzenleyici kurumlar"
+        ]
+      },
+      {
+        "title": "Haklarınız ve Tercihleriniz",
+        "description": "Bilgilerinizin toplanması ve kullanımı üzerinde tam kontrole sahipsiniz.",
+        "items": [
+          "Kişisel verilerinize erişim talep edebilir, düzeltme veya silme isteğinde bulunabilirsiniz",
+          "Pazarlama iletişimlerinden dilediğiniz zaman çıkabilirsiniz",
+          "Yasal olarak mümkün olduğunda belirli işleme faaliyetlerini kısıtlayabilirsiniz",
+          "Teknik olarak mümkün olduğunda verilerinizi başka bir sağlayıcıya aktarabilirsiniz"
+        ]
+      },
+      {
+        "title": "Veri Güvenliği ve Saklama",
+        "description": "Verilerinizi güvence altına almak için idari, teknik ve fiziksel önlemler uyguluyoruz.",
+        "items": [
+          "Aktarım ve saklama sırasında veriler için şifreleme ve güvenli iletişim",
+          "Rol tabanlı erişim kontrolleri ve veri koruma konusunda ekip eğitimleri",
+          "Düzenli güvenlik incelemeleri, zafiyet değerlendirmeleri ve yedeklemeler",
+          "Kişisel verileri yalnızca hizmetlerimiz veya yasal yükümlülüklerimiz için gereken süre boyunca saklıyoruz"
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Bu Politika Hakkında Sorularınız mı Var?",
+      "description": "Sorularınız varsa veya gizlilik haklarınızı kullanmak istiyorsanız gizlilik ekibimizle iletişime geçebilirsiniz.",
+      "emailLabel": "E-posta",
+      "email": "info@devinbi.com"
+    }
   }
 }

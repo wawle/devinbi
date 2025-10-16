@@ -62,6 +62,7 @@ export async function generateMetadata({
         en: `${siteUrl}/en`,
         tr: `${siteUrl}/tr`,
         de: `${siteUrl}/de`,
+        ar: `${siteUrl}/ar`,
       },
     },
     openGraph: {

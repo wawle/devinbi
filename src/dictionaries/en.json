@@ -313,5 +313,69 @@
     "messageMin": "Message must be at least 10 characters long",
     "success": "Your message has been sent successfully",
     "error": "An error occurred while sending your message"
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "Learn how Devinbi collects, uses, and protects your personal data across our digital products and services.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 10, 2025",
+    "intro": "At Devinbi, we take the privacy and security of your personal information seriously. This policy explains what data we collect, how we use it, and the choices you have to manage your information.",
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "description": "We collect only the information needed to deliver our services effectively and securely.",
+        "items": [
+          "Contact details such as name, email address, and company information",
+          "Project information and requirements shared through our forms or direct communication",
+          "Usage data including device information, browser type, and interaction metrics",
+          "Technical logs that help us keep our systems secure and reliable"
+        ]
+      },
+      {
+        "title": "How We Use Your Information",
+        "description": "Your data is used to provide you with the best possible experience and to support our business operations.",
+        "items": [
+          "Delivering and improving our software products and services",
+          "Responding to inquiries, proposals, and support requests",
+          "Personalizing content, recommendations, and marketing communication",
+          "Monitoring, auditing, and protecting our platforms against abuse or fraud"
+        ]
+      },
+      {
+        "title": "Sharing & Disclosure",
+        "description": "We do not sell your personal information. Data is shared only when necessary.",
+        "items": [
+          "Trusted service providers who help us operate our infrastructure",
+          "Professional advisors such as legal and financial consultants",
+          "Regulators or authorities when required by law or to protect our rights"
+        ]
+      },
+      {
+        "title": "Your Rights & Choices",
+        "description": "You have full control over how your information is collected and used.",
+        "items": [
+          "Request access to, correction of, or deletion of your personal data",
+          "Opt out of marketing communications at any time",
+          "Restrict certain processing activities where legally applicable",
+          "Transfer your data to another provider when technically feasible"
+        ]
+      },
+      {
+        "title": "Data Security & Retention",
+        "description": "We implement administrative, technical, and physical safeguards to keep your data secure.",
+        "items": [
+          "Encryption and secure transport for data in transit and at rest",
+          "Role-based access controls and staff training on data protection",
+          "Regular security reviews, vulnerability assessments, and backups",
+          "Retention of personal information only as long as needed for our services or legal obligations"
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Questions About This Policy?",
+      "description": "If you have any questions or wish to exercise your privacy rights, please reach out to our privacy team.",
+      "emailLabel": "Email",
+      "email": "info@devinbi.com"
+    }
   }
 }
