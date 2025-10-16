@@ -143,11 +143,12 @@
     }
   },
   "projectsSection": {
-    "badge": "Fallstudien",
+    "badge": "Letzte Projekte",
     "title": "Unsere aktuellen Projekte",
     "description": "Entdecken Sie eine Auswahl erfolgreicher Projekte, die unsere Expertise in verschiedenen Branchen und Technologien zeigen.",
     "list": [
       {
+        "id": "finance-app",
         "icon": "receipt",
         "title": "Rechnungs-App",
         "category": "SaaS-Plattform",
@@ -156,6 +157,7 @@
         "impact": "Verkürzte Zahlungszyklen um 40 %"
       },
       {
+        "id": "ecommerce-marketplace",
         "icon": "shoppingCart",
         "title": "E-Commerce-Marktplatz",
         "category": "Commerce-Plattform",
@@ -164,6 +166,7 @@
         "impact": "Ermöglichte über 120 Händler:innen den Online-Verkauf"
       },
       {
+        "id": "social-platform",
         "icon": "users",
         "title": "Soziale Plattform",
         "category": "Community-Erlebnis",
@@ -172,6 +175,7 @@
         "impact": "Erreichte über 85.000 monatlich aktive Mitglieder"
       },
       {
+        "id": "ai-music-generator",
         "icon": "music4",
         "title": "KI-Musikgenerator-App",
         "category": "Kreative KI",
@@ -180,6 +184,7 @@
         "impact": "Generierte in der Beta über 12.000 einzigartige Tracks"
       },
       {
+        "id": "ai-chatbot",
         "icon": "bot",
         "title": "KI-gestützter Chatbot",
         "category": "Kundensupport",
@@ -188,6 +193,8 @@
         "impact": "Löste 78 % der Anfragen autonom"
       },
       {
+        "id": "investment-tracker",
+        "link": "https://invest.devinbi.com/",
         "icon": "trendingUp",
         "title": "Investment-Tracker-App",
         "category": "Fintech-Dashboard",

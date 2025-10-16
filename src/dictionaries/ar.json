@@ -143,11 +143,12 @@
     }
   },
   "projectsSection": {
-    "badge": "دراسات حالة",
+    "badge": "أحدث المشاريع",
     "title": "أحدث مشاريعنا",
     "description": "تعرّف على بعض مشاريعنا الناجحة التي تُبرز خبرتنا عبر قطاعات وتقنيات مختلفة.",
     "list": [
       {
+        "id": "finance-app",
         "icon": "receipt",
         "title": "تطبيق الفوترة",
         "category": "منصة SaaS",
@@ -156,6 +157,7 @@
         "impact": "قلّص دورات الدفع بنسبة 40٪"
       },
       {
+        "id": "ecommerce-marketplace",
         "icon": "shoppingCart",
         "title": "منصة سوق إلكترونية",
         "category": "منصة تجارة",
@@ -164,6 +166,7 @@
         "impact": "ساعدنا أكثر من 120 بائعاً على البيع عبر الإنترنت"
       },
       {
+        "id": "social-platform",
         "icon": "users",
         "title": "منصة اجتماعية",
         "category": "تجربة مجتمعية",
@@ -172,6 +175,7 @@
         "impact": "وصل إلى أكثر من 85 ألف عضو نشط شهرياً"
       },
       {
+        "id": "ai-music-generator",
         "icon": "music4",
         "title": "تطبيق مولد موسيقى بالذكاء الاصطناعي",
         "category": "ذكاء اصطناعي إبداعي",
@@ -180,6 +184,7 @@
         "impact": "أنتج أكثر من 12 ألف مقطع فريد خلال النسخة التجريبية"
       },
       {
+        "id": "ai-chatbot",
         "icon": "bot",
         "title": "روبوت محادثة مدعوم بالذكاء الاصطناعي",
         "category": "دعم العملاء",
@@ -188,6 +193,8 @@
         "impact": "حل 78٪ من الاستفسارات بشكل تلقائي"
       },
       {
+        "id": "investment-tracker",
+        "link": "https://invest.devinbi.com/",
         "icon": "trendingUp",
         "title": "تطبيق تتبع الاستثمارات",
         "category": "لوحة تحكم مالية",

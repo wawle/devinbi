@@ -143,11 +143,12 @@
     }
   },
   "projectsSection": {
-    "badge": "Case Studies",
+    "badge": "Latest Projects",
     "title": "Our Recent Projects",
     "description": "Explore some of our successful projects that showcase our expertise across different industries and technologies.",
     "list": [
       {
+        "id": "finance-app",
         "icon": "receipt",
         "title": "Finance App",
         "category": "SaaS Platform",
@@ -156,6 +157,7 @@
         "impact": "Cut payment cycles by 40%"
       },
       {
+        "id": "ecommerce-marketplace",
         "icon": "shoppingCart",
         "title": "E-commerce Marketplace",
         "category": "Commerce Platform",
@@ -164,6 +166,7 @@
         "impact": "Enabled 120+ vendors to sell online"
       },
       {
+        "id": "social-platform",
         "icon": "users",
         "title": "Social Platform",
         "category": "Community Experience",
@@ -172,6 +175,7 @@
         "impact": "Grew to 85K monthly active members"
       },
       {
+        "id": "ai-music-generator",
         "icon": "music4",
         "title": "AI Music Generator App",
         "category": "Creative AI",
@@ -180,6 +184,7 @@
         "impact": "Produced 12K+ unique tracks in beta"
       },
       {
+        "id": "ai-chatbot",
         "icon": "bot",
         "title": "AI Powered Chatbot",
         "category": "Customer Support",
@@ -188,6 +193,8 @@
         "impact": "Resolved 78% of inquiries autonomously"
       },
       {
+        "id": "investment-tracker",
+        "link": "https://invest.devinbi.com/",
         "icon": "trendingUp",
         "title": "Investment Tracker App",
         "category": "Fintech Dashboard",

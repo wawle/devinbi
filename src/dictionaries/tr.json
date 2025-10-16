@@ -143,11 +143,12 @@
     }
   },
   "projectsSection": {
-    "badge": "Vaka Çalışmaları",
+    "badge": "Son Çalışmalarımız",
     "title": "Son Projelerimiz",
     "description": "Farklı sektörlerdeki ve teknolojilerdeki uzmanlığımızı gösteren başarılı projelerimizden bazılarını keşfedin.",
     "list": [
       {
+        "id": "finance-app",
         "icon": "receipt",
         "title": "Finans Uygulaması",
         "category": "SaaS Platformu",
@@ -156,6 +157,7 @@
         "impact": "Ödeme sürecini %40 kısalttı"
       },
       {
+        "id": "ecommerce-marketplace",
         "icon": "shoppingCart",
         "title": "E-ticaret Pazaryeri",
         "category": "Ticaret Platformu",
@@ -164,6 +166,7 @@
         "impact": "120'den fazla satıcının çevrim içi satış yapmasını sağladık"
       },
       {
+        "id": "social-platform",
         "icon": "users",
         "title": "Sosyal Platform",
         "category": "Topluluk Deneyimi",
@@ -172,6 +175,7 @@
         "impact": "Aylık 85 bin aktif üyeye ulaştı"
       },
       {
+        "id": "ai-music-generator",
         "icon": "music4",
         "title": "Yapay Zeka Müzik Üretici Uygulaması",
         "category": "Yaratıcı Yapay Zeka",
@@ -180,6 +184,7 @@
         "impact": "Beta sürecinde 12 binin üzerinde özgün parça üretildi"
       },
       {
+        "id": "ai-chatbot",
         "icon": "bot",
         "title": "Yapay Zeka Destekli Chatbot",
         "category": "Müşteri Destek",
@@ -188,6 +193,8 @@
         "impact": "Taleplerin %78'ini otonom olarak çözdü"
       },
       {
+        "id": "investment-tracker",
+        "link": "https://invest.devinbi.com/",
         "icon": "trendingUp",
         "title": "Yatırım Takip Uygulaması",
         "category": "Finans Paneli",
