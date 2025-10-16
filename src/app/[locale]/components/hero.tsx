@@ -3,9 +3,31 @@ import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useDictionary } from "@/hooks/use-dictionary";
+
+type HeroStat = {
+  value: string;
+  label: string;
+};
+
+type HeroDictionary = {
+  badge: string;
+  title: {
+    line1: string;
+    highlight: string;
+    line3: string;
+  };
+  description: string;
+  primaryCta: string;
+  secondaryCta: string;
+  stats: HeroStat[];
+};
 
 export function Hero() {
   const router = useRouter();
+  const { dictionary } = useDictionary<HeroDictionary>("hero");
+  const stats = dictionary?.stats ?? [];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Content */}
@@ -18,7 +40,9 @@ export function Hero() {
             className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 rounded-full mb-6"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary">AI-Powered Development</span>
+            <span className="text-sm text-primary">
+              {dictionary?.badge ?? ""}
+            </span>
           </motion.div>
 
           <motion.h1
@@ -27,11 +51,13 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Building Smarter
+            {dictionary?.title?.line1 ?? ""}
             <br />
-            <span className="text-primary">Digital Experiences</span>
+            <span className="text-primary">
+              {dictionary?.title?.highlight ?? ""}
+            </span>
             <br />
-            with AI
+            {dictionary?.title?.line3 ?? ""}
           </motion.h1>
 
           <motion.p
@@ -40,8 +66,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10"
           >
-            We craft cutting-edge web and mobile applications from concept to
-            launch. Powered by artificial intelligence, scaled for the future.
+            {dictionary?.description ?? ""}
           </motion.p>
 
           <motion.div
@@ -55,7 +80,7 @@ export function Hero() {
               size="lg"
               className="bg-primary hover:bg-primary/70 text-white px-8 py-6 group"
             >
-              Start Your Project
+              {dictionary?.primaryCta ?? ""}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -64,7 +89,7 @@ export function Hero() {
               variant="outline"
               className="border-primary/50 text-primary hover:bg-primary/10 px-8 py-6"
             >
-              View Our Work
+              {dictionary?.secondaryCta ?? ""}
             </Button>
           </motion.div>
 
@@ -75,24 +100,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-20"
           >
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                50+
+            {stats.map((stat, index) => (
+              <div
+                key={`${stat.label}-${index}`}
+                className={`text-center ${index === 1 ? "border-x border-white/10" : ""}`}
+              >
+                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
               </div>
-              <div className="text-sm text-gray-400">Projects Delivered</div>
-            </div>
-            <div className="text-center border-x border-white/10">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                15+
-              </div>
-              <div className="text-sm text-gray-400">AI Integrations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                98%
-              </div>
-              <div className="text-sm text-gray-400">Client Satisfaction</div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>

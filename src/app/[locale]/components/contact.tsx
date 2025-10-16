@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 import FormInput from "@/components/form/form-input";
-import { SubmitButton } from "@/components/form/submit-button";
 import {
   Select,
   SelectContent,
@@ -16,11 +15,51 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useDictionary } from "@/hooks/use-dictionary";
+
+type ContactReason = {
+  title: string;
+  description: string;
+};
+
+type ContactOption = {
+  value: string;
+  label: string;
+};
+
+type ContactDictionary = {
+  badge: string;
+  title: string;
+  description: string;
+  whyTitle: string;
+  reasons: ContactReason[];
+  emailCard: {
+    title: string;
+    description: string;
+    address: string;
+  };
+  success: {
+    title: string;
+    description: string;
+  };
+  form: {
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    servicePlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submit: string;
+    options: ContactOption[];
+  };
+};
 
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [submitted, setSubmitted] = useState(false);
+  const { dictionary } = useDictionary<ContactDictionary>("contactPage");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,14 +81,15 @@ export function Contact() {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-1 bg-primary/10 border border-primary/20 rounded-full mb-4">
-            <span className="text-sm text-primary">Get in Touch</span>
+            <span className="text-sm text-primary">
+              {dictionary?.badge ?? ""}
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Let's Build Together
+            {dictionary?.title ?? ""}
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Have a project in mind? We'd love to hear about it. Share your ideas
-            and let's create something extraordinary.
+            {dictionary?.description ?? ""}
           </p>
         </motion.div>
 
@@ -61,69 +101,42 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Why Work With Us?
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">
-                      Transparent Communication
-                    </h4>
-                    <p className="text-gray-400 text-sm">
-                      Regular updates and clear project milestones
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">
-                      Expert Team
-                    </h4>
-                    <p className="text-gray-400 text-sm">
-                      Skilled developers with years of experience
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">
-                      On-Time Delivery
-                    </h4>
-                    <p className="text-gray-400 text-sm">
-                      We respect deadlines and deliver quality work
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">
-                      Ongoing Support
-                    </h4>
-                    <p className="text-gray-400 text-sm">
-                      We're here even after launch
-                    </p>
-                  </div>
-                </li>
-              </ul>
+            <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  {dictionary?.whyTitle ?? ""}
+                </h3>
+                <ul className="space-y-4">
+                  {(dictionary?.reasons ?? []).map((reason, index) => (
+                    <li className="flex items-start" key={`${reason.title}-${index}`}>
+                      <CheckCircle2 className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">
+                          {reason.title}
+                        </h4>
+                        <p className="text-gray-400 text-sm">
+                          {reason.description}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div className="bg-gradient-to-br from-black/90 to-transparent border border-white/10 rounded-xl p-8">
               <Mail className="w-10 h-10 text-primary mb-4" />
-              <h4 className="text-white font-semibold mb-2">Email Us</h4>
+              <h4 className="text-white font-semibold mb-2">
+                {dictionary?.emailCard?.title ?? ""}
+              </h4>
               <p className="text-gray-400 text-sm mb-4">
-                Prefer email? Drop us a line anytime.
+                {dictionary?.emailCard?.description ?? ""}
               </p>
               <a
-                href="mailto:info@devinbi.com"
+                href={`mailto:${dictionary?.emailCard?.address ?? ""}`}
                 className="text-primary hover:text-primary/80 transition-colors"
               >
-                info@devinbi.com
+                {dictionary?.emailCard?.address ?? ""}
               </a>
             </div>
           </motion.div>
@@ -141,29 +154,29 @@ export function Contact() {
                   <CheckCircle2 className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Message Sent!
+                  {dictionary?.success?.title ?? ""}
                 </h3>
                 <p className="text-gray-400">
-                  We'll get back to you within 24 hours.
+                  {dictionary?.success?.description ?? ""}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <FormInput
-                  label="Your Name"
+                  label={dictionary?.form?.nameLabel ?? ""}
                   id="name"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder={dictionary?.form?.namePlaceholder ?? ""}
                   className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
                   required
                 />
 
                 <FormInput
-                  label="Email Address"
+                  label={dictionary?.form?.emailLabel ?? ""}
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={dictionary?.form?.emailPlaceholder ?? ""}
                   className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
                   required
                 />
@@ -171,29 +184,28 @@ export function Contact() {
                 <div>
                   <Select name="project" required>
                     <SelectTrigger className="w-full text-sm border border-white/10 rounded-lg text-gray-500 focus:border-primary">
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue
+                        placeholder={dictionary?.form?.servicePlaceholder ?? ""}
+                      />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="web">Web Development</SelectItem>
-                      <SelectItem value="mobile">Mobile Development</SelectItem>
-                      <SelectItem value="ai">AI Integration</SelectItem>
-                      <SelectItem value="product">
-                        Product Development
-                      </SelectItem>
-                      <SelectItem value="support">Support & Scaling</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      {(dictionary?.form?.options ?? []).map((option) => (
+                        <SelectItem value={option.value} key={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
 
                 <FormInput
-                  label="Tell Us About Your Project"
+                  label={dictionary?.form?.messageLabel ?? ""}
                   id="message"
                   name="message"
                   RenderInput={() => (
                     <Textarea
                       id="message"
-                      placeholder="Describe your project, goals, and timeline..."
+                      placeholder={dictionary?.form?.messagePlaceholder ?? ""}
                       rows={5}
                       className="border-white/10 text-white placeholder:text-gray-500 focus:border-primary resize-none"
                       required
@@ -205,7 +217,7 @@ export function Contact() {
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-white py-6 group font-semibold"
                 >
-                  Send Message
+                  {dictionary?.form?.submit ?? ""}
                   <Send className="size-5 ml-2 group-hover:rotate-45 transition-all" />
                 </Button>
               </form>
