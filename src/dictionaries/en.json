@@ -226,10 +226,8 @@
       "description": "Prefer email? Drop us a line anytime.",
       "address": "info@devinbi.com"
     },
-    "success": {
-      "title": "Message Sent!",
-      "description": "We'll get back to you within 24 hours."
-    },
+    "success": "Your message has been sent successfully",
+    "error": "An error occurred while sending your message",
     "form": {
       "nameLabel": "Your Name",
       "namePlaceholder": "John Doe",

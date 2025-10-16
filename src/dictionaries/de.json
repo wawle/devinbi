@@ -226,10 +226,8 @@
       "description": "Sie bevorzugen E-Mail? Schreiben Sie uns jederzeit.",
       "address": "info@devinbi.com"
     },
-    "success": {
-      "title": "Nachricht gesendet!",
-      "description": "Wir melden uns innerhalb von 24 Stunden."
-    },
+    "success": "Ihre Nachricht wurde erfolgreich gesendet",
+    "error": "Beim Senden der Nachricht ist ein Fehler aufgetreten",
     "form": {
       "nameLabel": "Ihr Name",
       "namePlaceholder": "Max Mustermann",

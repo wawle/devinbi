@@ -226,10 +226,8 @@
       "description": "تفضل البريد الإلكتروني؟ تواصل معنا في أي وقت.",
       "address": "info@devinbi.com"
     },
-    "success": {
-      "title": "تم إرسال الرسالة!",
-      "description": "سنتواصل معك خلال 24 ساعة."
-    },
+    "success": "تم إرسال رسالتك بنجاح",
+    "error": "حدث خطأ أثناء إرسال رسالتك",
     "form": {
       "nameLabel": "اسمك",
       "namePlaceholder": "محمد أحمد",
