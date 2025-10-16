@@ -8,9 +8,9 @@ import { Locale } from "../locales";
 interface ContactDictionary {
   getInTouch: string;
   nameRequired: string;
-  surnameRequired: string;
   emailInvalid: string;
   messageMin: string;
+  serviceRequired: string;
   success: string;
   error: string;
 }
@@ -22,9 +22,9 @@ export async function sendContact(
   // get form data
   const formBody = {
     name: formData.get("name")?.toString() || "",
-    surname: formData.get("surname")?.toString() || "",
     email: formData.get("email")?.toString() || "",
     message: formData.get("message")?.toString() || "",
+    service: formData.get("service")?.toString() || "", // Now using "service" to match the form field
   };
 
   const dict = (await getDictionary(
@@ -44,7 +44,10 @@ export async function sendContact(
     };
   }
 
-  const mailText = `Name: ${formBody.name}\nSurname: ${formBody.surname}\nEmail: ${formBody.email}\nMessage: ${formBody.message}`;
+  const mailText = `Name: ${formBody.name}
+Email: ${formBody.email}
+Service: ${formBody.service}
+Message: ${formBody.message}`;
 
   const response = await sendMail({
     email: validatedFields.data.email,
@@ -54,7 +57,7 @@ export async function sendContact(
 
   return {
     data: response?.messageId
-      ? { name: "", surname: "", email: "", message: "" }
+      ? { name: "", email: "", message: "", service: "" }
       : formBody,
     message: response?.messageId ? "success" : "error",
   };

@@ -107,12 +107,12 @@ export function Footer() {
         </div>
       </div>
       {/* Bottom Bar */}
-      <div className="pt-4  border-t border-white/10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-4  border-t border-white/10 mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
         <div className="w-full max-w-7xl flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm md:mb-0">
             {dictionary?.rights ?? ""}
           </p>
-          <div className="flex space-x-6">
+          <div className="flex">
             <Link
               href="/privacy"
               className="text-gray-400 hover:text-primary text-sm transition-colors"

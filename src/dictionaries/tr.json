@@ -189,7 +189,7 @@
       },
       {
         "icon": "receipt",
-        "title": "Faturalama Uygulaması",
+        "title": "Finans Uygulaması",
         "category": "SaaS Platformu",
         "description": "Akıllı hatırlatmalar, ödeme takibi ve PDF çıktılarıyla otomatikleştirilmiş faturalama çalışma alanı.",
         "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
@@ -226,15 +226,13 @@
       "description": "E-postayı mı tercih ediyorsunuz? İstediğiniz zaman bize yazın.",
       "address": "info@devinbi.com"
     },
-    "success": {
-      "title": "Mesaj Gönderildi!",
-      "description": "24 saat içinde sizinle iletişime geçeceğiz."
-    },
+    "success": "Mesajınız başarıyla gönderildi!",
+    "error": "Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin.",
     "form": {
       "nameLabel": "Adınız",
-      "namePlaceholder": "Ahmet Yılmaz",
+      "namePlaceholder": "John Doe",
       "emailLabel": "E-posta Adresi",
-      "emailPlaceholder": "ahmet@example.com",
+      "emailPlaceholder": "johndoe@example.com",
       "servicePlaceholder": "Bir hizmet seçin",
       "messageLabel": "Projenizi Anlatın",
       "messagePlaceholder": "Projenizi, hedeflerinizi ve zaman çizelgenizi bizimle paylaşın...",
@@ -303,14 +301,14 @@
     "ideas": "Fikirlerinizi gerçeğe dönüştürmek için birlikte çalışalım!",
     "getInTouch": "İletişime Geçin",
     "name": "Ad",
-    "surname": "Soyad",
     "email": "E-posta",
     "message": "Mesaj",
+    "service": "Hizmet",
     "send": "Gönder",
     "nameRequired": "Ad alanı boş bırakılamaz",
-    "surnameRequired": "Soyad alanı boş bırakılamaz",
     "emailInvalid": "Lütfen geçerli bir e-posta girin",
     "messageMin": "Mesaj en az 10 karakter olmalıdır",
+    "serviceRequired": "Lütfen bir hizmet seçin",
     "success": "Mesajınız başarıyla gönderildi",
     "error": "Mesaj gönderilirken bir hata oluştu"
   },
