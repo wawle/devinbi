@@ -2,10 +2,9 @@
 
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
-import { useActionState, useEffect, useRef, useState } from "react";
-import { Mail, Send, CheckCircle2 } from "lucide-react";
+import { useActionState, useEffect, useRef } from "react";
+import { Mail, CheckCircle2 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 
 import FormInput from "@/components/form/form-input";
 import {
