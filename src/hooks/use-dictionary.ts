@@ -3,16 +3,17 @@ import { useParams } from "next/navigation";
 import { Locale } from "@/lib/locales";
 import { getDictionary } from "@/lib/dictionary";
 
-interface UseDictionaryReturn {
-  dictionary: Record<string, string> | null;
+type DictionaryRecord = Record<string, unknown>;
+
+interface UseDictionaryReturn<T extends DictionaryRecord> {
+  dictionary: T | null;
 }
 
-export function useDictionary(namespace: string): UseDictionaryReturn {
+export function useDictionary<T extends DictionaryRecord = DictionaryRecord>(
+  namespace: string
+): UseDictionaryReturn<T> {
   const params = useParams();
-  const [dictionary, setDictionary] = useState<Record<
-    string,
-    string
-  > | null>(null);
+  const [dictionary, setDictionary] = useState<T | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -20,7 +21,7 @@ export function useDictionary(namespace: string): UseDictionaryReturn {
     async function loadDictionary() {
       try {
         const locale = (params.locale as Locale) || "en";
-        const dict = await getDictionary(namespace, locale);
+        const dict = await getDictionary<T>(namespace, locale);
 
         if (isMounted) {
           setDictionary(dict);

@@ -17,25 +17,21 @@ import Image from "next/image";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const { locale } = useParams();
-  const { dictionary: dict } = useDictionary("navbar");
+  const { dictionary: dict } = useDictionary<Record<string, string>>("navbar");
 
   return (
-    <nav className="relative " aria-label="Main">
-      <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-[#008529]/5 via-[#008529] to-[#008529]/5" />
-      <div className="mx-auto flex max-w-7xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black px-4 md:px-6 h-[85px]">
+    <nav className="relative" aria-label="Main">
+      <div className="absolute bottom-0 w-full h-[1px] bg-gradient-to-r from-black/ via-primary to-black" />
+      <div className="mx-auto flex max-w-7xl flex-col justify-center md:justify-between py-4 font-medium text-white md:flex-row md:items-center md-:py-6 bg-black/50 px-4 md:px-6 h-[85px]">
         <div className="flex items-center justify-between h-full">
           <Link
+            dir="ltr"
             className="z-50 text-3xl font-bold"
             href="/"
             onClick={() => setOpen(false)}
           >
             <div className="flex items-center gap-2">
-              <Image
-                alt="Devinbi Logo"
-                height={50}
-                width={50}
-                src={Logo}
-              />
+              <Image alt="Devinbi Logo" height={50} width={50} src={Logo} />
               <AnimatedLogo />
               <span className="sr-only">Devinbi Home Page</span>
             </div>
@@ -44,8 +40,6 @@ export default function NavBar() {
             <div className="md:hidden">
               <LocaleSwitcher currentLocale={locale as Locale} />
             </div>
-
-            {/* TODO: Shadcn Butonu kullan */}
 
             <Button
               variant="ghost"
@@ -83,7 +77,7 @@ export default function NavBar() {
                 className="inline-flex min-h-11 items-center uppercase text-xl"
                 onClick={() => setOpen(false)}
               >
-                {dict?.[item.dictionary]}
+                {dict?.[item.dictionary] ?? ""}
               </Link>
             ))}
           </div>
@@ -94,7 +88,7 @@ export default function NavBar() {
           {navbarItems.map((item, index) => (
             <li key={index.toString()}>
               <Link href={item.href} className="nav-hover-btn">
-                {dict?.[item.dictionary]}
+                {dict?.[item.dictionary] ?? ""}
               </Link>
             </li>
           ))}

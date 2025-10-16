@@ -3,14 +3,15 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import NavBar from "../../components/navbar";
-import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
 import { Locale, locales } from "@/lib/locales";
 import Script from "next/script";
+import { Footer } from "@/components/footer";
+import { MatrixBackground } from "./components/matrix-background";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["100", "300", "500", "700", "900"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -61,6 +62,7 @@ export async function generateMetadata({
         en: `${siteUrl}/en`,
         tr: `${siteUrl}/tr`,
         de: `${siteUrl}/de`,
+        ar: `${siteUrl}/ar`,
       },
     },
     openGraph: {
@@ -120,9 +122,10 @@ export default async function RootLayout({
   params: Params;
 }) {
   const { locale } = await params; // params asenkron olarak çözülüyor
+  const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning lang={locale} dir={direction}>
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID as string}
       />
@@ -138,7 +141,8 @@ export default async function RootLayout({
             })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");
           `}
       </Script>
-      <body className={`${roboto.className} bg-black antialiased`}>
+      <body className={`${roboto.className} bg-black antialiased`} dir={direction}>
+        <MatrixBackground />
         <NavBar />
         <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] bg-black">
           {children}

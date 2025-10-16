@@ -1,38 +1,306 @@
 {
   "navbar": {
     "home": "STARTSEITE",
-    "products": "PRODUKTE",
-    "services": "DIENSTLEISTUNGEN",
+    "projects": "PROJEKTE",
+    "services": "LEISTUNGEN",
     "contact": "KONTAKT"
   },
   "common": {
-    "contactButton": "Kontakt aufnehmen"
-  },
-  "tech": {
-    "title": "Die Zukunft der Software gestalten"
+    "contactButton": "Kontakt aufnehmen",
+    "sending": "Wird gesendet..."
   },
   "hero": {
-    "title": "Intelligente Lösungen",
-    "description": "Devinbi bietet KI-gestützte Softwarelösungen, die Ihr Unternehmen auf die nächste Stufe heben. Beschleunigen Sie Ihre Arbeitsabläufe und seien Sie mit unseren dynamischen und benutzerorientierten Designs für die Zukunft gerüstet."
+    "badge": "KI-gestützte Entwicklung",
+    "title": {
+      "line1": "Wir gestalten",
+      "highlight": "smarte digitale Erlebnisse",
+      "line3": "mit KI"
+    },
+    "description": "Wir entwickeln hochmoderne Web- und Mobile-Anwendungen von der Idee bis zum Launch. Unsere Lösungen sind KI-gestützt und bereit für die Zukunft.",
+    "primaryCta": "Projekt starten",
+    "secondaryCta": "Unsere Arbeiten ansehen",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "Ausgelieferte Projekte"
+      },
+      {
+        "value": "15+",
+        "label": "KI-Integrationen"
+      },
+      {
+        "value": "98%",
+        "label": "Kundenzufriedenheit"
+      }
+    ]
   },
-  "bento": {
-    "titleFirst": "Mit modernster",
-    "titleGreen": "Next-Generation",
-    "titleLast": "Software-Lösungen",
-    "featureMobileTitle": "Mobile Anwendungen",
-    "featureMobileContent": "Wir entwickeln benutzerfreundliche und funktionale mobile Anwendungen mit modernen Technologien, damit Sie Ihre Zielgruppe einfach erreichen können.",
-
-    "featureWebTitle": "Webanwendungen und Websites",
-    "featureWebContent": "Wir gestalten und entwickeln schnelle und wirkungsvolle Webanwendungen und Websites, die die digitale Präsenz Ihres Unternehmens stärken.",
-
-    "featureAiTitle": "KI-gestützte intelligente Lösungen",
-    "featureAiContent": "Mit KI-gestützten Technologien bieten wir überlegene Leistung in der Datenanalyse und bei Automatisierungsprozessen, um Ihre Wettbewerbsfähigkeit zu steigern.",
-
-    "featureSecurityTitle": "Schnelle und sichere Entwicklung",
-    "featureSecurityContent": "Mit schnellen Prototyping- und sicheren Softwareentwicklungsprozessen liefern wir Ihre Projekte pünktlich und in höchster Qualität."
+  "about": {
+    "badge": "Über Devinbi",
+    "title": "Ihr digitaler Partner",
+    "description": "Devinbi ist ein Softwareunternehmen, das Ideen in leistungsstarke digitale Lösungen verwandelt. Wir entwickeln eigene Produkte und schaffen maßgeschneiderte Anwendungen für Kund:innen weltweit, indem wir technische Exzellenz mit KI-getriebener Innovation verbinden.",
+    "features": [
+      {
+        "icon": "code2",
+        "title": "Expertenentwicklung",
+        "description": "Full-Stack-Expertise für moderne Web- und Mobile-Technologien"
+      },
+      {
+        "icon": "lightbulb",
+        "title": "Innovation zuerst",
+        "description": "Wir nutzen KI und modernste Tools, um intelligentere Lösungen zu bauen"
+      },
+      {
+        "icon": "rocket",
+        "title": "Schnelle Lieferung",
+        "description": "Von der Idee bis zum Launch mit agiler Methodik und schnellen Iterationen"
+      },
+      {
+        "icon": "shield",
+        "title": "Langfristiger Support",
+        "description": "Technischer Support, Skalierung und Wartung für wachsende Anforderungen"
+      }
+    ],
+    "why": {
+      "title": "Warum Devinbi?",
+      "description": "Wir schreiben nicht nur Code – wir schaffen Erlebnisse. Unser Team verbindet tiefes technisches Know-how mit Innovationsfreude, damit jedes Projekt mit Präzision umgesetzt wird.",
+      "bullets": [
+        "End-to-End-Entwicklung von der Idee bis zum Livegang",
+        "KI-Integrationskompetenz zur Stärkung Ihres Produkts",
+        "Skalierbare Architektur für zukünftiges Wachstum",
+        "Fortlaufender Support und Wartung"
+      ],
+      "experience": {
+        "value": "9+",
+        "label": "Jahre Erfahrung"
+      }
+    }
+  },
+  "servicesSection": {
+    "badge": "Unsere Leistungen",
+    "title": "Was wir tun",
+    "description": "Wir bieten ganzheitliche Softwareentwicklung, die genau auf Ihre Anforderungen zugeschnitten ist – vom Konzept bis zum langfristigen Support.",
+    "list": [
+      {
+        "icon": "globe",
+        "title": "Webentwicklung",
+        "description": "Wir bauen moderne, reaktionsfähige Webanwendungen mit React, Next.js und neuesten Technologien.",
+        "features": [
+          "Progressive Web Apps",
+          "E-Commerce-Plattformen",
+          "Individuelle Weblösungen",
+          "Echtzeit-Anwendungen"
+        ]
+      },
+      {
+        "icon": "smartphone",
+        "title": "Mobile Entwicklung",
+        "description": "Native und plattformübergreifende Mobile Apps für iOS und Android, die Nutzer:innen begeistern.",
+        "features": [
+          "React Native Apps",
+          "Native iOS & Android",
+          "Mobile-First-Design",
+          "App-Store-Optimierung"
+        ]
+      },
+      {
+        "icon": "brain",
+        "title": "KI-Integration",
+        "description": "Wir erweitern Ihre Produkte mit künstlicher Intelligenz und Machine-Learning-Funktionen.",
+        "features": [
+          "ChatGPT-Integration",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Prädiktive Analysen"
+        ]
+      },
+      {
+        "icon": "package",
+        "title": "Produktentwicklung",
+        "description": "Vom MVP bis zum skalierbaren Produkt – wir setzen Ihre Vision mit einem erfahrenen Team um.",
+        "features": [
+          "MVP-Entwicklung",
+          "Produktstrategie",
+          "UI/UX-Design",
+          "Markteinführung"
+        ]
+      },
+      {
+        "icon": "wrench",
+        "title": "Support & Skalierung",
+        "description": "Wir liefern laufenden technischen Support, Wartung und Infrastruktur-Skalierung für wachsende Unternehmen.",
+        "features": [
+          "24/7 Monitoring",
+          "Performance-Optimierung",
+          "Cloud-Infrastruktur",
+          "Bugfixes & Updates"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Sie brauchen eine individuelle Lösung?",
+      "description": "Jedes Projekt ist einzigartig. Lassen Sie uns Ihre Anforderungen besprechen und gemeinsam etwas Großartiges schaffen.",
+      "button": "Kontakt aufnehmen"
+    }
+  },
+  "projectsSection": {
+    "badge": "Fallstudien",
+    "title": "Unsere aktuellen Projekte",
+    "description": "Entdecken Sie eine Auswahl erfolgreicher Projekte, die unsere Expertise in verschiedenen Branchen und Technologien zeigen.",
+    "list": [
+      {
+        "icon": "shoppingCart",
+        "title": "E-Commerce-Marktplatz",
+        "category": "Commerce-Plattform",
+        "description": "Skalierbarer Multivendor-Marktplatz mit intuitiver Produktsuche und hochkonvertierenden Checkout-Flows.",
+        "tech": ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+        "impact": "Ermöglichte über 120 Händler:innen den Online-Verkauf"
+      },
+      {
+        "icon": "users",
+        "title": "Soziale Plattform",
+        "category": "Community-Erlebnis",
+        "description": "Engagierende Community mit Echtzeit-Interaktion, Content-Feeds und personalisierter Entdeckung.",
+        "tech": ["React", "Node.js", "WebSockets", "Redis"],
+        "impact": "Erreichte über 85.000 monatlich aktive Mitglieder"
+      },
+      {
+        "icon": "music4",
+        "title": "KI-Musikgenerator-App",
+        "category": "Kreative KI",
+        "description": "Text-zu-Track-Kompositionsengine mit gemeinsamen Playlists und exportierbaren Stems.",
+        "tech": ["Next.js", "Python", "PyTorch", "AWS"],
+        "impact": "Generierte in der Beta über 12.000 einzigartige Tracks"
+      },
+      {
+        "icon": "bot",
+        "title": "KI-gestützter Chatbot",
+        "category": "Kundensupport",
+        "description": "Konversationsassistent mit domänenspezifischen Antworten, Sentimentanalyse und Live-Weiterleitung.",
+        "tech": ["TypeScript", "Next.js", "OpenAI", "Pinecone"],
+        "impact": "Löste 78 % der Anfragen autonom"
+      },
+      {
+        "icon": "trendingUp",
+        "title": "Investment-Tracker-App",
+        "category": "Fintech-Dashboard",
+        "description": "Portfolio-Analytics-Suite mit automatisierten Insights, Alerts und Multi-Brokerage-Aggregation.",
+        "tech": ["React", "Node.js", "GraphQL", "Supabase"],
+        "impact": "Über 450 Mio. USD an Vermögenswerten überwacht"
+      },
+      {
+        "icon": "receipt",
+        "title": "Rechnungs-App",
+        "category": "SaaS-Plattform",
+        "description": "Automatisierter Abrechnungs-Workspace mit intelligenten Erinnerungen, Zahlungsnachverfolgung und PDF-Export.",
+        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
+        "impact": "Verkürzte Zahlungszyklen um 40 %"
+      }
+    ],
+    "footerNote": "Sie möchten mehr sehen? Wir haben über 50 Projekte in unterschiedlichsten Branchen geliefert."
+  },
+  "contactPage": {
+    "badge": "Kontakt aufnehmen",
+    "title": "Lassen Sie uns gemeinsam etwas aufbauen",
+    "description": "Sie haben ein Projekt vor Augen? Wir hören gern zu. Teilen Sie Ihre Ideen und wir erschaffen gemeinsam etwas Außergewöhnliches.",
+    "whyTitle": "Warum mit uns arbeiten?",
+    "reasons": [
+      {
+        "title": "Transparente Kommunikation",
+        "description": "Regelmäßige Updates und klare Projektmeilensteine"
+      },
+      {
+        "title": "Experten-Team",
+        "description": "Erfahrene Entwickler:innen mit jahrelanger Praxis"
+      },
+      {
+        "title": "Pünktliche Lieferung",
+        "description": "Wir halten Deadlines ein und liefern Qualität"
+      },
+      {
+        "title": "Kontinuierlicher Support",
+        "description": "Wir bleiben auch nach dem Launch an Ihrer Seite"
+      }
+    ],
+    "emailCard": {
+      "title": "Schreiben Sie uns eine E-Mail",
+      "description": "Sie bevorzugen E-Mail? Schreiben Sie uns jederzeit.",
+      "address": "info@devinbi.com"
+    },
+    "success": {
+      "title": "Nachricht gesendet!",
+      "description": "Wir melden uns innerhalb von 24 Stunden."
+    },
+    "form": {
+      "nameLabel": "Ihr Name",
+      "namePlaceholder": "Max Mustermann",
+      "emailLabel": "E-Mail-Adresse",
+      "emailPlaceholder": "max@example.com",
+      "servicePlaceholder": "Wählen Sie eine Leistung",
+      "messageLabel": "Erzählen Sie uns von Ihrem Projekt",
+      "messagePlaceholder": "Beschreiben Sie Ihr Projekt, Ihre Ziele und Ihren Zeitplan...",
+      "submit": "Nachricht senden",
+      "options": [
+        {
+          "value": "web",
+          "label": "Webentwicklung"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile Entwicklung"
+        },
+        {
+          "value": "ai",
+          "label": "KI-Integration"
+        },
+        {
+          "value": "product",
+          "label": "Produktentwicklung"
+        },
+        {
+          "value": "support",
+          "label": "Support & Skalierung"
+        },
+        {
+          "value": "other",
+          "label": "Andere"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "Wir schaffen intelligentere digitale Erlebnisse mit KI. Vom Konzept bis zum Launch sind wir Ihr verlässlicher Entwicklungspartner.",
+    "quickLinksTitle": "Schnellzugriff",
+    "quickLinks": [
+      {
+        "label": "Startseite",
+        "href": "/"
+      },
+      {
+        "label": "Leistungen",
+        "href": "/services"
+      },
+      {
+        "label": "Projekte",
+        "href": "/projects"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/contact"
+      }
+    ],
+    "servicesTitle": "Leistungen",
+    "services": [
+      "Webentwicklung",
+      "Mobile Apps",
+      "KI-Integration",
+      "Produktentwicklung"
+    ],
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "rights": "© 2025 Devinbi. Alle Rechte vorbehalten."
   },
   "contact": {
-    "ideas": "Lassen Sie uns zusammenarbeiten, um Ihre Ideen Wirklichkeit werden zu lassen!",
+    "ideas": "Verwirklichen wir Ihre Ideen gemeinsam!",
     "getInTouch": "Kontakt aufnehmen",
     "name": "Name",
     "surname": "Nachname",
@@ -44,35 +312,70 @@
     "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
     "success": "Ihre Nachricht wurde erfolgreich gesendet",
-    "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten"
+    "error": "Beim Senden der Nachricht ist ein Fehler aufgetreten"
   },
-  "products": {
-    "crmTitle1": "Verwalten Sie Ihre Arbeit einfach",
-    "crmContent1": "Verwalten Sie alle Ihre Kundenbeziehungen und Projekte auf einer einzigen Plattform, um Ihre Arbeitsabläufe effizienter zu gestalten. Organisieren Sie Kommunikations-, Tracking- und Berichtsprozesse einfach.",
-
-    "crmTitle2": "Effizientes Kundenmanagement",
-    "crmContent2": "Stärken Sie Ihre Kundenbeziehungen, verfolgen Sie vergangene Interaktionen und entwickeln Sie personalisierte Strategien für jeden Kunden. CRM trägt zum Wachstum Ihres Unternehmens bei.",
-
-    "crmTitle3": "Einfaches Tracking und Reporting",
-    "crmContent3": "Verfolgen Sie Ihre Verkaufsprozesse und Kundeninteraktionen einfach über ein einziges Panel. Bestimmen Sie die Richtung Ihres Unternehmens mit Analysen und Berichten.",
-
-    "crmTitle4": "Wachsen mit integrierten Lösungen",
-    "crmContent4": "Integrieren Sie Ihr CRM-System mit anderer Unternehmenssoftware. Sparen Sie Zeit in Ihren Arbeitsabläufen und treffen Sie intelligentere Entscheidungen."
-  },
-  "services": {
-    "title": "Professionelle Software-Dienstleistungen",
-    "description": "Wir bieten maßgeschneiderte Lösungen, die Ihr Unternehmen in der digitalen Welt einen Schritt voranbringen.",
-
-    "startupTitle": "Startup-Lösungen",
-    "startupContent": "Wir bieten alle Software-Unterstützung, die Sie für Ihr neues Unternehmen benötigen. Von der MVP-Entwicklung bis hin zu skalierbaren Anwendungen unterstützen wir das Wachstum Ihres Startups.",
-
-    "enterpriseTitle": "Enterprise-Softwarelösungen",
-    "enterpriseContent": "Wir entwickeln skalierbare und sichere Softwarelösungen, die auf die Bedürfnisse Ihres Unternehmens zugeschnitten sind. Wir bieten maßgeschneiderte Anwendungen, die Ihre Geschäftsprozesse optimieren und Ihre Effizienz steigern.",
-
-    "webTitle": "Maßgeschneiderte Webanwendungen",
-    "webContent": "Benutzerfreundliche und leistungsstarke Webanwendungen, entwickelt mit modernen Technologien. Wir unterstützen die digitale Transformation Ihres Unternehmens bestmöglich.",
-
-    "mobileTitle": "Mobile App-Entwicklung",
-    "mobileContent": "Wir entwickeln native und plattformübergreifende mobile Anwendungen für iOS und Android. Wir bieten leistungsstarke mobile Lösungen, die den Benutzer in den Mittelpunkt stellen."
+  "privacy": {
+    "metaTitle": "Datenschutzerklärung",
+    "metaDescription": "Erfahren Sie, wie Devinbi Ihre personenbezogenen Daten in unseren digitalen Produkten und Services sammelt, nutzt und schützt.",
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: 10. Januar 2025",
+    "intro": "Der Schutz Ihrer persönlichen Daten hat bei Devinbi höchste Priorität. Diese Erklärung beschreibt, welche Daten wir sammeln, wie wir sie verwenden und welche Möglichkeiten Sie haben, Ihre Informationen zu verwalten.",
+    "sections": [
+      {
+        "title": "Welche Daten wir sammeln",
+        "description": "Wir erfassen nur die Informationen, die für eine sichere und effiziente Bereitstellung unserer Leistungen erforderlich sind.",
+        "items": [
+          "Kontaktdaten wie Name, E-Mail-Adresse und Unternehmensangaben",
+          "Projektinformationen und Anforderungen, die über Formulare oder direkte Kommunikation geteilt werden",
+          "Nutzungsdaten wie Geräteinformationen, Browsertyp und Interaktionsmetriken",
+          "Technische Protokolle, die uns helfen, unsere Systeme sicher und zuverlässig zu halten"
+        ]
+      },
+      {
+        "title": "Wie wir Ihre Daten verwenden",
+        "description": "Wir nutzen Ihre Daten, um Ihnen ein optimales Erlebnis zu bieten und unsere Geschäftsprozesse zu unterstützen.",
+        "items": [
+          "Bereitstellung und Weiterentwicklung unserer Softwareprodukte und Dienstleistungen",
+          "Beantwortung von Anfragen, Angeboten und Support-Tickets",
+          "Personalisierung von Inhalten, Empfehlungen und Marketingkommunikation",
+          "Überwachung, Prüfung und Schutz unserer Plattformen vor Missbrauch oder Betrug"
+        ]
+      },
+      {
+        "title": "Weitergabe und Offenlegung",
+        "description": "Wir verkaufen Ihre personenbezogenen Daten nicht. Eine Weitergabe erfolgt nur, wenn sie notwendig ist.",
+        "items": [
+          "Vertrauenswürdige Dienstleister, die uns beim Betrieb unserer Infrastruktur unterstützen",
+          "Professionelle Berater wie Rechts- und Finanzexpert:innen",
+          "Behörden oder Aufsichtsstellen, sofern dies gesetzlich vorgeschrieben ist oder unsere Rechte zu schützen sind"
+        ]
+      },
+      {
+        "title": "Ihre Rechte und Wahlmöglichkeiten",
+        "description": "Sie behalten die volle Kontrolle darüber, wie Ihre Informationen erhoben und verwendet werden.",
+        "items": [
+          "Zugriff auf Ihre personenbezogenen Daten anfordern, sie berichtigen oder löschen lassen",
+          "Marketingkommunikation jederzeit abbestellen",
+          "Unter bestimmten gesetzlichen Voraussetzungen die Verarbeitung einschränken",
+          "Ihre Daten übertragen lassen, sofern dies technisch möglich ist"
+        ]
+      },
+      {
+        "title": "Datensicherheit und Aufbewahrung",
+        "description": "Wir setzen organisatorische, technische und physische Maßnahmen ein, um Ihre Daten zu schützen.",
+        "items": [
+          "Verschlüsselung und gesicherte Übertragung für Daten während des Transports und im Ruhezustand",
+          "Rollenbasierte Zugriffskontrollen und Schulungen unseres Teams zum Datenschutz",
+          "Regelmäßige Sicherheitsprüfungen, Schwachstellenanalysen und Backups",
+          "Aufbewahrung personenbezogener Daten nur solange es für unsere Services oder gesetzliche Pflichten erforderlich ist"
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Fragen zu dieser Erklärung?",
+      "description": "Wenn Sie Fragen haben oder Ihre Datenschutzrechte ausüben möchten, kontaktieren Sie bitte unser Privacy-Team.",
+      "emailLabel": "E-Mail",
+      "email": "info@devinbi.com"
+    }
   }
 }

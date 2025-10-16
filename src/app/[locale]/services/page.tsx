@@ -1,30 +1,29 @@
-import ServicesList from "./components/services-list";
-import Hero from "./components/hero";
-import Bounded from "@/components/bounded";
-import StarGrid from "@/components/star-grid";
 import { Metadata } from "next";
+import { Services } from "../components/services";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = "Software Development Services | Devinbi";
+  const description =
+    "Explore Devinbi’s end-to-end services: web platforms, mobile applications, AI integration, product strategy, and long-term technical support.";
+  const image = "/img/logo.png";
+
   return {
-    title: "Our Services",
-    description:
-      "Discover our comprehensive software development services including web development, mobile app development, custom software solutions, and digital transformation services.",
+    title,
+    description,
     keywords: [
-      "software services",
-      "web development services",
-      "mobile app development",
-      "custom software solutions",
-      "digital transformation",
-      "technology consulting",
+      "software development services",
+      "AI integration agency",
+      "product development partner",
+      "web and mobile development",
       "Devinbi services",
+      "technical support and scaling",
     ],
     openGraph: {
-      title: "Our Services | Devinbi",
-      description:
-        "Discover our comprehensive software development services including web development, mobile app development, custom software solutions, and digital transformation services.",
+      title,
+      description,
       images: [
         {
-          url: "/img/services.png",
+          url: image,
           width: 1200,
           height: 630,
           alt: "Devinbi Services",
@@ -32,20 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     twitter: {
-      title: "Our Services | Devinbi",
-      description:
-        "Discover our comprehensive software development services including web development, mobile app development, custom software solutions, and digital transformation services.",
-      images: ["/img/services.png"],
+      title,
+      description,
+      images: [image],
     },
   };
 }
 
 export default async function ServicesPage() {
   return (
-    <Bounded className="relative flex min-h-screen flex-col items-center justify-between py-12">
-      <StarGrid />
-      <Hero />
-      <ServicesList />
-    </Bounded>
+    <>
+      <Services />
+    </>
   );
 }

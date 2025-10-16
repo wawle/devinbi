@@ -1,13 +1,16 @@
 import { Locale } from "./locales";
 
-// Dynamic dictionary type that can accept any namespace
-type Dictionary = Record<string, Record<string, string>>;
+type Dictionary = Record<string, unknown>;
 
-export async function getDictionary(namespace: string, locale: Locale = "en") {
+export async function getDictionary<T = Dictionary>(
+  namespace: string,
+  locale: Locale = "en"
+) {
   const dictionaries: Record<Locale, () => Promise<{ default: Dictionary }>> = {
     en: () => import("../dictionaries/en.json"),
     tr: () => import("../dictionaries/tr.json"),
     de: () => import("../dictionaries/de.json"),
+    ar: () => import("../dictionaries/ar.json"),
   };
 
   const selectedDictionary = dictionaries[locale];
@@ -17,5 +20,5 @@ export async function getDictionary(namespace: string, locale: Locale = "en") {
   }
 
   const dict = await selectedDictionary();
-  return dict.default[namespace] || {};
+  return (dict.default[namespace] || {}) as T;
 }

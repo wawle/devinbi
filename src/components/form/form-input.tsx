@@ -37,13 +37,7 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
 
     return (
       <div className="grid w-full gap-1">
-        <Label className="sr-only" htmlFor={inputProps.name}>
-          {label && (
-            <Label className="sr-only" htmlFor={inputProps.name}>
-              {label}
-            </Label>
-          )}
-        </Label>
+        {label && <Label htmlFor={inputProps.name}>{label}</Label>}
         <CustomInput />
         {error && <FormError message={error} />}
       </div>
