@@ -1,101 +1,306 @@
 {
   "navbar": {
     "home": "STARTSEITE",
-    "products": "PRODUKTE",
-    "services": "DIENSTLEISTUNGEN",
+    "projects": "PROJEKTE",
+    "services": "LEISTUNGEN",
     "contact": "KONTAKT"
   },
   "common": {
     "contactButton": "Kontakt aufnehmen",
     "sending": "Wird gesendet..."
   },
-  "tech": {
-    "title": "Die Zukunft der Software gestalten"
-  },
   "hero": {
-    "badge": "AI-Powered Development",
+    "badge": "KI-gestützte Entwicklung",
     "title": {
-      "line1": "Building Smarter",
-      "highlight": "Digital Experiences",
-      "line3": "with AI"
+      "line1": "Wir gestalten",
+      "highlight": "smarte digitale Erlebnisse",
+      "line3": "mit KI"
     },
-    "description": "We craft cutting-edge web and mobile applications from concept to launch. Powered by artificial intelligence, scaled for the future.",
-    "primaryCta": "Start Your Project",
-    "secondaryCta": "View Our Work",
+    "description": "Wir entwickeln hochmoderne Web- und Mobile-Anwendungen von der Idee bis zum Launch. Unsere Lösungen sind KI-gestützt und bereit für die Zukunft.",
+    "primaryCta": "Projekt starten",
+    "secondaryCta": "Unsere Arbeiten ansehen",
     "stats": [
       {
         "value": "50+",
-        "label": "Projects Delivered"
+        "label": "Ausgelieferte Projekte"
       },
       {
         "value": "15+",
-        "label": "AI Integrations"
+        "label": "KI-Integrationen"
       },
       {
         "value": "98%",
-        "label": "Client Satisfaction"
+        "label": "Kundenzufriedenheit"
       }
     ]
   },
-  "bento": {
-    "titleFirst": "Mit modernster",
-    "titleGreen": "Next-Generation",
-    "titleLast": "Software-Lösungen",
-    "featureMobileTitle": "Mobile Anwendungen",
-    "featureMobileContent": "Wir entwickeln benutzerfreundliche und funktionale mobile Anwendungen mit modernen Technologien, damit Sie Ihre Zielgruppe einfach erreichen können.",
-
-    "featureWebTitle": "Webanwendungen und Websites",
-    "featureWebContent": "Wir gestalten und entwickeln schnelle und wirkungsvolle Webanwendungen und Websites, die die digitale Präsenz Ihres Unternehmens stärken.",
-
-    "featureAiTitle": "KI-gestützte intelligente Lösungen",
-    "featureAiContent": "Mit KI-gestützten Technologien bieten wir überlegene Leistung in der Datenanalyse und bei Automatisierungsprozessen, um Ihre Wettbewerbsfähigkeit zu steigern.",
-
-    "featureSecurityTitle": "Schnelle und sichere Entwicklung",
-    "featureSecurityContent": "Mit schnellen Prototyping- und sicheren Softwareentwicklungsprozessen liefern wir Ihre Projekte pünktlich und in höchster Qualität."
-  },
   "about": {
-    "badge": "About Devinbi",
-    "title": "Your Digital Partner",
-    "description": "Devinbi is a software development company that transforms ideas into powerful digital solutions. We build our own products and craft custom applications for clients worldwide, combining technical excellence with AI-driven innovation.",
+    "badge": "Über Devinbi",
+    "title": "Ihr digitaler Partner",
+    "description": "Devinbi ist ein Softwareunternehmen, das Ideen in leistungsstarke digitale Lösungen verwandelt. Wir entwickeln eigene Produkte und schaffen maßgeschneiderte Anwendungen für Kund:innen weltweit, indem wir technische Exzellenz mit KI-getriebener Innovation verbinden.",
     "features": [
       {
         "icon": "code2",
-        "title": "Expert Development",
-        "description": "Full-stack expertise in modern web and mobile technologies"
+        "title": "Expertenentwicklung",
+        "description": "Full-Stack-Expertise für moderne Web- und Mobile-Technologien"
       },
       {
         "icon": "lightbulb",
-        "title": "Innovation First",
-        "description": "Leveraging AI and cutting-edge tools to build smarter solutions"
+        "title": "Innovation zuerst",
+        "description": "Wir nutzen KI und modernste Tools, um intelligentere Lösungen zu bauen"
       },
       {
         "icon": "rocket",
-        "title": "Fast Delivery",
-        "description": "From idea to launch with agile methodology and rapid iterations"
+        "title": "Schnelle Lieferung",
+        "description": "Von der Idee bis zum Launch mit agiler Methodik und schnellen Iterationen"
       },
       {
         "icon": "shield",
-        "title": "Long-term Support",
-        "description": "Technical support, scaling, and maintenance for your growing needs"
+        "title": "Langfristiger Support",
+        "description": "Technischer Support, Skalierung und Wartung für wachsende Anforderungen"
       }
     ],
     "why": {
-      "title": "Why Choose Devinbi?",
-      "description": "We don't just write code – we build experiences. Our team combines deep technical expertise with a passion for innovation, ensuring every project is crafted with precision and purpose.",
+      "title": "Warum Devinbi?",
+      "description": "Wir schreiben nicht nur Code – wir schaffen Erlebnisse. Unser Team verbindet tiefes technisches Know-how mit Innovationsfreude, damit jedes Projekt mit Präzision umgesetzt wird.",
       "bullets": [
-        "End-to-end development from concept to deployment",
-        "AI integration expertise to enhance your product",
-        "Scalable architecture for future growth",
-        "Ongoing support and maintenance"
+        "End-to-End-Entwicklung von der Idee bis zum Livegang",
+        "KI-Integrationskompetenz zur Stärkung Ihres Produkts",
+        "Skalierbare Architektur für zukünftiges Wachstum",
+        "Fortlaufender Support und Wartung"
       ],
       "experience": {
         "value": "9+",
-        "label": "Years Experience"
+        "label": "Jahre Erfahrung"
       }
     }
   },
+  "servicesSection": {
+    "badge": "Unsere Leistungen",
+    "title": "Was wir tun",
+    "description": "Wir bieten ganzheitliche Softwareentwicklung, die genau auf Ihre Anforderungen zugeschnitten ist – vom Konzept bis zum langfristigen Support.",
+    "list": [
+      {
+        "icon": "globe",
+        "title": "Webentwicklung",
+        "description": "Wir bauen moderne, reaktionsfähige Webanwendungen mit React, Next.js und neuesten Technologien.",
+        "features": [
+          "Progressive Web Apps",
+          "E-Commerce-Plattformen",
+          "Individuelle Weblösungen",
+          "Echtzeit-Anwendungen"
+        ]
+      },
+      {
+        "icon": "smartphone",
+        "title": "Mobile Entwicklung",
+        "description": "Native und plattformübergreifende Mobile Apps für iOS und Android, die Nutzer:innen begeistern.",
+        "features": [
+          "React Native Apps",
+          "Native iOS & Android",
+          "Mobile-First-Design",
+          "App-Store-Optimierung"
+        ]
+      },
+      {
+        "icon": "brain",
+        "title": "KI-Integration",
+        "description": "Wir erweitern Ihre Produkte mit künstlicher Intelligenz und Machine-Learning-Funktionen.",
+        "features": [
+          "ChatGPT-Integration",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Prädiktive Analysen"
+        ]
+      },
+      {
+        "icon": "package",
+        "title": "Produktentwicklung",
+        "description": "Vom MVP bis zum skalierbaren Produkt – wir setzen Ihre Vision mit einem erfahrenen Team um.",
+        "features": [
+          "MVP-Entwicklung",
+          "Produktstrategie",
+          "UI/UX-Design",
+          "Markteinführung"
+        ]
+      },
+      {
+        "icon": "wrench",
+        "title": "Support & Skalierung",
+        "description": "Wir liefern laufenden technischen Support, Wartung und Infrastruktur-Skalierung für wachsende Unternehmen.",
+        "features": [
+          "24/7 Monitoring",
+          "Performance-Optimierung",
+          "Cloud-Infrastruktur",
+          "Bugfixes & Updates"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Sie brauchen eine individuelle Lösung?",
+      "description": "Jedes Projekt ist einzigartig. Lassen Sie uns Ihre Anforderungen besprechen und gemeinsam etwas Großartiges schaffen.",
+      "button": "Kontakt aufnehmen"
+    }
+  },
+  "projectsSection": {
+    "badge": "Fallstudien",
+    "title": "Unsere aktuellen Projekte",
+    "description": "Entdecken Sie eine Auswahl erfolgreicher Projekte, die unsere Expertise in verschiedenen Branchen und Technologien zeigen.",
+    "list": [
+      {
+        "icon": "shoppingCart",
+        "title": "E-Commerce-Marktplatz",
+        "category": "Commerce-Plattform",
+        "description": "Skalierbarer Multivendor-Marktplatz mit intuitiver Produktsuche und hochkonvertierenden Checkout-Flows.",
+        "tech": ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+        "impact": "Ermöglichte über 120 Händler:innen den Online-Verkauf"
+      },
+      {
+        "icon": "users",
+        "title": "Soziale Plattform",
+        "category": "Community-Erlebnis",
+        "description": "Engagierende Community mit Echtzeit-Interaktion, Content-Feeds und personalisierter Entdeckung.",
+        "tech": ["React", "Node.js", "WebSockets", "Redis"],
+        "impact": "Erreichte über 85.000 monatlich aktive Mitglieder"
+      },
+      {
+        "icon": "music4",
+        "title": "KI-Musikgenerator-App",
+        "category": "Kreative KI",
+        "description": "Text-zu-Track-Kompositionsengine mit gemeinsamen Playlists und exportierbaren Stems.",
+        "tech": ["Next.js", "Python", "PyTorch", "AWS"],
+        "impact": "Generierte in der Beta über 12.000 einzigartige Tracks"
+      },
+      {
+        "icon": "bot",
+        "title": "KI-gestützter Chatbot",
+        "category": "Kundensupport",
+        "description": "Konversationsassistent mit domänenspezifischen Antworten, Sentimentanalyse und Live-Weiterleitung.",
+        "tech": ["TypeScript", "Next.js", "OpenAI", "Pinecone"],
+        "impact": "Löste 78 % der Anfragen autonom"
+      },
+      {
+        "icon": "trendingUp",
+        "title": "Investment-Tracker-App",
+        "category": "Fintech-Dashboard",
+        "description": "Portfolio-Analytics-Suite mit automatisierten Insights, Alerts und Multi-Brokerage-Aggregation.",
+        "tech": ["React", "Node.js", "GraphQL", "Supabase"],
+        "impact": "Über 450 Mio. USD an Vermögenswerten überwacht"
+      },
+      {
+        "icon": "receipt",
+        "title": "Rechnungs-App",
+        "category": "SaaS-Plattform",
+        "description": "Automatisierter Abrechnungs-Workspace mit intelligenten Erinnerungen, Zahlungsnachverfolgung und PDF-Export.",
+        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
+        "impact": "Verkürzte Zahlungszyklen um 40 %"
+      }
+    ],
+    "footerNote": "Sie möchten mehr sehen? Wir haben über 50 Projekte in unterschiedlichsten Branchen geliefert."
+  },
+  "contactPage": {
+    "badge": "Kontakt aufnehmen",
+    "title": "Lassen Sie uns gemeinsam etwas aufbauen",
+    "description": "Sie haben ein Projekt vor Augen? Wir hören gern zu. Teilen Sie Ihre Ideen und wir erschaffen gemeinsam etwas Außergewöhnliches.",
+    "whyTitle": "Warum mit uns arbeiten?",
+    "reasons": [
+      {
+        "title": "Transparente Kommunikation",
+        "description": "Regelmäßige Updates und klare Projektmeilensteine"
+      },
+      {
+        "title": "Experten-Team",
+        "description": "Erfahrene Entwickler:innen mit jahrelanger Praxis"
+      },
+      {
+        "title": "Pünktliche Lieferung",
+        "description": "Wir halten Deadlines ein und liefern Qualität"
+      },
+      {
+        "title": "Kontinuierlicher Support",
+        "description": "Wir bleiben auch nach dem Launch an Ihrer Seite"
+      }
+    ],
+    "emailCard": {
+      "title": "Schreiben Sie uns eine E-Mail",
+      "description": "Sie bevorzugen E-Mail? Schreiben Sie uns jederzeit.",
+      "address": "info@devinbi.com"
+    },
+    "success": {
+      "title": "Nachricht gesendet!",
+      "description": "Wir melden uns innerhalb von 24 Stunden."
+    },
+    "form": {
+      "nameLabel": "Ihr Name",
+      "namePlaceholder": "Max Mustermann",
+      "emailLabel": "E-Mail-Adresse",
+      "emailPlaceholder": "max@example.com",
+      "servicePlaceholder": "Wählen Sie eine Leistung",
+      "messageLabel": "Erzählen Sie uns von Ihrem Projekt",
+      "messagePlaceholder": "Beschreiben Sie Ihr Projekt, Ihre Ziele und Ihren Zeitplan...",
+      "submit": "Nachricht senden",
+      "options": [
+        {
+          "value": "web",
+          "label": "Webentwicklung"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile Entwicklung"
+        },
+        {
+          "value": "ai",
+          "label": "KI-Integration"
+        },
+        {
+          "value": "product",
+          "label": "Produktentwicklung"
+        },
+        {
+          "value": "support",
+          "label": "Support & Skalierung"
+        },
+        {
+          "value": "other",
+          "label": "Andere"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "Wir schaffen intelligentere digitale Erlebnisse mit KI. Vom Konzept bis zum Launch sind wir Ihr verlässlicher Entwicklungspartner.",
+    "quickLinksTitle": "Schnellzugriff",
+    "quickLinks": [
+      {
+        "label": "Startseite",
+        "href": "/"
+      },
+      {
+        "label": "Leistungen",
+        "href": "/services"
+      },
+      {
+        "label": "Projekte",
+        "href": "/projects"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/contact"
+      }
+    ],
+    "servicesTitle": "Leistungen",
+    "services": [
+      "Webentwicklung",
+      "Mobile Apps",
+      "KI-Integration",
+      "Produktentwicklung"
+    ],
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "rights": "© 2025 Devinbi. Alle Rechte vorbehalten."
+  },
   "contact": {
-    "ideas": "Lassen Sie uns zusammenarbeiten, um Ihre Ideen Wirklichkeit werden zu lassen!",
+    "ideas": "Verwirklichen wir Ihre Ideen gemeinsam!",
     "getInTouch": "Kontakt aufnehmen",
     "name": "Name",
     "surname": "Nachname",
@@ -107,259 +312,6 @@
     "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
     "success": "Ihre Nachricht wurde erfolgreich gesendet",
-    "error": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten"
-  },
-  "products": {
-    "crmTitle1": "Verwalten Sie Ihre Arbeit einfach",
-    "crmContent1": "Verwalten Sie alle Ihre Kundenbeziehungen und Projekte auf einer einzigen Plattform, um Ihre Arbeitsabläufe effizienter zu gestalten. Organisieren Sie Kommunikations-, Tracking- und Berichtsprozesse einfach.",
-
-    "crmTitle2": "Effizientes Kundenmanagement",
-    "crmContent2": "Stärken Sie Ihre Kundenbeziehungen, verfolgen Sie vergangene Interaktionen und entwickeln Sie personalisierte Strategien für jeden Kunden. CRM trägt zum Wachstum Ihres Unternehmens bei.",
-
-    "crmTitle3": "Einfaches Tracking und Reporting",
-    "crmContent3": "Verfolgen Sie Ihre Verkaufsprozesse und Kundeninteraktionen einfach über ein einziges Panel. Bestimmen Sie die Richtung Ihres Unternehmens mit Analysen und Berichten.",
-
-    "crmTitle4": "Wachsen mit integrierten Lösungen",
-    "crmContent4": "Integrieren Sie Ihr CRM-System mit anderer Unternehmenssoftware. Sparen Sie Zeit in Ihren Arbeitsabläufen und treffen Sie intelligentere Entscheidungen."
-  },
-  "services": {
-    "title": "Professionelle Software-Dienstleistungen",
-    "description": "Wir bieten maßgeschneiderte Lösungen, die Ihr Unternehmen in der digitalen Welt einen Schritt voranbringen.",
-
-    "startupTitle": "Startup-Lösungen",
-    "startupContent": "Wir bieten alle Software-Unterstützung, die Sie für Ihr neues Unternehmen benötigen. Von der MVP-Entwicklung bis hin zu skalierbaren Anwendungen unterstützen wir das Wachstum Ihres Startups.",
-
-    "enterpriseTitle": "Enterprise-Softwarelösungen",
-    "enterpriseContent": "Wir entwickeln skalierbare und sichere Softwarelösungen, die auf die Bedürfnisse Ihres Unternehmens zugeschnitten sind. Wir bieten maßgeschneiderte Anwendungen, die Ihre Geschäftsprozesse optimieren und Ihre Effizienz steigern.",
-
-    "webTitle": "Maßgeschneiderte Webanwendungen",
-    "webContent": "Benutzerfreundliche und leistungsstarke Webanwendungen, entwickelt mit modernen Technologien. Wir unterstützen die digitale Transformation Ihres Unternehmens bestmöglich.",
-
-    "mobileTitle": "Mobile App-Entwicklung",
-    "mobileContent": "Wir entwickeln native und plattformübergreifende mobile Anwendungen für iOS und Android. Wir bieten leistungsstarke mobile Lösungen, die den Benutzer in den Mittelpunkt stellen."
-  },
-  "servicesSection": {
-    "badge": "Our Services",
-    "title": "What We Do",
-    "description": "Comprehensive software development services tailored to your needs, from initial concept to ongoing support.",
-    "list": [
-      {
-        "icon": "globe",
-        "title": "Web Development",
-        "description": "Modern, responsive web applications built with React, Next.js, and cutting-edge technologies.",
-        "features": [
-          "Progressive Web Apps",
-          "E-commerce Platforms",
-          "Custom Web Solutions",
-          "Real-time Applications"
-        ]
-      },
-      {
-        "icon": "smartphone",
-        "title": "Mobile Development",
-        "description": "Native and cross-platform mobile apps for iOS and Android that users love.",
-        "features": [
-          "React Native Apps",
-          "Native iOS & Android",
-          "Mobile-first Design",
-          "App Store Optimization"
-        ]
-      },
-      {
-        "icon": "brain",
-        "title": "AI Integration",
-        "description": "Enhance your products with artificial intelligence and machine learning capabilities.",
-        "features": [
-          "ChatGPT Integration",
-          "Computer Vision",
-          "Natural Language Processing",
-          "Predictive Analytics"
-        ]
-      },
-      {
-        "icon": "package",
-        "title": "Product Development",
-        "description": "From MVP to full-scale product, we bring your vision to life with expert execution.",
-        "features": [
-          "MVP Development",
-          "Product Strategy",
-          "UI/UX Design",
-          "Market Launch"
-        ]
-      },
-      {
-        "icon": "wrench",
-        "title": "Support & Scaling",
-        "description": "Ongoing technical support, maintenance, and infrastructure scaling for growing businesses.",
-        "features": [
-          "24/7 Monitoring",
-          "Performance Optimization",
-          "Cloud Infrastructure",
-          "Bug Fixes & Updates"
-        ]
-      }
-    ],
-    "cta": {
-      "title": "Need a Custom Solution?",
-      "description": "Every project is unique. Let's discuss your specific requirements and build something amazing together.",
-      "button": "Get in Touch"
-    }
-  },
-  "projectsSection": {
-    "badge": "Case Studies",
-    "title": "Our Recent Projects",
-    "description": "Explore some of our successful projects that showcase our expertise across different industries and technologies.",
-    "list": [
-      {
-        "icon": "shoppingCart",
-        "title": "E-commerce Marketplace",
-        "category": "Commerce Platform",
-        "description": "Scalable multi-vendor marketplace with intuitive product discovery and high-converting checkout flows.",
-        "tech": ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
-        "impact": "Enabled 120+ vendors to sell online"
-      },
-      {
-        "icon": "users",
-        "title": "Social Platform",
-        "category": "Community Experience",
-        "description": "Engaging social community with real-time interactions, content feeds, and personalized discovery.",
-        "tech": ["React", "Node.js", "WebSockets", "Redis"],
-        "impact": "Grew to 85K monthly active members"
-      },
-      {
-        "icon": "music4",
-        "title": "AI Music Generator App",
-        "category": "Creative AI",
-        "description": "Text-to-track composition engine with collaborative playlists and export-ready stems.",
-        "tech": ["Next.js", "Python", "PyTorch", "AWS"],
-        "impact": "Produced 12K+ unique tracks in beta"
-      },
-      {
-        "icon": "bot",
-        "title": "AI Powered Chatbot",
-        "category": "Customer Support",
-        "description": "Conversational assistant with domain-tuned responses, sentiment detection, and live agent handoff.",
-        "tech": ["TypeScript", "Next.js", "OpenAI", "Pinecone"],
-        "impact": "Resolved 78% of inquiries autonomously"
-      },
-      {
-        "icon": "trendingUp",
-        "title": "Investment Tracker App",
-        "category": "Fintech Dashboard",
-        "description": "Portfolio analytics suite with automated insights, alerts, and multi-brokerage aggregation.",
-        "tech": ["React", "Node.js", "GraphQL", "Supabase"],
-        "impact": "Monitored $450M+ in assets"
-      },
-      {
-        "icon": "receipt",
-        "title": "Invoicing App",
-        "category": "SaaS Platform",
-        "description": "Automated billing workspace with smart reminders, payment tracking, and PDF export workflows.",
-        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
-        "impact": "Cut payment cycles by 40%"
-      }
-    ],
-    "footerNote": "Want to see more? We've delivered 50+ projects across various industries."
-  },
-  "contactPage": {
-    "badge": "Get in Touch",
-    "title": "Let's Build Together",
-    "description": "Have a project in mind? We'd love to hear about it. Share your ideas and let's create something extraordinary.",
-    "whyTitle": "Why Work With Us?",
-    "reasons": [
-      {
-        "title": "Transparent Communication",
-        "description": "Regular updates and clear project milestones"
-      },
-      {
-        "title": "Expert Team",
-        "description": "Skilled developers with years of experience"
-      },
-      {
-        "title": "On-Time Delivery",
-        "description": "We respect deadlines and deliver quality work"
-      },
-      {
-        "title": "Ongoing Support",
-        "description": "We're here even after launch"
-      }
-    ],
-    "emailCard": {
-      "title": "Email Us",
-      "description": "Prefer email? Drop us a line anytime.",
-      "address": "info@devinbi.com"
-    },
-    "success": {
-      "title": "Message Sent!",
-      "description": "We'll get back to you within 24 hours."
-    },
-    "form": {
-      "nameLabel": "Your Name",
-      "namePlaceholder": "John Doe",
-      "emailLabel": "Email Address",
-      "emailPlaceholder": "john@example.com",
-      "servicePlaceholder": "Select a service",
-      "messageLabel": "Tell Us About Your Project",
-      "messagePlaceholder": "Describe your project, goals, and timeline...",
-      "submit": "Send Message",
-      "options": [
-        {
-          "value": "web",
-          "label": "Web Development"
-        },
-        {
-          "value": "mobile",
-          "label": "Mobile Development"
-        },
-        {
-          "value": "ai",
-          "label": "AI Integration"
-        },
-        {
-          "value": "product",
-          "label": "Product Development"
-        },
-        {
-          "value": "support",
-          "label": "Support & Scaling"
-        },
-        {
-          "value": "other",
-          "label": "Other"
-        }
-      ]
-    }
-  },
-  "footer": {
-    "description": "Building smarter digital experiences with AI. From concept to launch, we're your trusted development partner.",
-    "quickLinksTitle": "Quick Links",
-    "quickLinks": [
-      {
-        "label": "Home",
-        "href": "/"
-      },
-      {
-        "label": "Services",
-        "href": "/services"
-      },
-      {
-        "label": "Projects",
-        "href": "/projects"
-      },
-      {
-        "label": "Contact",
-        "href": "/contact"
-      }
-    ],
-    "servicesTitle": "Services",
-    "services": [
-      "Web Development",
-      "Mobile Apps",
-      "AI Integration",
-      "Product Development"
-    ],
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "rights": "© 2025 Devinbi. All rights reserved."
+    "error": "Beim Senden der Nachricht ist ein Fehler aufgetreten"
   }
 }

@@ -121,9 +121,10 @@ export default async function RootLayout({
   params: Params;
 }) {
   const { locale } = await params; // params asenkron olarak çözülüyor
+  const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning lang={locale} dir={direction}>
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID as string}
       />
@@ -139,7 +140,7 @@ export default async function RootLayout({
             })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");
           `}
       </Script>
-      <body className={`${roboto.className} bg-black antialiased`}>
+      <body className={`${roboto.className} bg-black antialiased`} dir={direction}>
         <MatrixBackground />
         <NavBar />
         <div className="min-h-[calc(100vh-230px)] md:min-h-[calc(100vh-154px)] bg-black">

@@ -10,6 +10,7 @@ export async function getDictionary<T = Dictionary>(
     en: () => import("../dictionaries/en.json"),
     tr: () => import("../dictionaries/tr.json"),
     de: () => import("../dictionaries/de.json"),
+    ar: () => import("../dictionaries/ar.json"),
   };
 
   const selectedDictionary = dictionaries[locale];
