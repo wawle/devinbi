@@ -148,6 +148,14 @@
     "description": "Entdecken Sie eine Auswahl erfolgreicher Projekte, die unsere Expertise in verschiedenen Branchen und Technologien zeigen.",
     "list": [
       {
+        "icon": "receipt",
+        "title": "Rechnungs-App",
+        "category": "SaaS-Plattform",
+        "description": "Automatisierter Abrechnungs-Workspace mit intelligenten Erinnerungen, Zahlungsnachverfolgung und PDF-Export.",
+        "tech": ["Expo", "MongoDB", "Node.js"],
+        "impact": "Verkürzte Zahlungszyklen um 40 %"
+      },
+      {
         "icon": "shoppingCart",
         "title": "E-Commerce-Marktplatz",
         "category": "Commerce-Plattform",
@@ -186,14 +194,6 @@
         "description": "Portfolio-Analytics-Suite mit automatisierten Insights, Alerts und Multi-Brokerage-Aggregation.",
         "tech": ["React", "Node.js", "GraphQL", "Supabase"],
         "impact": "Über 450 Mio. USD an Vermögenswerten überwacht"
-      },
-      {
-        "icon": "receipt",
-        "title": "Rechnungs-App",
-        "category": "SaaS-Plattform",
-        "description": "Automatisierter Abrechnungs-Workspace mit intelligenten Erinnerungen, Zahlungsnachverfolgung und PDF-Export.",
-        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
-        "impact": "Verkürzte Zahlungszyklen um 40 %"
       }
     ],
     "footerNote": "Sie möchten mehr sehen? Wir haben über 50 Projekte in unterschiedlichsten Branchen geliefert."

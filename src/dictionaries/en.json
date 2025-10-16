@@ -148,6 +148,14 @@
     "description": "Explore some of our successful projects that showcase our expertise across different industries and technologies.",
     "list": [
       {
+        "icon": "receipt",
+        "title": "Finance App",
+        "category": "SaaS Platform",
+        "description": "Automated billing workspace with smart reminders, payment tracking, and PDF export workflows.",
+        "tech": ["Expo", "MongoDB", "Node.js"],
+        "impact": "Cut payment cycles by 40%"
+      },
+      {
         "icon": "shoppingCart",
         "title": "E-commerce Marketplace",
         "category": "Commerce Platform",
@@ -186,14 +194,6 @@
         "description": "Portfolio analytics suite with automated insights, alerts, and multi-brokerage aggregation.",
         "tech": ["React", "Node.js", "GraphQL", "Supabase"],
         "impact": "Monitored $450M+ in assets"
-      },
-      {
-        "icon": "receipt",
-        "title": "Finance App",
-        "category": "SaaS Platform",
-        "description": "Automated billing workspace with smart reminders, payment tracking, and PDF export workflows.",
-        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
-        "impact": "Cut payment cycles by 40%"
       }
     ],
     "footerNote": "Want to see more? We've delivered 50+ projects across various industries."

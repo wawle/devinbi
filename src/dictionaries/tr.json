@@ -148,6 +148,14 @@
     "description": "Farklı sektörlerdeki ve teknolojilerdeki uzmanlığımızı gösteren başarılı projelerimizden bazılarını keşfedin.",
     "list": [
       {
+        "icon": "receipt",
+        "title": "Finans Uygulaması",
+        "category": "SaaS Platformu",
+        "description": "Akıllı hatırlatmalar, ödeme takibi ve PDF çıktılarıyla otomatikleştirilmiş faturalama çalışma alanı.",
+        "tech": ["Expo", "MongoDB", "Node.js"],
+        "impact": "Ödeme sürecini %40 kısalttı"
+      },
+      {
         "icon": "shoppingCart",
         "title": "E-ticaret Pazaryeri",
         "category": "Ticaret Platformu",
@@ -186,14 +194,6 @@
         "description": "Otomatik içgörü, uyarı ve çoklu aracı kurum entegrasyonu sunan portföy analitik paketi.",
         "tech": ["React", "Node.js", "GraphQL", "Supabase"],
         "impact": "450 milyon doların üzerindeki varlıkları izledi"
-      },
-      {
-        "icon": "receipt",
-        "title": "Finans Uygulaması",
-        "category": "SaaS Platformu",
-        "description": "Akıllı hatırlatmalar, ödeme takibi ve PDF çıktılarıyla otomatikleştirilmiş faturalama çalışma alanı.",
-        "tech": ["Next.js", "Prisma", "PostgreSQL", "AWS SES"],
-        "impact": "Ödeme sürecini %40 kısalttı"
       }
     ],
     "footerNote": "Daha fazlasını görmek ister misiniz? Çeşitli sektörlerde 50'den fazla proje teslim ettik."
